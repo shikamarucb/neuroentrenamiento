@@ -293,3 +293,64 @@ ul li:hover{
     background-color: black;
     transition: all 500ms;
 }
+
+#cont1L {
+    height: 500px;
+    width: 100%;
+    min-width: 1024px;
+    text-align: center;
+    background-color: rgba(250,250,250,1);
+}
+
+#cont1L > div{
+    display: inline-block;
+    width: 90%;
+}
+
+#cont1L > div h1{
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.7em;
+}
+
+#cont1L > div p{
+    margin: 0 30px;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.15em;
+}
+
+#cont1L > #cont1L1{
+    font-size: 1.2em;
+    margin-top: 10px;
+    width: 45%;
+    float: left;
+    margin-left: 65px;
+}
+
+#cont1L1 p{
+    text-align: justify;
+}
+
+#cont1L > #cont1L2{
+    padding: 50px 0px;
+    background-color: rgba(240,240,240,1);
+    margin-top: 10px;
+    margin-right: 35px;
+    width: 45%;
+    float: right;
+}
+
+#cont1L2 input,button{
+    text-align: center;
+    width: 80%;
+    height: 40px;
+}
+
+#cont1L2 button{
+    background-color: rgb(110,111,61);
+    color: white;
+}
+
+#cont1L2 button:hover{
+    background-color: black;
+    transition: all 500ms;
+}
