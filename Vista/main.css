@@ -1,0 +1,295 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+ol, ul {
+    list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+
+/*Aca termina css reset*/
+
+
+#navi {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    min-width: 1024px;
+}
+
+#navi {
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+    min-width: 1024px;
+    text-align: center;
+}
+
+#title {
+    position: relative;
+    height: inherit;
+    width: 20%;
+    margin: 0 auto;
+    min-width: 320px;
+    float: left;
+}
+
+#title > h1{
+    margin: 35px;
+    width: 90%;
+    font-family: 'Poiret One', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+
+#menu {
+    position: relative;
+    height: inherit;
+    width: 50%;
+    margin: 0 55px;
+    min-width: 40%x;
+    float: right;
+}
+
+ul{
+    margin: 40px 0;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: darkgoldenrod;
+}
+
+a:link{
+    color: darkgoldenrod;
+}
+
+ul li{
+    display: inline-block;
+    margin: 0px 10px;
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+ul li:hover{
+    color: black; 
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 1); 
+    
+    transition: all 500ms;
+}
+
+#cont1 {
+    position: relative;
+    width: 100%;
+    min-width: 1024px;
+    min-height: 200px;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-image: url(cerebro.jpg);
+    background-size: cover;
+}
+
+#cont1 > p{
+    position: relative;
+    width: 50%;
+    top: 30%;
+    left: 50%;
+    font-size: 2.3em;
+    color: darkkhaki;
+    font-family: 'Exo 2', sans-serif;
+}
+
+#cont2 {
+    position: relative;
+    width: 100%;
+    min-width: 1024px;
+    min-height: 200px;
+    height: 400px;
+    background-color:rgba(244,244,244,1);
+}
+
+#footerP {
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+    min-width: 1024px;
+    background-color: rgba(0,0,0,0.9);
+    color: aliceblue;
+}
+
+#footerP >div{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    font-size: 1.5em;
+}
+
+#cont1C {
+    min-height: 500px;
+    background-color: rgba(252,252,252,1);
+}
+
+#cont1C >div{
+    width: 90%;
+    min-width: 1024px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#cont1C > div h1,p{
+    text-align: center;
+}
+
+#cont1C > div h1{
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.7em;
+}
+
+#cont1C > div p{
+    margin: 0 30px;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.15em;
+}
+
+#cont1C > div > form{
+    text-align: center;
+}
+
+#cont1C > div > form input[text],input[email],input[textarea]{
+    display: inline-block;
+}
+
+#cont1C > div > form input{
+    width: 30%;
+    height: 35px;
+}
+
+#cont1C > div > form textarea{
+    width: 91%;
+    height: 180px;
+}
+
+#cont1C > div > form button{
+    float: left;
+    margin-left: 4%;
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+    background-color: rgb(110,111,61);
+    color: white;
+}
+
+#cont1C > div > form button:hover{
+    background-color: black;
+    transition: all 500ms;
+}
+
+#cont1R{
+    background-color: rgba(250,250,250,1);
+    height: 500px;
+    min-width: 1024px;
+}
+
+#cont1R > div{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#cont1R > div h1,p{
+    text-align: center;
+}
+
+#cont1R > div h1{
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.7em;
+}
+
+#cont1R > div p{
+    margin: 0 30px;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.15em;
+}
+
+#cont1R > form{
+    text-align: center;
+    width: 100%;
+    margin-top: 35px;
+}
+
+#cont1R > form div{
+    width: 43%;
+    display: inline-block;
+    text-align: center;
+}
+
+#cont1R > form div input,select{
+    width: 90%;
+    height: 35px;
+    text-align: center;
+}
+
+#cont1R > form div select{
+    text-indent: 45%;
+    text-align: center;
+}
+
+#cont1R > form button{
+    float: left;
+    margin-left: 9%;
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+    background-color: rgb(110,111,61);
+    color: white;
+}
+
+#cont1R > form button:hover{
+    background-color: black;
+    transition: all 500ms;
+}
