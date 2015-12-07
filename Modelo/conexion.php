@@ -3,7 +3,7 @@
     
     class Conexion{
         
-        private $DB='prueba';
+        private $DB='cartilla';
         private $host='127.0.0.1';
         private $pass='';
         private $user='root';
