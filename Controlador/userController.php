@@ -4,18 +4,19 @@
     include_once ("../Modelo/conexion.php");
 
     class UsuarioC{
+        
         public function registrar(){
+            
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
-            $email=strip_tags($_POST['email']);
-            $nombre=strip_tags($_POST['nombre']);
-            $apellido=strip_tags($_POST['apellido']);
-            $edad=strip_tags($_POST['edad']);
-            $genero=strip_tags($_POST['genero']);
-            $grado=strip_tags($_POST['grado']);
-            $password=strip_tags($_POST['password']);
-
-
+            
+            $email=$conexion->real_escape_string(strip_tags($_POST['email']));
+            $nombre=$conexion->real_escape_string(strip_tags($_POST['nombre']));
+            $apellido=$conexion->real_escape_string(strip_tags($_POST['apellido']));
+            $edad=$conexion->real_escape_string(strip_tags($_POST['edad']));
+            $genero=$conexion->real_escape_string(strip_tags($_POST['genero']));
+            $grado=$conexion->real_escape_string(strip_tags($_POST['grado']));
+            $password=$conexion->real_escape_string(strip_tags($_POST['password']));
 
             $user=new Usuario();
             $user->addUser($conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password);
@@ -30,8 +31,8 @@
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
-            $email=strip_tags($_POST['email']);    
-            $password=strip_tags($_POST['password']);
+            $email=$conexion->real_escape_string(strip_tags($_POST['email']));    
+            $password=$conexion->real_escape_string(strip_tags($_POST['password']));
 
             $user=new Usuario();
             $resultado=$user->getUser($conexion, $email, $password);
@@ -43,6 +44,21 @@
             }else{
                 echo "Datos incorrectos";
             }
+        }
+        
+        public function contactar(){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $destino="neurocartilla@gmail.com";
+            $nombre=$conexion->real_escape_string(strip_tags($_POST['nombre']));
+            $email=$conexion->real_escape_string(strip_tags($_POST['email']));
+            $asunto=$conexion->real_escape_string(strip_tags($_POST['asunto']));
+            $mensaje=$conexion->real_escape_string(strip_tags($_POST['mensaje']));
+
+            $contenido="Nombre:  ".$nombre."\nCorreo:  ".$email."\nMensaje:  ".$mensaje;
+            mail($destino, $asunto, $contenido); 
+            header('location: ../Vista/index.html');
         }
         
     }
