@@ -6,7 +6,6 @@
 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
-
     $email=strip_tags($_POST['email']);
     $nombre=strip_tags($_POST['nombre']);
     $apellido=strip_tags($_POST['apellido']);
@@ -16,12 +15,12 @@
     $password=strip_tags($_POST['password']);
 
     
-    $user=new Usuario($email,$nombre,$apellido,$edad,$genero,$grado,$password);
-    $user->addUser($conexion);
+    $user=new Usuario();
+    $user->addUser($conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password);
 
     $control=new Control($email);
     $control->addControl($conexion);
 
-    header('location: ../Vista/login.html')
-
+    header('location: ../Vista/login.html');
+   
 ?>

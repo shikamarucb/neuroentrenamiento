@@ -8,8 +8,10 @@
                              $password."\n',\n'".$roll."\n');");
         }
         
-        public function get($table,$conexion,$email,$password,$conexion){
-            $conexion->query("SELECT email,password from usuario where email = \n'".$email."\n' AND password = '".$password."\n';");
+        public function get($table,$email,$password,$conexion){
+            return $conexion->query("SELECT * from ".$table." where email = \n'".$email."\n'
+                               AND password = '".$password."\n' AND roll= 3 ;");
+            
         }
 
         //Funciones para el manejo de la tabla control 

@@ -14,8 +14,6 @@
             }else{
                 return $this->conexion;
             }
-            
-            
         }
     }
 ?>
