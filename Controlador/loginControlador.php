@@ -7,9 +7,11 @@
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
 
-    $email=strip_tags($_POST['email']);    
-    $password=strip_tags($_POST['password']);
+    $email=$conexion->real_escape_string(strip_tags($_POST['email']));    
+    $password=$conexion->real_escape_string(strip_tags($_POST['password']));
 
+   // $email=$conexion->real_escape_string($email);
+    //$password=$conexion->real_escape_string($password);
     
     $user=new Usuario();
     $resultado=$user->getUser($conexion, $email, $password);
@@ -20,9 +22,7 @@
         header('location: ../Vista/contact.html');
     }else{
         echo "Datos incorrectos";
+        header('location: ../Vista/login.html');
     }
-
-
-    
 
 ?>

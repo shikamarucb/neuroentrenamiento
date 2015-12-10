@@ -31,11 +31,11 @@
         </p>
     </div>
     <div>
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <input type="text" placeholder="Asunto" required><br><br>
-            <textarea placeholder="Mensaje" required></textarea><br><br><br>
+        <form action="../Controlador/mailControlador.php" method="POST">
+            <input type="text" placeholder="Nombre" name="nombre" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Asunto" name="asunto" required><br><br>
+            <textarea placeholder="Mensaje" name="mensaje" required></textarea><br><br><br>
             <button type="submit">Enviar Mensaje</button>
         </form>
     </div>
