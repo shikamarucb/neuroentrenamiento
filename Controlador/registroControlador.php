@@ -6,13 +6,14 @@
 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
-    $email=strip_tags($_POST['email']);
-    $nombre=strip_tags($_POST['nombre']);
-    $apellido=strip_tags($_POST['apellido']);
-    $edad=strip_tags($_POST['edad']);
-    $genero=strip_tags($_POST['genero']);
-    $grado=strip_tags($_POST['grado']);
-    $password=strip_tags($_POST['password']);
+
+    $email=$conexion->real_escape_string(strip_tags($_POST['email']));
+    $nombre=$conexion->real_escape_string(strip_tags($_POST['nombre']));
+    $apellido=$conexion->real_escape_string(strip_tags($_POST['apellido']));
+    $edad=$conexion->real_escape_string(strip_tags($_POST['edad']));
+    $genero=$conexion->real_escape_string(strip_tags($_POST['genero']));
+    $grado=$conexion->real_escape_string(strip_tags($_POST['grado']));
+    $password=$conexion->real_escape_string(strip_tags($_POST['password']));
 
     
     $user=new Usuario();
