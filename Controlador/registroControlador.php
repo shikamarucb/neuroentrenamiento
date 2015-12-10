@@ -14,6 +14,7 @@
     $grado=strip_tags($_POST['grado']);
     $password=strip_tags($_POST['password']);
 
+
     
     $user=new Usuario();
     $user->addUser($conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password);

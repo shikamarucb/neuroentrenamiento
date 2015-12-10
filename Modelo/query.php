@@ -3,14 +3,14 @@
     class Query{
         //funciones para el manejo de usuarios
         public function add($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password,$roll){        
-            $conexion->query("INSERT into ".$table." values (\n'".$email."\n',\n'".$nombre."\n',\n'".
-                             $apellido."\n',\n'".$genero."\n',\n'".$edad."\n',\n'".$grado."\n',\n'".
-                             $password."\n',\n'".$roll."\n');");
+            $conexion->query("INSERT into ".$table." values ('".$email."','".$nombre."','".
+                         $apellido."','".$genero."','".$edad."','".$grado."','".
+                             $password."','".$roll."');");
         }
         
         public function get($table,$email,$password,$conexion){
-            return $conexion->query("SELECT * from ".$table." where email = \n'".$email."\n'
-                               AND password = '".$password."\n' AND roll= 3 ;");
+            return $conexion->query("SELECT * from ".$table." where email = '".$email."'
+                               AND password = '".$password."' AND roll= 3 ;");
             
         }
 

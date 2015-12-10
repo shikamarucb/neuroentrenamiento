@@ -1,6 +1,6 @@
 <?php
     include_once ("../Modelo/usuario.php");
-    include_once ("../Modelo/control.php");
+    //include_once ("../Modelo/control.php");
     include_once ("../Modelo/conexion.php");
     //include_once ("../Vista/register.html");
 
