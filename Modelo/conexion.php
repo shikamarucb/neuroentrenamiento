@@ -1,6 +1,4 @@
-<?php
-
-    
+<?php   
     class Conexion{
         
         private $DB='cartilla';
@@ -16,8 +14,6 @@
             }else{
                 return $this->conexion;
             }
-            
-            
         }
     }
 ?>

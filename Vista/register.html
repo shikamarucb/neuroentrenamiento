@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -29,19 +30,19 @@
             mandaremus.
         </p>
     </div><br><br><br>
-    <form>
+    <form name="registro" action="../Controlador/registroControlador.php" method="POST">
         <div>
-            <input type="text" placeholder="Nombre" required><br><br>
-            <input type="text" placeholder="Apellido" required><br><br>
-            <input type="number" min="11" max="19" placeholder="Edad" required><br><br>
-            <select>
-                <option>Hombre</option>
-                <option>Mujer</option>
+            <input type="text" placeholder="Nombre"  name="nombre" required><br><br>
+            <input type="text" placeholder="Apellido" name="apellido" required><br><br>
+            <input type="number" min="11" max="19" placeholder="Edad" name="edad" required><br><br>
+            <select name="genero">
+                <option value="M">Hombre</option>
+                <option value="F">Mujer</option>
             </select><br><br>
             
         </div>
         <div>
-            <select>
+            <select name="grado">
                 <option value="sexto">Sexto</option>
                 <option value="septimo">Séptimo</option>
                 <option value="octavo">Octavo</option>
@@ -49,9 +50,9 @@
                 <option value="decimo">Décimo</option>
                 <option value="once">Once</option>
             </select><br><br>
-            <input type="email" placeholder="Email" required><br><br>
-            <input type="password" placeholder="Contraseña" required><br><br>
-            <input type="password" placeholder="Repetir Contraseña" required><br><br>
+            <input type="email" placeholder="Email" name="email" required><br><br>
+            <input type="password" placeholder="Contraseña" name="password" required><br><br>
+            <input type="password" placeholder="Repetir Contraseña" name="password2" required><br><br>
         </div><br><br>
         <button type="submit">Registrarse</button>
     </form>
