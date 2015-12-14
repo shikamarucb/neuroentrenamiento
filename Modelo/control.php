@@ -21,7 +21,11 @@ class Control{
     
     public function getControl($conexion){
         $query=new Query();
-        $query->get($this->table,$this->email,$this->password,$conexion);
+        return $query->getControl($this->table,$this->users_email,$conexion);
+    }
+    public function upControl($conexion, $contador, $dia, $semana){        
+        $conexion->query("UPDATE ".$this->table." SET dia_usuario=".$dia.", semana_usuario=".$semana.",
+                         contador_actividad=".$contador." where users_email='".$this->users_email."';");
     }
     
 }

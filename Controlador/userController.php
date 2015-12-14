@@ -3,7 +3,7 @@
     include_once ("../Modelo/control.php");
     include_once ("../Modelo/conexion.php");
 
-    class UsuarioC{
+    class UsuarioC{        
         
         public function registrar(){
             
@@ -28,6 +28,7 @@
         }
         
         public function loguear(){
+            session_start();
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
@@ -40,6 +41,7 @@
                 $datos=$resultado->fetch_array(MYSQLI_ASSOC);
                 $nombre= $datos["nombre"];
                 $email=$datos["email"];
+                $_SESSION['session']=$email;
                 header('location: ../Vista/contact.html');
             }else{
                 echo "Datos incorrectos";

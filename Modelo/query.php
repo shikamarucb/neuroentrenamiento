@@ -16,9 +16,27 @@
 
         //Funciones para el manejo de la tabla control 
         public function addControl($conexion, $table, $users_email){            
-             $conexion->query("INSERT into ".$table."(dia_usuario, semana_usuario, contador_actividad, users_email)
-                               values (\n'".'1'."\n',\n'".'1'."\n',\n'".'0'."\n',\n'".$users_email."\n');");
+             $conexion->query("INSERT into ".$table." values (1 , 1, 0, '".$users_email."');");
         } 
+
+        public function getControl($table,$email,$conexion){
+            return $conexion->query("SELECT * from ".$table." where users_email = '".$email."';");        
+        }
+
+        //funciones para el manejo de la tabla Actividad
+
+        public function getActividad($table,$conexion, $tipo, $enunciado, $dia, $semana){         
+            return $conexion->query("SELECT respuesta from ".$table." where tipo='".$tipo."'
+                   and dia=".$dia." and semana=".$semana." and enunciado_actividad='".$enunciado."';");      
+        }
+
+        //funciones para el manejo de la tabla Resultado
+
+        public function adResultado($table, $conexion, $email, $tipo, $puntos, $dia, $semana){                 
+             $conexion->query("INSERT into ".$table."(usuario_correo, prueba_tipo, puntaje_usuario, dia, semana)
+                  values ('".$email."','".$tipo."','".$puntos."',
+                  '".$dia."','".$semana."');");      
+        }
         
     }
 ?>
