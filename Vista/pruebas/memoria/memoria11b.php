@@ -26,24 +26,27 @@
 <div id="contmem">
     <div><br><br>
         <p>Clasifica las palabras anteriores de acuerdo a su categoría y anótalas en el siguiente cuadro. Recuerda que no puedes observar la página anterior.</p><br><br><br>
-        <form>
-            <table>
+
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria11" method="POST" autocomplete="off">
+            <table> 
                 <tr>
                     <th>Herramientas</th>
                     <th>Frutas</th>
                 </tr>
                 <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="herra1" required></td>
+                    <td><input type="text" name="fruta1" required></td>
                 </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
+                    
+                    <tr>
+                        <td><input type="text"  name="herra2" required></td>
+                        <td><input type="text"  name="fruta2" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><input type="text" name="herra3" required></td>
+                        <td><input type="text" name="fruta3" required></td>
+                    </tr>
             </table><br><br><br><br>
             <button type="submit">Enviar</button>
         </form>
