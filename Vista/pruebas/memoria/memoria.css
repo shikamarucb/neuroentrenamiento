@@ -65,3 +65,42 @@
     font-size: 2.5em;
     text-align: center;
 }
+
+#questionsMemA {
+    text-align: left;
+    font-weight: 100;
+    font-size: 1.5em;
+    line-height: 25px;
+}
+
+.h33 {
+    text-align: left;
+    font-family: "Poiret One",cursive;
+    font-weight: 800;
+}
+
+.tdCol1{
+    text-align: center;
+    font-size: 1.4em;
+    font-family: 'Jura', sans-serif;
+    border: 1px solid;
+}
+
+#formA1{
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+}
+
+#formA1>#tableA1 tr th,td input{
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    height: 40px;
+    font-size: 1.5em;
+}
+
+#formA1>#tableA1{
+    border: 1px solid;
+    width: 100%;
+    height: 200px;
+}

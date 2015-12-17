@@ -7,13 +7,6 @@
 
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Jura:600,400,500|Exo+2:400,500' rel='stylesheet' type='text/css'>
     <title>Plantilla</title>
-    
-    <style>
-        td{
-            border:1px solid;
-        }
-    </style>
-        
 </head>
 <body>
 <nav id="navi">
@@ -31,23 +24,11 @@
 </nav>
     
 <div id="contmem">
-    <div><br><br>
-        <p>Completa el siguiente cuadro de acuerdo a lo observado anteriormente. Recuerda que no puedes observar la página anterior. </p><br><br><br>
-        <form>
-            <table>
-                <tr>
-                    <td><h2 class="h22">5</h2><input type="text" style="width:98%;"></td>
-                    <td><input type="number"  style="width:98%;"><h2 class="h22" style="color: green;">Verde</h2></td>
-                    <td><h2 class="h22">1</h2><input type="text" style="width:98%;"></td>
-                </tr>
-                <tr>
-                    <td><h2 class="h22">3</h2><input type="text" style="width:98%;"></td>
-                    <td><h2 class="h22">2</h2><input type="text" style="width:98%;"></td>
-                    <td><input type="number" style="width:98%;"><h2 class="h22" style="color: blue;">Azul</h2></td>
-                </tr>
-            </table><br><br><br><br>
-            <button type="submit">Enviar</button>
-        </form>
+    <div>
+        <h1>¡PRUEBA TU MEMORIA! </h1><br><br>
+        <p>Observa detenidamente las figuras que se presentan en la parte inferior, memorízalas los detalles como, los colores, las figuras y las veces que se repiten cada una de ellas. Una vez te sientas preparado(a), pasa a la siguiente página. </p><br>
+        <img src="../imagenes/memoria31.png"><br><br>
+        <a href="memoria31b.php">Siguiente</a>
     </div>
 </div>
 <footer>
