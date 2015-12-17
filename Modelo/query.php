@@ -32,9 +32,9 @@
 
         //funciones para el manejo de la tabla Resultado
 
-        public function adResultado($table, $conexion, $email, $tipo, $puntos, $dia, $semana){                 
-             $conexion->query("INSERT into ".$table."(usuario_correo, prueba_tipo, puntaje_usuario, dia, semana)
-                  values ('".$email."','".$tipo."','".$puntos."',
+        public function adResultado($table, $conexion, $email, $tipo, $puntos, $dia, $semana,$tiempo){                 
+             $conexion->query("INSERT into ".$table."(usuario_correo, prueba_tipo, tiempo, puntaje_usuario, dia, semana)
+                  values ('".$email."','".$tipo."','".$tiempo."','".$puntos."',
                   '".$dia."','".$semana."');");      
         }
         

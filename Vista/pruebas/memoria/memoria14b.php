@@ -15,10 +15,10 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -26,15 +26,15 @@
 <div id="contmem">
     <div><br><br>
         <p>Clasifica las palabras anteriores de acuerdo a su categoría y anótalas en el siguiente cuadro. Recuerda que no puedes observar la página anterior.</p><br><br><br>
-        <form>
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria14" method="POST" autocomplete="off">
             <table>
                 <tr>
-                    <td style="text-align:center;"><img src="../imagenes/a14.png"><input type="text"></td>
-                    <td style="text-align:center;"><img src="../imagenes/b14.png"><input type="text"></td>
+                    <td style="text-align:center;"><img src="../imagenes/c14.png"><input type="number" name="circulo" required></td>
+                    <td style="text-align:center;"><img src="../imagenes/d14.png"><input type="number" name="cuadradoAmarillo" required></td>
                 </tr>
                 <tr>
-                    <td style="text-align:center;"><img src="../imagenes/c14.png"><input type="text"></td>
-                    <td style="text-align:center;"><img src="../imagenes/d14.png"><input type="text"></td>
+                    <td style="text-align:center;"><img src="../imagenes/a14.png"><input type="number" name="cuadradoAzul" required></td>
+                    <td style="text-align:center;"><img src="../imagenes/b14.png"><input type="number" name="estrella" required></td>
                 </tr>
                 
             </table><br><br><br><br>

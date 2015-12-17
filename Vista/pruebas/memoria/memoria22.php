@@ -9,6 +9,13 @@
     <title>Plantilla</title>
 </head>
 <body>
+<?php
+    session_start();
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
