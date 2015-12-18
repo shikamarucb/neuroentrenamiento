@@ -3,8 +3,7 @@
     include_once ("../../Modelo/control.php");
     include_once ("../../Modelo/conexion.php");
     include_once ("../../Modelo/actividad.php");
-    include_once ("calificar.php");
-    include_once ("cronometro.php");
+    include_once ("calificar.php");   
 
     class Memoria{    	
 
@@ -329,6 +328,64 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
+            echo "Fin de la prueba";
+      }
+      //manejo de la preuab de la semana 2 dia 1
+      public function memoria21(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+                   
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="figura";            
+            $actividad=new Actividad();
+            $figuras=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($figuras->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+              while($infos=$figuras->fetch_array(MYSQLI_ASSOC)){                            
+                foreach ($infos as $clave=>$info) {
+                  foreach ($_POST['check_list'] as $select=>$figura) {                                                        
+                    if($info == $figura){                                                              
+                       $rango=$rango+1;                       
+                    }elseif($info == $figura){                                                                             
+                             $rango=$rango+1;
+                    }elseif($info == $figura){                                                            
+                          $rango=$rango+1;
+                    }elseif ($info == $figura){
+                       $rango=$rango+1;
+                    }elseif ($info == $figura) {
+                       $rango=$rango+1;
+                    }elseif ($info == $figura) {
+                       $rango=$rango+1;
+                    }
+                  }                                                  
+                }
+              }
+            }
+            
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->seis($conexion);
             echo "Fin de la prueba";
       }
       //manejo de la prueba de memoria 2-2
