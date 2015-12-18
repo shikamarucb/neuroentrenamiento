@@ -22,10 +22,10 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -33,17 +33,17 @@
 <div id="contmem">
     <div><br><br>
         <p>Completa el siguiente cuadro de acuerdo a lo observado anteriormente. Recuerda que no puedes observar la página anterior. </p><br><br><br>
-        <form>
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria22" method="POST" autocomplete="off">
             <table>
                 <tr>
-                    <td><h2 class="h22">5</h2><input type="text"></td>
-                    <td><input type="number"><h2 class="h22" style="color: green;">Verde</h2></td>
-                    <td><h2 class="h22">1</h2><input type="text"></td>
+                    <td><h2 class="h22">5</h2><input type="text" name="color1" required></td>
+                    <td><input type="number" name="color2"><h2 class="h22" style="color: green;">Verde</h2></td>
+                    <td><h2 class="h22">1</h2><input type="text" name="color3"></td>
                 </tr>
                 <tr>
-                    <td><h2 class="h22">3</h2><input type="text"></td>
-                    <td><h2 class="h22">2</h2><input type="text"></td>
-                    <td><input type="number"><h2 class="h22" style="color: blue;">Azul</h2></td>
+                    <td><h2 class="h22">3</h2><input type="text" name="color4"></td>
+                    <td><h2 class="h22">2</h2><input type="text" name="color5"></td>
+                    <td><input type="number" name="color6"><h2 class="h22" style="color: blue;">Azul</h2></td>
                 </tr>
             </table><br><br><br><br>
             <button type="submit">Enviar</button>

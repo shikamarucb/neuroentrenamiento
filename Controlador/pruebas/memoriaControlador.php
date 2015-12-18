@@ -331,6 +331,101 @@
             $calificacion->cinco($conexion);
             echo "Fin de la prueba";
       }
+      //manejo de la prueba de memoria 2-2
+      public function memoria22(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $color1=strtoupper($conexion->real_escape_string(strip_tags($_POST['color3'])));//strtoupper convierte una cadena
+            $color2=strtoupper($conexion->real_escape_string(strip_tags($_POST['color5'])));//a mayusculas
+            $color3=strtoupper($conexion->real_escape_string(strip_tags($_POST['color4'])));
+            $color4=$conexion->real_escape_string(strip_tags($_POST['color2']));
+            $color5=strtoupper($conexion->real_escape_string(strip_tags($_POST['color1'])));
+            $color6=$conexion->real_escape_string(strip_tags($_POST['color6']));
+        
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="5";            
+            $actividad=new Actividad();
+            $colores=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($colores->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+               $infos=$colores->fetch_array(MYSQLI_ASSOC);                                                                   
+              if($infos["respuesta"] == $color5){                                                              
+                 $rango=$rango+1;                       
+              }                             
+            }
+
+            $enunciado="verde";                        
+            $colores=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($colores->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+               $infos=$colores->fetch_array(MYSQLI_ASSOC);                                                                   
+              if($infos["respuesta"] == $color4){                                                              
+                 $rango=$rango+1;                       
+              }                             
+            }
+
+            $enunciado="1";                        
+            $colores=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($colores->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+               $infos=$colores->fetch_array(MYSQLI_ASSOC);                                                                   
+              if($infos["respuesta"] == $color1){                                                              
+                 $rango=$rango+1;                       
+              }                             
+            }
+
+            $enunciado="3";                        
+            $colores=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($colores->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+               $infos=$colores->fetch_array(MYSQLI_ASSOC);                                                                   
+              if($infos["respuesta"] == $color3){                                                              
+                 $rango=$rango+1;                       
+              }                             
+            }
+
+            $enunciado="2";                        
+            $colores=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($colores->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+               $infos=$colores->fetch_array(MYSQLI_ASSOC);                                                                   
+              if($infos["respuesta"] == $color2){                                                              
+                 $rango=$rango+1;                       
+              }                             
+            }
+
+            $enunciado="azul";                        
+            $colores=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($colores->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+               $infos=$colores->fetch_array(MYSQLI_ASSOC);                                                                   
+              if($infos["respuesta"] == $color6){                                                              
+                 $rango=$rango+1;                       
+              }                             
+            }
+            
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->seis($conexion);
+            echo "Fin de la prueba";
+      }
     }
 
     $metodo=$_GET['value'];
