@@ -15,10 +15,10 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -26,23 +26,23 @@
 <div id="contmem">
     <div><br><br>
         <p>Clasifica las palabras anteriores de acuerdo a su categoría y anótalas en el siguiente cuadro. Recuerda que no puedes observar la página anterior.</p><br><br><br>
-        <form>
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria13" method="POST" autocomplete="off">
             <table>
                 <tr>
                     <th>Animales Salvajes</th>
                     <th>Animales Domésticos</th>
                 </tr>
                 <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
+                    <td><input type="text" name="salvaje1" required></td>
+                    <td><input type="text" name="domestico1" required></td>
+                </tr>    
                 <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
+                    <td><input type="text" name="salvaje2" required></td>
+                    <td><input type="text" name="domestico2" required></td>
+                </tr>    
                 <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name="salvaje3" required></td>
+                    <td><input type="text" name="domestico3"required></td>
                 </tr>
             </table><br><br><br><br>
             <button type="submit">Enviar</button>

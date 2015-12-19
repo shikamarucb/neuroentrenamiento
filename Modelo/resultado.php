@@ -5,9 +5,9 @@ class Resultado{
     
     private $table="resultado";   
         
-    public function addResultado($conexion, $email, $tipo, $puntos, $dia, $semana){
+    public function addResultado($conexion, $email, $tipo, $puntos, $dia, $semana, $tiempo){
         $query=new Query();
-        $query->adResultado($this->table,$conexion, $email, $tipo, $puntos, $dia, $semana);
+        $query->adResultado($this->table,$conexion, $email, $tipo, $puntos, $dia, $semana, $tiempo);
 
     }
     
