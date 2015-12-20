@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
+   
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="../../main.css" rel="stylesheet" type="text/css">
     <link href="memoria.css" rel="stylesheet" type="text/css">
 
@@ -15,37 +16,37 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
     
 <div id="contmem">
     <div><br><br>
-        <p>A continuación, sin mirar la página anterior, escribe las palabras en su orden. Recuerda que no puedes observar la página anterior. </p><br><br><br>
+        <p>A continuación, sin mirar la página anterior, escribe las palabras en su orden.</p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria11" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria24" method="POST" autocomplete="off">
             <table> 
                 
                 <tr>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
-                    <td><input type="text" name="" required></td>
+                    <td><input type="text" name="1" required></td>
+                    <td><input type="text" name="2" required></td>
+                    <td><input type="text" name="3" required></td>
                 </tr>
                     
                     <tr>
-                        <td><input type="text"  name="" required></td>
-                        <td><input type="text"  name="" required></td>
-                        <td><input type="text" name="" required></td>
+                        <td><input type="text"  name="4" required></td>
+                        <td><input type="text"  name="5" required></td>
+                        <td><input type="text"  name="6" required></td>
                     </tr>
                     
                     <tr>
-                        <td><input type="text" name="" required></td>
-                        <td><input type="text" name="" required></td>
-                        <td><input type="text" name="" required></td>
+                        <td><input type="text" name="7" required></td>
+                        <td><input type="text" name="8" required></td>
+                        <td><input type="text" name="9" required></td>
                     </tr>
             </table><br><br><br><br>
             <button type="submit">Enviar</button>

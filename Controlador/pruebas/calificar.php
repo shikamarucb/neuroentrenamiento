@@ -23,6 +23,90 @@
              $this->contador=$contador;
              $this->tiempo=$tiempo;
     	}
+      public function diez($conexion){//funcion donde se califican las puebas que contienen 9 respuestas. 
+        // se calcula la calificacion 
+        $puntos=0;
+        if($this->rango != 0){ 
+          if( $this->rango < 6){
+             $puntos=0.5;            
+          }else{ 
+            if($this->rango > 5 && $this->rango < 10){
+              $puntos=0.75;               
+            }else{
+                $puntos=1;
+            }
+          }            
+        }                       
+            $resultado=new Resultado();
+            $resultado->addResultado($conexion, $this->email, $this->tipo, $puntos, $this->dia, $this->semana, $this->tiempo);            
+            $this->contador=$this->contador+1;            
+            if($this->contador>2){
+               $this->contador=0;
+               $this->dia=$dia+1;
+            }
+            if($this->dia>5){
+                $this->dia=1;
+                $this->semana=$this->semana+1;
+            }
+            $control=new Control($this->email);            
+            $control->upControl($conexion, $this->contador, $this->dia, $this->semana);
+      }
+      public function nueve($conexion){//funcion donde se califican las puebas que contienen 9 respuestas. 
+        // se calcula la calificacion 
+        $puntos=0;
+        if($this->rango != 0){ 
+          if( $this->rango < 5){
+             $puntos=0.5;            
+          }else{ 
+            if($this->rango > 4 && $this->rango < 9){
+              $puntos=0.75;               
+            }else{
+                $puntos=1;
+            }
+          }            
+        }                       
+            $resultado=new Resultado();
+            $resultado->addResultado($conexion, $this->email, $this->tipo, $puntos, $this->dia, $this->semana, $this->tiempo);            
+            $this->contador=$this->contador+1;            
+            if($this->contador>2){
+               $this->contador=0;
+               $this->dia=$dia+1;
+            }
+            if($this->dia>5){
+                $this->dia=1;
+                $this->semana=$this->semana+1;
+            }
+            $control=new Control($this->email);            
+            $control->upControl($conexion, $this->contador, $this->dia, $this->semana);
+      }
+      public function ocho($conexion){//funcion donde se califican las puebas que contienen 8 respuestas. 
+        // se calcula la calificacion 
+        $puntos=0;
+        if($this->rango != 0){ 
+          if( $this->rango < 5){
+             $puntos=0.5;            
+          }else{ 
+            if($this->rango > 4 && $this->rango < 8){
+              $puntos=0.75;               
+            }else{
+                $puntos=1;
+            }
+          }            
+        }                       
+            $resultado=new Resultado();
+            $resultado->addResultado($conexion, $this->email, $this->tipo, $puntos, $this->dia, $this->semana, $this->tiempo);            
+            $this->contador=$this->contador+1;            
+            if($this->contador>2){
+               $this->contador=0;
+               $this->dia=$this->dia+1;
+            }
+            if($this->dia>5){
+                $this->dia=1;
+                $this->semana=$this->semana+1;
+            }
+            $control=new Control($this->email);            
+            $control->upControl($conexion, $this->contador, $this->dia, $this->semana);
+      }
 
     	public function seis($conexion){//funcion donde se califican las puebas que contienen 6 respuestas. 
     		// se calcula la calificacion 

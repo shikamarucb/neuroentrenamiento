@@ -15,10 +15,10 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -27,71 +27,71 @@
     <div><br><br>
         <p>Recuerda el texto anterior y responde las siguientes preguntas. </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria11" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria23" method="POST" autocomplete="off">
             <div id="questionsMemA">
                 <h2 class="h33">1) ¿Qué deporte jugaban los primos? </h2><br>
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="parques">
                     <label>Parques</label><br>
 
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="volleyball">
                     <label>Volleyball</label><br>
 
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="futbol">
                     <label>Fútbol</label><br>
 
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="tennis">
                     <label>Tennis</label><br><br>
                 
                 <h2 class="h33">2) ¿Cómo estaba la mañana el día del viaje? </h2><br>
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="soleada">
                     <label>Soleada</label><br>
 
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="lluviosa">
                     <label>Lluviosa</label><br>
 
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="nublada">
                     <label>Nublada</label><br>
 
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="calurosa">
                     <label>Calurosa</label><br><br>
                 
                 <h2 class="h33">3) ¿Por qué estaba enojada la madre? </h2><br>
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="lloviendo">
                     <label>Porque estaba lloviendo</label><br>
 
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="desorden">
                     <label>Porque había desorden</label><br>
 
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="mosquitos"> 
                     <label>Porque habían mosquitos</label><br>
 
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="trafico">
                     <label>Porque había mucho tráfico</label><br><br>
                 
                 <h2 class="h33">4) Entre los objetos que llevaban no se encontraba: </h2><br>
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="cepillo">
                     <label>Cepillo de dientes</label><br>
 
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="comida">
                     <label>Comida enlatada</label><br>
 
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="carpas">
                     <label>Carpas</label><br>
 
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="lazos">
                     <label>Lazos</label><br><br>
                 
                 <h2 class="h33">5) ¿Quiénes iban al viaje? </h2><br>
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="hijos,sobrinos,padrinos">
                     <label>Hijos, sobrinos, padrinos</label><br>
 
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="abuelos,tios,bisnietos">
                     <label>Abuelos, tíos, bisnietos</label><br>
 
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="abuelos,vecinos">
                     <label>Abuelos, vecinos</label><br>
 
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="tios,primos,sobrinos,padres">
                     <label>Tíos, primos, sobrinos, padres</label><br><br>
             </div>
             <button type="submit">Enviar</button>

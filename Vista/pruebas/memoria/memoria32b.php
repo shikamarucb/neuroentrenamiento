@@ -15,10 +15,10 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -27,84 +27,84 @@
     <div><br><br>
         <p>A continuación responde las siguientes preguntas de selección múltiple de acuerdo al ejercicio, recuerda que no debes ver la página anterior hasta que respondas cada una de las preguntas. </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria11" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria32" method="POST" autocomplete="off">
             <div id="questionsMemA">
                 <h2 class="h33">1) La figura que aparece en color rojo es: </h2><br>
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="nube">
                     <label>Nube</label>
 
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="flecha">
                     <label>Flecha</label>
 
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="cruz">
                     <label>Cruz</label>
 
-                    <input type="radio" name="1">
+                    <input type="radio" name="1" value="cilindro">
                     <label>Cilindro</label><br><br>
                 
                 <h2 class="h33">2) La flecha que señala hacia abajo es de color: </h2><br>
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="rojo">
                     <label>Rojo</label>
 
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="verde">
                     <label>Verde</label>
 
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="negro">
                     <label>Negro</label>
 
-                    <input type="radio" name="2">
+                    <input type="radio" name="2" value="morado">
                     <label>Morado</label><br><br>
                 
                 <h2 class="h33">3) La figura que aparece en color Morado es: </h2><br>
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="cilindro">
                     <label>Cilindro</label>
 
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="triangulo">
                     <label>Triángulo</label>
 
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="hexagono">
                     <label>Hexágono</label>
 
-                    <input type="radio" name="3">
+                    <input type="radio" name="3" value="cubo">
                     <label>Cubo</label><br><br>
                 
                 <h2 class="h33">4) El color que observaste en la estrella de cinco puntas fue: </h2><br>
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="blanca">
                     <label>Blanca</label>
 
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="amarilla">
                     <label>Amarilla</label>
 
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="roja">
                     <label>Roja</label>
 
-                    <input type="radio" name="4">
+                    <input type="radio" name="4" value="naranja">
                     <label>Naranja</label><br><br>
                 
                 <h2 class="h33">5) La figura de color azul es: </h2><br>
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="cubo">
                     <label>Cubo</label>
 
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="flecha">
                     <label>Flecha</label>
 
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="estrella">
                     <label>Estrella</label>
 
-                    <input type="radio" name="5">
+                    <input type="radio" name="5" value="hexagono">
                     <label>Hexágono</label><br><br>
                 
                 <h2 class="h33">6) La figura que es de color gris es: </h2><br>
-                    <input type="radio" name="6">
+                    <input type="radio" name="6" value="rombo">
                     <label>Rombo</label>
 
-                    <input type="radio" name="6">
+                    <input type="radio" name="6" value="cilindro">
                     <label>Cilindro</label>
 
-                    <input type="radio" name="6">
+                    <input type="radio" name="6" value="triangulo">
                     <label>Triángulo</label>
 
-                    <input type="radio" name="6">
+                    <input type="radio" name="6" value="hexagono">
                     <label>Hexágono</label><br><br>
             </div>
             <button type="submit">Enviar</button>
