@@ -27,7 +27,7 @@
     <div><br><br>
         <p>Escribe las palabras en las columnas en su orden correspondiente. Recuerda que no puedes mirar la página anterior. </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria33" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria41" method="POST" autocomplete="off">
             <table> 
                 <tr>
                     <th>Columna A</th>
@@ -37,32 +37,27 @@
                 <tr>
                     <td><input type="text" name="1" required></td>
                     <td><input type="text" name="2" required></td>
-                    <td><input type="text" name="2" required></td>
+                    <td><input type="text" name="3" required></td>
                 </tr>
                     
                 <tr>                    
-                    <td><input type="text"  name="3"  value="" required></td>
                     <td><input type="text"  name="4" required></td>
-                    <td><input type="text" name="2" required></td>
+                    <td><input type="text"  name="5" required></td>
+                    <td><input type="text"  name="6" required></td>
                 </tr>
 
                 <tr>
-                    <td><input type="text" name="5" required></td>
-                    <td><input type="text"  name="6"  value="" required></td>
-                    <td><input type="text" name="2" required></td>
+                    <td><input type="text" name="7" required></td>
+                    <td><input type="text" name="8" required></td>
+                    <td><input type="text" name="9" required></td>
                 </tr>
                 
                 <tr>
-                    <td><input type="text"  name="7" required></td>
-                    <td><input type="text"  name="8" required></td>
-                    <td><input type="text" name="2" required></td>
+                    <td><input type="text"  name="11"></td>
+                    <td><input type="text"  name="10" required></td>
+                    <td><input type="text"  name="12"></td>
                 </tr>
-
-                <tr>
-                    <td><input type="text" name="9" required></td>
-                    <td><input type="text" name="10" required></td>
-                    <td><input type="text" name="2" required></td>
-                </tr>
+               
             </table><br><br><br><br>
             <button type="submit">Enviar</button>
         </form>

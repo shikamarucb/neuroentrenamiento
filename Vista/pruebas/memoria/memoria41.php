@@ -42,7 +42,7 @@
                 </tr>
 
                 <tr>
-                    <td class="tdCol1">Cabello</td>
+                    <td class="tdCol1">Camello</td>
                     <td class="tdCol1">Soldado</td>
                     <td class="tdCol1">León</td>
                 </tr>

@@ -27,7 +27,7 @@
     <div><br><br>
         <p>Responde las preguntas sin mirar la página anterior, recuerda que este es un ejercicio de memoria, </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria31" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria42" method="POST" autocomplete="off">
             <div id="questionsMemA">
                 <h2 class="h33">1. El número total de rectángulos al interior del cuadro son: </h2><br>
                     <input type="radio" name="1" value="12">
@@ -40,13 +40,13 @@
                     <label>15</label><br><br>
                 
                 <h2 class="h33">2. Los colores de las líneas que forman el cuadro son: </h2><br>
-                    <input type="radio" name="2" value="">
+                    <input type="radio" name="2" value="verde,azul,morado">
                     <label>Verde, azul y morado</label>
 
-                    <input type="radio" name="2" value="">
+                    <input type="radio" name="2" value="azul,rojo,negro">
                     <label>Azul, rojo y negro</label>
 
-                    <input type="radio" name="2" value="">
+                    <input type="radio" name="2" value="azul,morado,rojo">
                     <label>Azul, morado y rojo</label><br><br>
                 
                 <h2 class="h33">3. El color de la equis (X) en el interior del cuadro es: </h2><br>
@@ -70,13 +70,13 @@
                     <label>Naranja</label><br><br>
                 
                 <h2 class="h33">5. Al interior de la figura hay dos líneas verticales de color: </h2><br>
-                    <input type="radio" name="5" value="">
+                    <input type="radio" name="5" value="azul,naranja">
                     <label>Azul y naranja</label>
 
-                    <input type="radio" name="5" value="">
+                    <input type="radio" name="5" value="naranja,rojo">
                     <label>Naranja y rojo</label>
 
-                    <input type="radio" name="5" value="">
+                    <input type="radio" name="5" value="azul,rojo">
                     <label>Azul y rojo</label><br><br>
                 
                 <h2 class="h33">6. En el centro de la imagen se observa: </h2><br>

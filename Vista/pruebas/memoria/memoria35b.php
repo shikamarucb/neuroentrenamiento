@@ -27,7 +27,7 @@
     <div><br><br>
         <p>Escribe las palabras que recuerdes en el orden correspondiente en cada columna. Recuerda que no puedes observar la página anterior. </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria33" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria35" method="POST" autocomplete="off">
             <table> 
                 <tr>
                     <th>Columna A</th>
