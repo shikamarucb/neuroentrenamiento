@@ -46,7 +46,7 @@
             }else{
                 echo "Datos incorrectos";
             }
-        }
+        }       
         
         public function contactar(){
             $conexion=new Conexion();
@@ -62,6 +62,35 @@
             mail($destino, $asunto, $contenido); 
             header('location: ../Vista/index.html');
         }
+
+        public function actualizar(){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $email=$conexion->real_escape_string(strip_tags($_POST['email']));
+            $nombre=$conexion->real_escape_string(strip_tags($_POST['nombre']));
+            $apellido=$conexion->real_escape_string(strip_tags($_POST['apellido']));
+            $edad=$conexion->real_escape_string(strip_tags($_POST['edad']));
+            $genero=$conexion->real_escape_string(strip_tags($_POST['genero']));
+            $grado=$conexion->real_escape_string(strip_tags($_POST['grado']));            
+
+            $user=new Usuario();
+            $user->updateUser($conexion,$email,$nombre,$apellido,$edad,$genero,$grado);
+
+            header('location: ../Vista/Administracion/dashboard.php');
+        }
+        public function delete(){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $email=$_GET["email"];
+ 
+            $user=new Usuario();
+            $user->deleteUser($conexion,$email);
+            
+            header('location: ../Vista/Administracion/dashboard.php');
+
+        }         
         
     }
 

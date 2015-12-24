@@ -4,7 +4,6 @@ include_once ("query.php");
 class Actividad{
     
     private $table="actividad";
-    
         
     public function getActividad($conexion, $tipo, $enunciado, $dia, $semana){
         $query=new Query();
