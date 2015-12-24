@@ -1,0 +1,111 @@
+
+#contAten {
+    width: 100%;
+    min-width: 1024px;
+    height: 550px;
+}
+
+#contAten2 > h1{
+    text-align: center;
+    font-family: "Poiret One",cursive;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+#contAten2 >p{
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.2em;
+    color:darkmagenta;
+}
+
+#table1 {
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    border: 1px solid;
+}
+
+#table1 tr td{
+    border: 1px solid;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.2em;
+    width: 6%;
+    text-align: center;
+}
+
+.tr1 {
+    color: darkcyan;
+    height: 30px;
+}
+
+.tr2 {
+    color: darkkhaki;
+    height: 30px;
+}
+
+#subBA {
+    width: 200px;
+    background-color: rgb(110,111,61);
+    color: white;
+}
+
+#subBA:hover {
+    background-color: blueviolet;
+    transition: all 500ms;
+}
+
+.inpt11 {
+    width: 80%;
+}
+
+#divA1 {
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.2em;
+    width: 80%;
+}
+
+#divA1 > input{
+    width:35%;
+}
+
+.slct1 {
+    width: 35%;
+}
+
+#contAten2 {
+    text-align: center;
+}
+
+#formA2 {
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.5em;
+}
+
+#formA2 h1{
+    width: 30%;
+    min-width: 400px;
+    display: inline-block;
+    text-align: left;
+    height: 40px;
+}
+
+#formA2 input{
+    width: 5%;
+
+}
+.divA2 {
+    width: 40%;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.h1A1 {
+    font-family: 'Jura', sans-serif;
+    font-size: 1.5em;
+}
