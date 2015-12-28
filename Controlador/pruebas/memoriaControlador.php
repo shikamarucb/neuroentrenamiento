@@ -368,16 +368,6 @@
                   foreach ($_POST['check_list'] as $select=>$figura) {                                                        
                     if($info == $figura){                                                              
                        $rango=$rango+1;                       
-                    }elseif($info == $figura){                                                                             
-                             $rango=$rango+1;
-                    }elseif($info == $figura){                                                            
-                          $rango=$rango+1;
-                    }elseif ($info == $figura){
-                       $rango=$rango+1;
-                    }elseif ($info == $figura) {
-                       $rango=$rango+1;
-                    }elseif ($info == $figura) {
-                       $rango=$rango+1;
                     }
                   }                                                  
                 }

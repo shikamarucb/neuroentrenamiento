@@ -8,16 +8,23 @@
     <title>Plantilla</title>
 </head>
 <body>
+<?php
+    session_start();
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -26,9 +33,9 @@
     <div id="contAten2">
         <h1>¡PRUEBA TU ATENCIÓN! </h1><br><br>
         <p>Encuentra el número correspondiente </p><br><br>
-        <form style="text-align:center;">
+        <form style="text-align:center;" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion12" method="POST" autocomplete="off">
             <div style="margin:0 auto; width:90%; text-align:center;">
-                <p>Entre las letras “B” encuentra y encierra en un círculo los números 8 y escribe cuántos encuentras.</p><br>
+                <p>Entre las letras “B” encuentra los números 8 y escribe cuántos encuentras.</p><br>
                 <p style="text-align:center;">BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB8BBBBBBBBBBBBBBBBB
                     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
                     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB8BBBBBBBBBBBBBBBBBBBBBBBB
@@ -38,10 +45,10 @@
                     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB<br>
                     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB 
                 </p>
-                <input type="number">
+                <input type="number" name="ochos">
             </div><br><br>
             <div style="margin:0 auto; width:90%; text-align:center;">
-                <p>Entre las letras “G” encuentra y encierra en un círculo los números 6 y escribe cuántos encuentras </p><br>
+                <p>Entre las letras “G” encuentra los números 6 y escribe cuántos encuentras </p><br>
                 <p style="text-align:center;">GGGGGGGGG6GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG6GGGGGGGG
                     GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG6GGGGGGGGGG
                     GGGGGGGGGGGGGGGGGGGGGGGGG6GGGGGGGGGGGGGG6GGGGGGGGGGGGGGG
@@ -51,7 +58,7 @@
                     GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG<br>
                     GGGGGGGGGGGGGGGGG6GGGGGGGGGGGGGGGGGGGGGGGGGGG  
                 </p>
-                <input type="number">
+                <input type="number" name="seis">
             </div><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

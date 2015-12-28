@@ -45,7 +45,7 @@
         public function getActividad($table,$conexion, $tipo, $enunciado, $dia, $semana){         
             return $conexion->query("SELECT respuesta from ".$table." where tipo='".$tipo."'
                    and dia=".$dia." and semana=".$semana." and enunciado_actividad='".$enunciado."';");      
-        }
+        }     
 
         //funciones para el manejo de la tabla Resultado
 
