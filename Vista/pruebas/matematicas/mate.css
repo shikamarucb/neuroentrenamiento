@@ -1,0 +1,56 @@
+
+#contMat {
+    width: 100%;
+    min-width: 1024px;
+    height: 550px;
+}
+
+#contMat2 > h1{
+    text-align: center;
+    font-family: "Poiret One",cursive;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+#contMat2 >p{
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.2em;
+    color:darkmagenta;
+}
+
+#subBA {
+    width: 200px;
+    background-color: rgb(110,111,61);
+    color: white;
+}
+
+#subBA:hover {
+    background-color: blueviolet;
+    transition: all 500ms;
+}
+
+#tableMat {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#tableMat tr{
+    height: 50px;
+}
+
+.contPr {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.6em;
+}
+
+.contPr > label{
+    margin: 0 auto;
+}
+
+.contPr > input{
+    width: 10%;
+}
