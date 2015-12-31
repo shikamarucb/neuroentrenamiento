@@ -47,7 +47,7 @@
 
                 <tr>
                     <td class="tdCol1">Televisor</td>
-                    <td class="tdCol1">Sillon</td>
+                    <td class="tdCol1">Sillón</td>
                 </tr>
 
                 <tr>
@@ -72,7 +72,7 @@
                 
                 <tr>
                     <td class="tdCol1">Silla</td>
-                    <td class="tdCol1">Estúfa</td>
+                    <td class="tdCol1">Estufa</td>
                 </tr>
             </table><br><br><br><br>
         </div>

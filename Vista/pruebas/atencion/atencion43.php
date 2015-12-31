@@ -8,6 +8,13 @@
     <title>Plantilla</title>
 </head>
 <body>
+<?php
+    session_start();
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
@@ -17,7 +24,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="contact.html">Contacto</a></li>
             <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -25,31 +32,31 @@
 <div id="contAten" style="height:800px;">
     <div id="contAten2">
         <h1>¡PRUEBA TU ATENCIÓN! </h1><br><br>
-        <p>A continuación te presentamos una serie de cuadros de color verde y amarillo, los cuales forman horizontalmente una secuencia. Sigue la serie y responde en la parte inferior del ejercicio, encerrando la letra “a” o “b" que contiene el color correcto que completa la serie. </p><br><br>
+        <p>A continuación te presentamos una serie de cuadros de color verde y amarillo, los cuales forman horizontalmente una secuencia. Sigue la serie y selecciona en la parte inferior del ejercicio el color correcto que completa la serie. </p><br><br>
         <img src="../imagenes/atencion43.png">
-        <form style="text-align:center; min-width:1024px;">
+        <form style="text-align:center; min-width:1024px;" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion43" method="POST" autocomplete="off">
             <div class="divA2">
                 <p>Primera Serie:</p>
-                <img src="../imagenes/a43A.png"><input type="radio" name="1">
-                <img src="../imagenes/b43A.png"><input type="radio" name="1">
+                <img src="../imagenes/a43A.png"><input type="radio" name="1" value="verde">
+                <img src="../imagenes/b43A.png"><input type="radio" name="1" value="amarillo">
             </div>
             
             <div class="divA2">
                 <p>Segunda Serie:</p>
-                <img src="../imagenes/a43A.png"><input type="radio" name="2">
-                <img src="../imagenes/b43A.png"><input type="radio" name="2">
+                <img src="../imagenes/a43A.png"><input type="radio" name="2" value="verde">
+                <img src="../imagenes/b43A.png"><input type="radio" name="2" value="amarillo">
             </div><br><br><br>
             
             <div class="divA2">
                 <p>Tercera Serie:</p>
-                <img src="../imagenes/a43A.png"><input type="radio" name="3">
-                <img src="../imagenes/b43A.png"><input type="radio" name="3">
+                <img src="../imagenes/a43A.png"><input type="radio" name="3" value="verde">
+                <img src="../imagenes/b43A.png"><input type="radio" name="3" value="amarillo">
             </div>
             
             <div class="divA2">
                 <p>Cuarta Serie:</p>
-                <img src="../imagenes/a43A.png"><input type="radio" name="4">
-                <img src="../imagenes/b43A.png"><input type="radio" name="4">
+                <img src="../imagenes/a43A.png"><input type="radio" name="4" value="verde">
+                <img src="../imagenes/b43A.png"><input type="radio" name="4" value="amarillo">
             </div><br><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

@@ -368,16 +368,6 @@
                   foreach ($_POST['check_list'] as $select=>$figura) {                                                        
                     if($info == $figura){                                                              
                        $rango=$rango+1;                       
-                    }elseif($info == $figura){                                                                             
-                             $rango=$rango+1;
-                    }elseif($info == $figura){                                                            
-                          $rango=$rango+1;
-                    }elseif ($info == $figura){
-                       $rango=$rango+1;
-                    }elseif ($info == $figura) {
-                       $rango=$rango+1;
-                    }elseif ($info == $figura) {
-                       $rango=$rango+1;
                     }
                   }                                                  
                 }
@@ -1086,7 +1076,782 @@
             $calificacion->diez($conexion);
             echo "Fin de la prueba";            
 
-      }   
+      }
+      //funcion para prueba de memoria 3-4
+      public function memoria34(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));                                
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="numero1";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                                           
+                 $rango=$rango+1;                                     
+              }              
+            }
+            $enunciado="numero2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                        
+              if($infos["respuesta"]== $r2){                                                                            
+                 $rango=$rango+1;                                                                      
+              }                                      
+            }
+            $enunciado="numero3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r3){                                                                              
+                 $rango=$rango+1;                                                     
+              }                                      
+            }
+            $enunciado="numero4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r4){                                                                          
+                 $rango=$rango+1;                                    
+              }              
+            }
+            $enunciado="numero5";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="numero6";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r6){                                                              
+                 $rango=$rango+1;                                                               
+              }                          
+            }
+            $enunciado="numero7";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r7){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="numero8";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r8){                                                              
+                 $rango=$rango+1;                                                                     
+              }                           
+            }
+            $enunciado="numero9";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r9){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="numero10";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r10){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }            
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->diez($conexion);
+            echo "Fin de la prueba";            
+
+      } 
+      //funcion para prueba de memoria 3-5
+      public function memoria35(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));                                
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));
+            $r11=strtoupper($conexion->real_escape_string(strip_tags($_POST['11'])));
+            $r12=strtoupper($conexion->real_escape_string(strip_tags($_POST['12'])));
+            $r13=strtoupper($conexion->real_escape_string(strip_tags($_POST['13'])));
+            $r14=strtoupper($conexion->real_escape_string(strip_tags($_POST['14'])));            
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="palabra1";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                                           
+                 $rango=$rango+1;                                     
+              }              
+            }
+            $enunciado="palabra2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                        
+              if($infos["respuesta"]== $r2){                                                                            
+                 $rango=$rango+1;                                                                      
+              }                                      
+            }
+            $enunciado="palabra3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r3){                                                                              
+                 $rango=$rango+1;                                                     
+              }                                      
+            }
+            $enunciado="palabra4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if(utf8_encode($infos["respuesta"]) == $r4){                                                                          
+                 $rango=$rango+1;                                    
+              }              
+            }
+            $enunciado="palabra5";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="palabra6";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r6){                                                              
+                 $rango=$rango+1;                                                               
+              }                          
+            }
+            $enunciado="palabra7";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r7){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="palabra8";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r8){                                                              
+                 $rango=$rango+1;                                                                     
+              }                           
+            }
+            $enunciado="palabra9";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r9){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra10";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r10){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra11";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r11){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra12";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if(utf8_encode($infos["respuesta"]) == $r12){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra13";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r13){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra14";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r14){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }            
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->catorce($conexion);
+            echo "Fin de la prueba";            
+
+      }  
+      //funcion para prueba de memoria de la semana 4 dia 1 
+      public function memoria41(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));                                
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));                    
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="palabra1";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                                           
+                 $rango=$rango+1;                                     
+              }              
+            }
+            $enunciado="palabra2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                        
+              if($infos["respuesta"]== $r2){                                                                            
+                 $rango=$rango+1;                                                                      
+              }                                      
+            }
+            $enunciado="palabra3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if(utf8_encode($infos["respuesta"]) == $r3){                                                                              
+                 $rango=$rango+1;                                                     
+              }                                      
+            }
+            $enunciado="palabra4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if(utf8_encode($infos["respuesta"]) == $r4){                                                                          
+                 $rango=$rango+1;                                    
+              }              
+            }
+            $enunciado="palabra5";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="palabra6";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r6){                                                              
+                 $rango=$rango+1;                                                               
+              }                          
+            }
+            $enunciado="palabra7";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r7){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="palabra8";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r8){                                                              
+                 $rango=$rango+1;                                                                     
+              }                           
+            }
+            $enunciado="palabra9";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if(utf8_encode($infos["respuesta"])== $r9){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra10";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r10){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+                        
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->diez($conexion);
+            echo "Fin de la prueba";            
+      }
+      //funcion para prueba de memoria de la semana 4 dia 2 (4-2)
+      public function memoria42(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));                                                      
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="cantidad de rectangulos";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="colores del cuadrado";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r2){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="color de la x";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r3){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="linea que mas se repite";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r4){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="lineas verticales";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="figura del interior";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r6){                                                              
+                 $rango=$rango+1;                       
+              }
+            }                      
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->seis($conexion);
+            echo "Fin de la prueba";
+      }
+      //funcion para prueba de memoria 4-4
+      public function memoria44(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));                                
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));
+            $r11=strtoupper($conexion->real_escape_string(strip_tags($_POST['11'])));
+            $r12=strtoupper($conexion->real_escape_string(strip_tags($_POST['12'])));          
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="palabra1";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                                           
+                 $rango=$rango+1;                                     
+              }              
+            }
+            $enunciado="palabra2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                        
+              if($infos["respuesta"]== $r2){                                                                            
+                 $rango=$rango+1;                                                                      
+              }                                      
+            }
+            $enunciado="palabra3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r3){                                                                              
+                 $rango=$rango+1;                                                     
+              }                                      
+            }
+            $enunciado="palabra4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if(utf8_encode($infos["respuesta"]) == $r4){                                                                          
+                 $rango=$rango+1;                                    
+              }              
+            }
+            $enunciado="palabra5";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="palabra6";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r6){                                                              
+                 $rango=$rango+1;                                                               
+              }                          
+            }
+            $enunciado="palabra7";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r7){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="palabra8";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r8){                                                              
+                 $rango=$rango+1;                                                                     
+              }                           
+            }
+            $enunciado="palabra9";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r9){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra10";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if(utf8_encode($infos["respuesta"]) == $r10){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra11";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r11){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="palabra12";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r12){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }                      
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->doce($conexion);
+            echo "Fin de la prueba";            
+      }
+      //funcion para prueba de memoria semana 4 dia 5 
+      public function memoria45(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));                                
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="numero1";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                                           
+                 $rango=$rango+1;                                     
+              }              
+            }
+            $enunciado="numero2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                        
+              if($infos["respuesta"]== $r2){                                                                            
+                 $rango=$rango+1;                                                                      
+              }                                      
+            }
+            $enunciado="numero3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r3){                                                                              
+                 $rango=$rango+1;                                                     
+              }                                      
+            }
+            $enunciado="numero4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r4){                                                                          
+                 $rango=$rango+1;                                    
+              }              
+            }
+            $enunciado="numero5";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="numero6";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r6){                                                              
+                 $rango=$rango+1;                                                               
+              }                          
+            }
+            $enunciado="numero7";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r7){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="numero8";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if($infos["respuesta"] == $r8){                                                              
+                 $rango=$rango+1;                                                                     
+              }                           
+            }
+            $enunciado="numero9";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r9){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }
+            $enunciado="numero10";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r10){                                                              
+                 $rango=$rango+1;                                                  
+              }
+            }            
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->diez($conexion);
+            echo "Fin de la prueba";            
+      } 
     }
 
     $metodo=$_GET['value'];

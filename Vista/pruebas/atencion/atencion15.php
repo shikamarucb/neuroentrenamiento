@@ -8,16 +8,23 @@
     <title>Plantilla</title>
 </head>
 <body>
+<?php
+    session_start();
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -30,23 +37,23 @@
         
         <img src="../imagenes/atencion15.png"><br><br>
         
-        <form style="text-align:center;">
+        <form style="text-align:center;" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion15" method="POST" autocomplete="off">
             <p>De acuerdo al texto responde las siguientes preguntas. </p><br><br>
             <div id="divA1">
                 <label>1. ¿Qué palabra se repite dentro del círculo?</label><br>
-                <input type="text"><br><br>
+                <input type="text" name="r1"><br><br>
 
                 <label>2. ¿Cuántas veces se repite esta palabra?</label><br>
-                <input type="text"><br><br>
+                <input type="number" name="r2"><br><br>
 
                 <label>3. ¿Qué palabras se encuentran mal escritas, les faltan o les sobran letras?</label><br>
-                <input type="text"><br><br>
+                <input type="text" name="r3"><br><br>
 
                 <label>4. ¿Cuántas palabras finalizan en “ido” y están escritas correctamente?</label><br>
-                <input type="text"><br><br>
+                <input type="number" name="r4"><br><br>
                 
                 <label>5. ¿Cuántas palabras finalizan en “esa”?</label><br>
-                <input type="text"><br><br>
+                <input type="number" name="r5"><br><br>
             </div>
             
             <button id="subBA" type="submit">Enviar</button>

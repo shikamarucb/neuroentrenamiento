@@ -8,16 +8,23 @@
     <title>Plantilla</title>
 </head>
 <body>
+<?php
+    session_start();
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../contact.html">Contacto</a></li>
+            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -89,7 +96,7 @@
             </tr>
             
         </table><br><br>
-        <form style="text-align:center;">
+        <form style="text-align:center;" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion11" method="POST" autocomplete="off">
             <table id="table1">
                 <tr>
                     <td>15</td>
@@ -100,12 +107,12 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
+                    <td><input type="text" class="inpt11" name="1"></td>
+                    <td><input type="text" class="inpt11" name="2"></td>
+                    <td><input type="text" class="inpt11" name="3"></td>
+                    <td><input type="text" class="inpt11" name="4"></td>
+                    <td><input type="text" class="inpt11" name="5"></td>
+                    <td><input type="text" class="inpt11" name="6"></td>
                 </tr>
             </table><br><br>
             
@@ -118,11 +125,11 @@
                     <td>12</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
+                    <td><input type="text" class="inpt11" name="7"></td>
+                    <td><input type="text" class="inpt11" name="8"></td>
+                    <td><input type="text" class="inpt11" name="9"></td>
+                    <td><input type="text" class="inpt11" name="10"></td>
+                    <td><input type="text" class="inpt11" name="11"></td>
                 </tr>
             </table><br><br>
             
@@ -139,15 +146,15 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
+                    <td><input type="text" class="inpt11" name="12"></td>
+                    <td><input type="text" class="inpt11" name="13"></td>
+                    <td><input type="text" class="inpt11" name="14"></td>
+                    <td><input type="text" class="inpt11" name="15"></td>
+                    <td><input type="text" class="inpt11" name="16"></td>
+                    <td><input type="text" class="inpt11" name="17"></td>
+                    <td><input type="text" class="inpt11" name="18"></td>
+                    <td><input type="text" class="inpt11" name="19"></td>
+                    <td><input type="text" class="inpt11" name="20"></td>
                 </tr>
             </table><br><br>
             

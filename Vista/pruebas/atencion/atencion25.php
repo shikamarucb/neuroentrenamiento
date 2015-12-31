@@ -8,6 +8,13 @@
     <title>Plantilla</title>
 </head>
 <body>
+<?php
+    session_start();
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
@@ -17,7 +24,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="contact.html">Contacto</a></li>
             <li><a href="register.html">Registrarse</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
+            <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
@@ -25,16 +32,22 @@
 <div id="contAten" style="height:800px;">
     <div id="contAten2">
         <h1>¡PRUEBA TU ATENCIÓN! </h1><br><br>
-        <p>A continuación encontrarás 12 cuadros, cada uno de ellos contiene una letra que te ayudará a formar una palabra, descubre la mayor cantidad de palabras ocultas y escríbelas en la parte inferior de la hoja. Será válido encontrar palabras en forma de u, n,-, l, escritas de derecha a izquierda, o de forma inversa la única condición de este ejercicio es que las letras se encuentren contiguas, inmediatas </p><br><br>
+        <p>A continuación encontrarás 12 cuadros, cada uno de ellos contiene una letra que te ayudará a formar una palabra, descubre la mayor cantidad de palabras ocultas y escríbelas en la parte inferior de la página. Será válido encontrar palabras en forma de u, n, - , L, escritas de derecha a izquierda, o de forma inversa la única condición de este ejercicio es que las letras se encuentren contiguas, inmediatas </p><br><br>
         <img src="../imagenes/atencion25.png">
-        <form style="text-align:center;">
+        <form style="text-align:center;"  action="../../../Controlador/pruebas/atencionControlador.php?value=atencion25" method="POST" autocomplete="off">
             <table id="table1" >
                 <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
+                    <td><input type="text" class="inpt11" name="1"></td>
+                    <td><input type="text" class="inpt11" name="2"></td>
+                    <td><input type="text" class="inpt11" name="3"></td>
+                    <td><input type="text" class="inpt11" name="4"></td>
                 </tr>
+                <tr>
+                    <td><input type="text" class="inpt11" name="5"></td>
+                    <td><input type="text" class="inpt11" name="6"></td>
+                    <td><input type="text" class="inpt11" name="7"></td>
+                    <td><input type="text" class="inpt11" name="8"></td>
+                </tr><!--
                 <tr>
                     <td><input type="text" class="inpt11"></td>
                     <td><input type="text" class="inpt11"></td>
@@ -52,13 +65,7 @@
                     <td><input type="text" class="inpt11"></td>
                     <td><input type="text" class="inpt11"></td>
                     <td><input type="text" class="inpt11"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                </tr>
+                </tr>-->
             </table><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

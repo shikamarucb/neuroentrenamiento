@@ -28,7 +28,7 @@
     <div><br><br>
         <p>Completa los espacios escribiendo las palabras que recuerdes de la lista anterior, es importante que las escribas en orden. Recuerda que no puedes observar la página anterior. </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria24" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria44" method="POST" autocomplete="off">
             <table> 
                 
                 <tr>
@@ -42,7 +42,7 @@
                     <td><input type="text"  name="5" required></td>
                     <td><input type="text"  name="6" required></td>
                     <td><input type="text"  name="7" required></td>
-                    <td><input type="text" name="8" required></td>
+                    <td><input type="text"  name="8" required></td>
                 </tr>
 
                 <tr>
