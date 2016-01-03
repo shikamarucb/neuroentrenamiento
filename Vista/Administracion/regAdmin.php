@@ -1,9 +1,3 @@
-<?php
-    include_once ("../../Controlador/permisosAdmins.php");
-    session_start();
-    $permiso=new PermisosAdmins();    
-    if($permiso->verificarAdmin()){    
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -19,6 +13,9 @@
 <script language="Javascript" type="text/javascript" src="vista/js/mem1/func1-2.js"></script>
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/jquery.min.js"></script>
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/Chart.js"></script>
+
+<script language="Javascript" type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script language="Javascript" type="text/javascript" src="../js/passwords.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -51,15 +48,10 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="dashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-indent nav_icon"></i>Resultados<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="menuGraficas.php">Gráficas</a>                                    
-                                </li>
-                            </ul>
+                            <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a>                            
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>
@@ -70,33 +62,34 @@
         </nav>
         <div id="page-wrapper">
         <div class="graphs">  
-           <strong>Usuarios Registrados </strong>  
+           <strong>Modificar Usuarios</strong>  
+        </div>             
+        <form name="registro" action="../../Controlador/userController.php?value=registrarAdmin" method="POST">
+          <div>
+            <label>Nombre</label>
+            <input type="text"  name="nombre" required><br><br>
+            <label>Apellido</label>
+            <input type="text"  name="apellido" required><br><br>
+            <label>Edad</label>
+            <input type="number" min="11" max="99"  name="edad" required><br><br>
+            <label>Genero</label>
+            <select name="genero">
+                <option value="M">M</option>
+                <option value="F">F</option>                                                           
+            </select><br>    
+          </div>
+          <div>                                                    
+          </div><br><br>
+          <label>Email</label>
+          <input type="text"  name="email" required><br>
+          <label>Contraseña</label>
+          <input type="password"  name="password" required><br><br>
+          <label>Repita la Contraseña</label>
+          <input type="password"  name="password2" required><br><br>
+          <button type="submit" onclick="return compara();" class="btn btn-primary">Registrar</button>
+        </form>                   
         </div>
-          <table class="table">
-           <thead>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Correo</th>
-              <th>Manejo</th>
-           </thead>
-           <tbody>
-             <?php
-              include_once ("../../Controlador/usuariosAdmin.php");
-              $usuarios=new UsuariosAdmin();
-              $datos=$usuarios->listar();                                                     
-                  foreach ($datos as $usuario) { ?>
-                   <td><?php echo utf8_encode($usuario['nombre']);?></td>
-                   <td><?php echo utf8_encode($usuario['apellido']); ?></td>
-                   <td><?php echo utf8_encode($usuario['email']); ?></td>
-                   <td>                      
-                       <a href="modUsuarios.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Editar</a>                       
-                   </td>
-                   </tbody>
-              <?php                 
-                 }                               
-               ?>                    
-          </table>
-        </div>
+
     <!-- /#wrapper -->
     <!-- Nav CSS -->
 <link href="vistaAdmin/css/custom.css" rel="stylesheet" type="text/css">
@@ -106,6 +99,3 @@
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/bootstrap.min.js"></script>
 </body>
 </html>
-<?php
-}
-?>

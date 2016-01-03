@@ -21,6 +21,14 @@
             return $user->getUsersByEmail($conexion,$email);
             
         }
+        public function getControl($email){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();            
+
+            $datos=new Control($email);
+            return $datos->getControl($conexion);
+            
+        }
                     
     }    
 ?>

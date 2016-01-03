@@ -27,24 +27,24 @@
     <div><br><br>
         <p>Selecciona el cuadro segun la imagen. Recuerda que no puedes observar la página anterior. </p><br><br><br>
 
-        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria11" method="POST" autocomplete="off">
+        <form action="../../../Controlador/pruebas/memoriaControlador.php?value=memoria12" method="POST" autocomplete="off">
             <table> 
                 <tr>
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/a12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="1">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/e12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name ="2">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
@@ -53,18 +53,18 @@
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/g12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="3">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/c12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="4">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
@@ -73,18 +73,18 @@
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/f12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="5">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/h12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="6">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
@@ -93,18 +93,18 @@
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/b12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="7">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>
                     <td>
                         <div style="text-align:center;">
                             <img src="../imagenes/d12Me.png">
-                            <select>
-                                <option>Cuadro A</option>
-                                <option>Cuadro B</option>
+                            <select name="8">
+                                <option value="cuadro-A">Cuadro A</option>
+                                <option value="cuadro-B">Cuadro B</option>
                             </select>
                         </div>
                     </td>

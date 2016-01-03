@@ -4,13 +4,13 @@ include_once ("query.php");
 class Usuario{
     
     private $table="users";
-    private $roll=3;
-
+   // private $roll=3;
+//funciones para hacer el CRUD de los usuarios registrados... los culaes tienen un roll de categoria 3.
     public function addUser($conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password){
-
+        $roll=3;
         $query=new Query();
         $query->add($this->table,$conexion,$email,$nombre,$apellido,
-                    $edad,$genero,$grado,$password,$this->roll);
+                    $edad,$genero,$grado,$password,$roll);
     }    
     public function getUser($conexion, $email, $password){
         $query=new Query();
@@ -29,13 +29,39 @@ class Usuario{
     }
     
     public function getAllUsers($conexion){
+        $roll=3;
         $query=new Query();
-        return $query->getUsers($this->table,$conexion);
+        return $query->getUsers($this->table,$conexion,$roll);
     }
     public function getUsersByEmail($conexion,$email){
         $query=new Query();
         return $query->getUsersByEmail($this->table,$conexion,$email);
     }
+
+    //funciones para hacer el CRUD de los administradores registrados...Los culaes tienen un roll de categoria 2 y pertenecen a la misma tabla de usuarios
+
+    public function addAdmin($conexion,$email,$nombre,$apellido,$edad,$genero,$password){
+        $roll=2;
+        $query=new Query();
+        $query->addAdmin($this->table,$conexion,$email,$nombre,$apellido,
+                    $edad,$genero,$password,$roll);
+    }    
+    public function getAdmin($conexion, $email, $password){
+        $query=new Query();
+        return $query->get($this->table,$email,$password,$conexion);
+    }
+
+    public function updateAdmin($conexion,$email,$nombre,$apellido,$edad,$genero){
+        $query=new Query();
+        $query->upAdmin($this->table,$conexion,$email,$nombre,$apellido,
+                    $edad,$genero);
+    }    
+    
+    public function getAllAdmins($conexion){
+        $roll=2;
+        $query=new Query();
+        return $query->getUsers($this->table,$conexion,$roll);
+    }    
     
 }
 ?>

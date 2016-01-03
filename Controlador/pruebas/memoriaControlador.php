@@ -87,6 +87,114 @@
             $calificacion->seis($conexion);
             echo "Fin de la prueba";
     	}
+       //funcion para prueba de memoria semana 1- dia 2
+      public function memoria12(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $circulo=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $cruz=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $sol=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $hexagono=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $cubo=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $cilindro=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $corazon=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $cara=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+                   
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="circulo";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $circulo){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="cara";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cara){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="corazon";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $corazon){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="hexagono";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $hexagono){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="cruz";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cruz){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="cubo";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cubo){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="cilindro";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cilindro){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+            $enunciado="sol";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $sol){                                                              
+                 $rango=$rango+1;                       
+              }
+            }
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->ocho($conexion);
+            echo "Fin de la prueba";
+      }
       //Funcion para prueba de memoria 1- 3
       public function memoria13(){
             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.

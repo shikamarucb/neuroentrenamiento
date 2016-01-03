@@ -1,3 +1,9 @@
+<?php
+    include_once ("../../../Controlador/permisos.php");
+    session_start();
+    $permiso=new Permisos();    
+    if($permiso->verificarUser()){    
+?>
 <!doctype html>
 <html>
 <head>
@@ -10,11 +16,10 @@
 </head>
 <body>
 <?php
-    session_start();
     date_default_timezone_set("America/Bogota");
     $fechaIn= date("Y-m-d");
     $inicio=microtime(true);
-    $_SESSION['tIni']=$inicio;
+    $_SESSION['tIni']=$inicio;    
 ?>
 <nav id="navi">
     <div id="title">
@@ -24,7 +29,7 @@
         <ul>
             <li><a href="../../index.html">Inicio</a></li>
             <li><a href="../../contact.html">Contacto</a></li>
-            <li><a href="../../register.html">Registrarse</a></li>
+            <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
             <li><a href="../../login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
@@ -54,3 +59,6 @@
 
 </body>
 </html>
+<?php
+}
+?>

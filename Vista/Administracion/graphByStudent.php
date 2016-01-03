@@ -70,14 +70,14 @@
         </nav>
         <div id="page-wrapper">
         <div class="graphs">  
-           <strong>Usuarios Registrados </strong>  
+           <strong>Graficas por Estudiante</strong>  
         </div>
           <table class="table">
            <thead>
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Correo</th>
-              <th>Manejo</th>
+              <th>Gráficar</th>
            </thead>
            <tbody>
              <?php
@@ -88,8 +88,8 @@
                    <td><?php echo utf8_encode($usuario['nombre']);?></td>
                    <td><?php echo utf8_encode($usuario['apellido']); ?></td>
                    <td><?php echo utf8_encode($usuario['email']); ?></td>
-                   <td>                      
-                       <a href="modUsuarios.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Editar</a>                       
+                   <td> 
+                   <a href="grafica.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Gráficar</a>                                  
                    </td>
                    </tbody>
               <?php                 

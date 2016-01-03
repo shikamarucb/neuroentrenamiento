@@ -2,12 +2,12 @@
     include_once ("../../Controlador/permisosAdmins.php");
     session_start();
     $permiso=new PermisosAdmins();    
-    if($permiso->verificarAdmin()){    
+    if($permiso->verificarSuperAdmin()){    
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Administrador</title>
+<title>Super-Administrador</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
  <!-- Bootstrap Core CSS -->
@@ -51,15 +51,10 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="dashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-indent nav_icon"></i>Resultados<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="menuGraficas.php">Gráficas</a>                                    
-                                </li>
-                            </ul>
+                            <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a>                              
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>
@@ -70,7 +65,7 @@
         </nav>
         <div id="page-wrapper">
         <div class="graphs">  
-           <strong>Usuarios Registrados </strong>  
+           <strong>Administradores Registrados </strong>  
         </div>
           <table class="table">
            <thead>
@@ -81,15 +76,15 @@
            </thead>
            <tbody>
              <?php
-              include_once ("../../Controlador/usuariosAdmin.php");
-              $usuarios=new UsuariosAdmin();
-              $datos=$usuarios->listar();                                                     
-                  foreach ($datos as $usuario) { ?>
-                   <td><?php echo utf8_encode($usuario['nombre']);?></td>
-                   <td><?php echo utf8_encode($usuario['apellido']); ?></td>
-                   <td><?php echo utf8_encode($usuario['email']); ?></td>
+              include_once ("../../Controlador/administradores.php");
+              $admins=new Administradores();
+              $datos=$admins->listar();                                                     
+                  foreach ($datos as $admin) { ?>
+                   <td><?php echo utf8_encode($admin['nombre']);?></td>
+                   <td><?php echo utf8_encode($admin['apellido']); ?></td>
+                   <td><?php echo utf8_encode($admin['email']); ?></td>
                    <td>                      
-                       <a href="modUsuarios.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Editar</a>                       
+                       <a href="modAdministradores.php?email=<?php echo urlencode($admin['email']);?>" class="btn btn-primary">Editar</a>                       
                    </td>
                    </tbody>
               <?php                 

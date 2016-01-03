@@ -10,6 +10,11 @@ class Resultado{
         $query->adResultado($this->table,$conexion, $email, $tipo, $puntos, $dia, $semana, $tiempo);
 
     }
+
+    public function getResultByWeek($conexion, $email, $semana){
+    	$query=new Query();
+    	return $query->getResultByWeek($this->table,$conexion, $email, $semana);
+    }
     
 }
 ?>

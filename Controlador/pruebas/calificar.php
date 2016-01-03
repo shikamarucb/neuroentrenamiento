@@ -23,6 +23,34 @@
              $this->contador=$contador;
              $this->tiempo=$tiempo;
     	}
+      public function veinte($conexion){//funcion donde se califican las puebas que contienen 20 respuestas de matemáticas. 
+        // se calcula la calificacion 
+        $puntos=0;
+        if($this->rango != 0){ 
+          if( $this->rango < 11){
+             $puntos=1.5;            
+          }else{ 
+            if($this->rango > 10 && $this->rango < 20){
+              $puntos=2.25;               
+            }else{
+                $puntos=3;
+            }
+          }            
+        }                       
+            $resultado=new Resultado();
+            $resultado->addResultado($conexion, $this->email, $this->tipo, $puntos, $this->dia, $this->semana, $this->tiempo);            
+            $this->contador=$this->contador+1;            
+            if($this->contador>2){
+               $this->contador=0;
+               $this->dia=$this->dia+1;
+            }
+            if($this->dia>5){
+                $this->dia=1;
+                $this->semana=$this->semana+1;
+            }
+            $control=new Control($this->email);            
+            $control->upControl($conexion, $this->contador, $this->dia, $this->semana);
+      }
       public function catorce($conexion){//funcion donde se califican las puebas que contienen 14 respuestas. 
         // se calcula la calificacion 
         $puntos=0;

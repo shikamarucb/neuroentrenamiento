@@ -7,10 +7,16 @@
                          $apellido."','".$genero."','".$edad."','".$grado."','".
                              $password."','".$roll."');");
         }
+
+        public function addAdmin($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$password,$roll){  //funcion para el register      
+            $conexion->query("INSERT into ".$table." (email, nombre, apellido, genero, edad, password, roll)
+                        values ('".$email."','".$nombre."','".
+                        $apellido."','".$genero."','".$edad."','".$password."','".$roll."');");
+        }
         
         public function get($table,$email,$password,$conexion){//funcion para el logueo
             return $conexion->query("SELECT * from ".$table." where email = '".$email."'
-                               AND password = '".$password."' AND roll= 3 ;");            
+                               AND password = '".$password."';");            
         }
 
         public function upUser($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$grado){//actualiza un usuario seleccionado desde el dashboard del admin
@@ -18,17 +24,21 @@
                          edad='".$edad."', genero='".$genero."', grado='".$grado."' where email='".$email."';");
         }
 
+        public function upAdmin($table,$conexion,$email,$nombre,$apellido,$edad,$genero){//actualiza un administrador seleccionado desde el dashboard del Super admin
+          $conexion->query("UPDATE ".$table." SET nombre='".$nombre."', apellido='".$apellido."',
+                         edad='".$edad."', genero='".$genero."' where email='".$email."';");
+        }
+
         public function deleteUser($table,$conexion,$email){//elimina un usuario seleccionado desde el dash del admin
             return $conexion->query("DELETE from ".$table." where email='".$email."';");            
         }
 
-        public function getUsers($table,$conexion){//obtiene todos los usuarios registrados
-            return $conexion->query("SELECT * from ".$table." where roll= 3 ;");            
+        public function getUsers($table,$conexion, $roll){//obtiene todos los usuarios registrados
+            return $conexion->query("SELECT * from ".$table." where roll=".$roll." ;");            
         }
 
-        public function getUsersByEmail($table,$conexion,$email){//obtiene un usuario unicamente por su email,  utilizado para el dashboard
-            return $conexion->query("SELECT * from ".$table." where  email = '".$email."'
-                               AND roll= 3 ;");            
+        public function getUsersByEmail($table,$conexion,$email){//obtiene un usuario  o administrador unicamente por su email,  utilizado para el dashboard y 
+            return $conexion->query("SELECT * from ".$table." where  email = '".$email."';");            
         }
 
         //Funciones para el manejo de la tabla control 
@@ -45,7 +55,12 @@
         public function getActividad($table,$conexion, $tipo, $enunciado, $dia, $semana){         
             return $conexion->query("SELECT respuesta from ".$table." where tipo='".$tipo."'
                    and dia=".$dia." and semana=".$semana." and enunciado_actividad='".$enunciado."';");      
-        }     
+        } 
+
+        public function getActividadByDay($table,$conexion, $tipo, $dia, $semana){         
+            return $conexion->query("SELECT * from ".$table." where tipo='".$tipo."'
+                   and dia=".$dia." and semana=".$semana." ;");      
+        }    
 
         //funciones para el manejo de la tabla Resultado
 
@@ -53,6 +68,10 @@
              $conexion->query("INSERT into ".$table."(usuario_correo, prueba_tipo, tiempo, puntaje_usuario, dia, semana)
                   values ('".$email."','".$tipo."','".$tiempo."','".$puntos."',
                   '".$dia."','".$semana."');");      
+        }
+
+        public function getResultByWeek($table, $conexion, $email, $semana){
+          return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' AND semana=".$semana.";");
         }
         
     }

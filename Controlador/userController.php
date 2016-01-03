@@ -5,7 +5,7 @@
 
     class UsuarioC{        
         
-        public function registrar(){
+        public function registrar(){//funcion para registrar los nuevos usuarios... 
             
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
@@ -26,6 +26,23 @@
 
             header('location: ../Vista/login.html');
         }
+        public function registrarAdmin(){//funcion para registrar los nuevos administradores... 
+            
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $email=$conexion->real_escape_string(strip_tags($_POST['email']));
+            $nombre=$conexion->real_escape_string(strip_tags($_POST['nombre']));
+            $apellido=$conexion->real_escape_string(strip_tags($_POST['apellido']));
+            $edad=$conexion->real_escape_string(strip_tags($_POST['edad']));
+            $genero=$conexion->real_escape_string(strip_tags($_POST['genero']));            
+            $password=$conexion->real_escape_string(strip_tags($_POST['password']));
+
+            $user=new Usuario();
+            $user->addAdmin($conexion,$email,$nombre,$apellido,$edad,$genero,$password);
+
+            header('location: ../Vista/Administracion/superAdDashboard.php');
+        }
         
         public function loguear(){
             session_start();
@@ -41,12 +58,29 @@
                 $datos=$resultado->fetch_array(MYSQLI_ASSOC);
                 $nombre= $datos["nombre"];
                 $email=$datos["email"];
+                $roll=$datos["roll"];
                 $_SESSION['session']=$email;
-                header('location: ../Vista/contact.html');
+                if($roll==3){
+                   header('location: ../Vista/pruebas/memoria/memoria11.php');
+                }elseif ($roll==2) {
+                    header('location: ../Vista/Administracion/dashboard.php');
+                }elseif ($roll==1) {
+                    header('location: ../Vista/Administracion/superAdDashboard.php');
+                }
             }else{
                 echo "Datos incorrectos";
             }
-        }       
+        } 
+        public function logout(){
+            session_start();
+            if(! isset($_SESSION['session'])){
+                echo "no hay sesion iniciada...";                
+                             
+            }else{
+                session_destroy();
+                header('location: ../Vista/login.html'); 
+            }            
+        }      
         
         public function contactar(){
             $conexion=new Conexion();
@@ -79,6 +113,21 @@
 
             header('location: ../Vista/Administracion/dashboard.php');
         }
+        public function actualizarAdmin(){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $email=$conexion->real_escape_string(strip_tags($_POST['email']));
+            $nombre=$conexion->real_escape_string(strip_tags($_POST['nombre']));
+            $apellido=$conexion->real_escape_string(strip_tags($_POST['apellido']));
+            $edad=$conexion->real_escape_string(strip_tags($_POST['edad']));
+            $genero=$conexion->real_escape_string(strip_tags($_POST['genero']));                       
+
+            $user=new Usuario();
+            $user->updateAdmin($conexion,$email,$nombre,$apellido,$edad,$genero);
+
+            header('location: ../Vista/Administracion/superAdDashboard.php');
+        }
         public function delete(){
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
@@ -90,7 +139,19 @@
             
             header('location: ../Vista/Administracion/dashboard.php');
 
-        }         
+        }   
+        public function deleteAdmin(){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $email=$_GET["email"];
+ 
+            $user=new Usuario();
+            $user->deleteUser($conexion,$email);
+            
+            header('location: ../Vista/Administracion/superAdDashboard.php');
+
+        }      
         
     }
 

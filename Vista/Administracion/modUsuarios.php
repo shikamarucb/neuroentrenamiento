@@ -37,7 +37,7 @@
 							<strong>Cuenta</strong>						
 						
 						<li class="divider"></li>
-						<li class="m_2"><a href="/logout"><i class="fa fa-lock"></i>Cerrar Sesión</a></li>	
+						<li class="m_2"><a href="../../Controlador/userController.php?value=logout"><i class="fa fa-lock"></i>Cerrar Sesión</a></li>	
 	        		</ul>
 	      		</li>
 			</ul>
@@ -45,7 +45,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="/administrador"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="dashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-indent nav_icon"></i>Resultados<span class="fa arrow"></span></a>
