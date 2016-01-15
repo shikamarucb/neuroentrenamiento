@@ -54,3 +54,29 @@
 .contPr > input{
     width: 10%;
 }
+
+#parrMat {
+    text-align: left;
+}
+
+.contPr2 {
+    text-align: left;
+    margin: 0 30%;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.6em;
+}
+
+.contPr2 > pre > input{
+    width: 8%;
+}
+
+.contPr3 {
+    text-align: left;
+    margin: 0 40%;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.6em;
+}
+
+.contPr3 > pre > input{
+    width: 12%;
+}
