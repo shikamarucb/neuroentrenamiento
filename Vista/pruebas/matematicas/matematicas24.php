@@ -13,6 +13,12 @@
     </style>
 </head>
 <body>
+<?php    
+    date_default_timezone_set("America/Bogota");
+    $fechaIn= date("Y-m-d");
+    $inicio=microtime(true);
+    $_SESSION['tIni']=$inicio;    
+?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
@@ -21,7 +27,7 @@
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="contact.html">Contacto</a></li>
-            <li><a href="register.html">Registrarse</a></li>
+            <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
             <li><a href="login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
@@ -38,15 +44,15 @@ En uno de los conjuntos:</p><br><br>
         <p style="text-align:left; margin-left:10%;">C. La suma de todos los números pares es 182 y la suma de todos los números impares es 98. </p>
         <p style="text-align:left; margin-left:10%;">D. La suma de los números pares menos la suma de los números impares da como resultado 76. </p>
         <p style="text-align:left; margin-left:10%;">E. La suma de todos los números dividido 2 da como resultado 245. </p><br><br>
-        <form style="text-align:center;">
+        <form style="text-align:center;" action="../../../Controlador/pruebas/matematicasControlador.php?value=matematicas24" method="POST" autocomplete="off">
             <table style="margin:0 auto;">
                 <tr>
-                    <td><img src="../imagenes/mat24A.png"><input type="text" style="width:8%;"></td>
-                    <td><img src="../imagenes/mat24B.png"><input type="text" style="width:8%;"></td>
+                    <td><img src="../imagenes/mat24A.png"><input type="text" style="width:8%;" name="1"></td>
+                    <td><img src="../imagenes/mat24B.png"><input type="text" style="width:8%;" name="2"></td>
                 </tr>
                 <tr>
-                    <td><img src="../imagenes/mat24C.png"><input type="text" style="width:8%;"></td>
-                    <td><img src="../imagenes/mat24D.png"><input type="text" style="width:8%;"></td>
+                    <td><img src="../imagenes/mat24C.png"><input type="text" style="width:8%;" name="3"></td>
+                    <td><img src="../imagenes/mat24D.png"><input type="text" style="width:8%;" name="4"></td>
                 </tr>
             </table><br><br>
             <button id="subBA" type="submit">Enviar</button>
