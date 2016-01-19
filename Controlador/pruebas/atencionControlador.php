@@ -842,6 +842,501 @@
             $calificacion->cuatro($conexion);
             echo "Fin de la prueba";
       }
+      public function atencion31(){//funcion para la prueba de atencion del dia 1 semana 3 
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="atencion";
+            $puntos=0;
+            $rango=0;
+            $aciertos=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $cant1=strtoupper($conexion->real_escape_string(strip_tags($_POST['secuencia1'])));
+            $cant2=strtoupper($conexion->real_escape_string(strip_tags($_POST['secuencia2']))); 
+            $cant3=strtoupper($conexion->real_escape_string(strip_tags($_POST['secuencia3'])));
+            $cant4=strtoupper($conexion->real_escape_string(strip_tags($_POST['secuencia4'])));            
+                   
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="secuencia1";            
+            $actividad=new Actividad();
+            $figuras=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($figuras->num_rows != 0){                                               
+              while($infos=$figuras->fetch_array(MYSQLI_ASSOC)){                            
+                foreach ($infos as $clave=>$info) {
+                  foreach ($_POST['check_list1'] as $select=>$figura) {                                                        
+                    if($info == $figura){                                                              
+                       $aciertos=$aciertos+1;                       
+                    }
+                  }                                                  
+                }
+              }
+            }
+            if ($aciertos==1) {
+              $rango=$rango+1;
+            }
+            $enunciado="cantidad secuencia1";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cant1){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            //hasta aca se evalua la 1° secuencia...
+            $aciertos=0;
+            $enunciado="secuencia2";                        
+            $figuras=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($figuras->num_rows != 0){                                               
+              while($infos=$figuras->fetch_array(MYSQLI_ASSOC)){                            
+                foreach ($infos as $clave=>$info) {
+                  foreach ($_POST['check_list2'] as $select=>$figura) {                                                        
+                    if($info == $figura){                                                              
+                       $aciertos=$aciertos+1;                       
+                    }
+                  }                                                  
+                }
+              }
+            }
+            if ($aciertos==3) {
+              $rango=$rango+1;
+            }
+            $enunciado="cantidad secuencia2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cant2){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            //hasta aca se evalua la 2° secuencia...
+            $aciertos=0;
+            $enunciado="secuencia3";                        
+            $figuras=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($figuras->num_rows != 0){                                               
+              while($infos=$figuras->fetch_array(MYSQLI_ASSOC)){                            
+                foreach ($infos as $clave=>$info) {
+                  foreach ($_POST['check_list3'] as $select=>$figura) {                                                        
+                    if($info == $figura){                                                              
+                       $aciertos=$aciertos+1;                       
+                    }
+                  }                                                  
+                }
+              }
+            }
+            if ($aciertos==2) {
+              $rango=$rango+1;
+            }
+            $enunciado="cantidad secuencia3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cant3){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            //hasta aca se evalua la 3° secuencia...
+            $aciertos=0;
+            $enunciado="secuencia4";                        
+            $figuras=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($figuras->num_rows != 0){                                               
+              while($infos=$figuras->fetch_array(MYSQLI_ASSOC)){                            
+                foreach ($infos as $clave=>$info) {
+                  foreach ($_POST['check_list4'] as $select=>$figura) {                                                        
+                    if($info == $figura){                                                              
+                       $aciertos=$aciertos+1;                       
+                    }
+                  }                                                  
+                }
+              }
+            }
+            if ($aciertos==3) {
+              $rango=$rango+1;
+            }
+            $enunciado="cantidad secuencia4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $cant4){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            //hasta aca se evalua la 4° secuencia...            
+            
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->ocho($conexion);            
+            echo "Fin de la prueba";            
+      }
+      public function atencion32(){//funcion para la prueba de atencion del dia 2 semana 3 
+         session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="atencion";
+            $puntos=0;
+            $rango=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2']))); 
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8']))); 
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));            
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $i=1;
+            $actividad=new Actividad();
+            while($i < 11){
+              $enunciado="imagen".$i;                          
+              $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+              if($rta->num_rows != 0){                                               
+                $infos=$rta->fetch_array(MYSQLI_ASSOC);
+                switch ($i) {
+                   case '1':
+                     if($infos["respuesta"] == $r1){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '2':
+                     if($infos["respuesta"] == $r2){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '3':
+                     if($infos["respuesta"] == $r3){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '4':
+                     if($infos["respuesta"] == $r4){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '5':
+                     if($infos["respuesta"] == $r5){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break; 
+                   case '6':
+                     if($infos["respuesta"] == $r6){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '7':
+                     if($infos["respuesta"] == $r7){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '8':
+                     if($infos["respuesta"] == $r8){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break; 
+                   case '9':
+                     if($infos["respuesta"] == $r9){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break; 
+                   case '10':
+                     if($infos["respuesta"] == $r10){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;                           
+                 }                                                                             
+              }
+              $i=$i+1;
+            }           
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->diez($conexion);
+            echo "Fin de la prueba";            
+      }
+      public function atencion33(){//funcion para la prueba de atencion del dia 3 semana 3 
+         session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="atencion";
+            $puntos=0;
+            $rango=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2']))); 
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8']))); 
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));            
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $i=1;
+            $actividad=new Actividad();
+            while($i < 11){
+              $enunciado="imagen".$i;                          
+              $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+              if($rta->num_rows != 0){                                               
+                $infos=$rta->fetch_array(MYSQLI_ASSOC);
+                switch ($i) {
+                   case '1':
+                     if($infos["respuesta"] == $r1){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '2':
+                     if($infos["respuesta"] == $r2){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '3':
+                     if($infos["respuesta"] == $r3){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '4':
+                     if($infos["respuesta"] == $r4){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '5':
+                     if($infos["respuesta"] == $r5){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break; 
+                   case '6':
+                     if($infos["respuesta"] == $r6){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '7':
+                     if($infos["respuesta"] == $r7){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;
+                   case '8':
+                     if($infos["respuesta"] == $r8){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break; 
+                   case '9':
+                     if($infos["respuesta"] == $r9){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break; 
+                   case '10':
+                     if($infos["respuesta"] == $r10){                                                              
+                         $rango=$rango+1;                      
+                      }
+                     break;                           
+                 }                                                                             
+              }
+              $i=$i+1;
+            }           
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->diez($conexion);          
+            echo "Fin de la prueba";            
+      }
+       public function atencion34(){//funcion para la prueba de atencion del dia 4 semana 3
+         session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="atencion";
+            $puntos=0;
+            $rango=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));//se capturan las letas que forman
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));//la primera palabra del ejercicio. 
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));//y se concatenan
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));            
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="puntos rojos";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="puntos negros";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r2){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="puntos azules";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r3){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="puntos morados";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r4){                                                              
+                 $rango=$rango+1;                      
+              }
+            }            
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->cuatro($conexion);            
+            echo "Fin de la prueba";            
+      }
+      public function atencion35(){//funcion para la prueba de atencion del dia 5 semana 3
+         session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+            
+            $tipo="atencion";
+            $puntos=0;
+            $rango=0;       
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));//se capturan las letas que forman
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));//la primera palabra del ejercicio. 
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));//y se concatenan
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));            
+
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="signo pesos";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="unos";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r2){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="ochos";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r3){                                                              
+                 $rango=$rango+1;                      
+              }
+            }
+            $enunciado="signo pregunta";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r4){                                                              
+                 $rango=$rango+1;                      
+              }
+            }            
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->cuatro($conexion);            
+            echo "Fin de la prueba";            
+      }
       public function atencion41(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
              $fin=microtime(true);
