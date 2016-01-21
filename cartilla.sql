@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-01-2016 a las 04:04:53
+-- Tiempo de generación: 21-01-2016 a las 19:19:05
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -387,7 +387,7 @@ INSERT INTO `actividad` (`id_actividad`, `tipo`, `dia`, `semana`, `respuesta`, `
 (363, 'atencion', 1, 3, '6', 'secuencia4'),
 (364, 'atencion', 1, 3, '8', 'secuencia4'),
 (365, 'atencion', 1, 3, '10', 'secuencia4'),
-(366, 'atencion', 1, 3, '3', 'cantidad secuencia4'),
+(366, 'atencion', 1, 3, '4', 'cantidad secuencia4'),
 (367, 'atencion', 2, 3, '2', 'imagen1'),
 (368, 'atencion', 2, 3, '9', 'imagen2'),
 (369, 'atencion', 2, 3, '10', 'imagen3'),
@@ -415,7 +415,25 @@ INSERT INTO `actividad` (`id_actividad`, `tipo`, `dia`, `semana`, `respuesta`, `
 (392, 'atencion', 5, 3, '5', 'signo pesos'),
 (393, 'atencion', 5, 3, '5', 'unos'),
 (394, 'atencion', 5, 3, '6', 'ochos'),
-(395, 'atencion', 5, 3, '4', 'signo pregunta');
+(395, 'atencion', 5, 3, '4', 'signo pregunta'),
+(396, 'atencion', 5, 2, 'DALI', 'palabras'),
+(397, 'atencion', 5, 2, 'LASER', 'palabras'),
+(398, 'atencion', 5, 2, 'LAS', 'palabras'),
+(399, 'atencion', 5, 2, 'DON', 'palabras'),
+(400, 'atencion', 5, 2, 'NO', 'palabras'),
+(401, 'atencion', 5, 2, 'RES', 'palabras'),
+(402, 'atencion', 5, 2, 'USO', 'palabras'),
+(403, 'atencion', 5, 2, 'ESA', 'palabras'),
+(404, 'atencion', 5, 2, 'ES', 'palabras'),
+(405, 'atencion', 5, 2, 'DONE', 'palabras'),
+(406, 'atencion', 5, 2, 'RUSA', 'palabras'),
+(407, 'atencion', 5, 2, 'OSA', 'palabras'),
+(408, 'atencion', 5, 2, 'LASO', 'palabras'),
+(409, 'atencion', 5, 2, 'EN', 'palabras'),
+(410, 'atencion', 5, 2, 'FUE', 'palabras'),
+(411, 'atencion', 5, 2, 'CURE', 'palabras'),
+(412, 'atencion', 5, 2, 'LA', 'palabras'),
+(413, 'atencion', 1, 3, '11', 'secuencia4');
 
 -- --------------------------------------------------------
 
@@ -451,7 +469,7 @@ INSERT INTO `control` (`id`, `dia_usuario`, `semana_usuario`, `contador_activida
 (20, 1, 1, 0, 'yandrey.yg@gmail.com'),
 (21, 1, 1, 0, 'raul2010@gmail.com'),
 (22, 1, 1, 0, 'a@gmail.com\n'),
-(23, 5, 3, 2, 'b@gmail.com');
+(23, 3, 1, 0, 'b@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -489,7 +507,7 @@ CREATE TABLE IF NOT EXISTS `resultado` (
   `respuesta_usuario` varchar(45) NOT NULL,
   `dia` int(11) NOT NULL,
   `semana` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=300 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=302 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `resultado`
@@ -626,7 +644,9 @@ INSERT INTO `resultado` (`id`, `usuario_correo`, `prueba_tipo`, `tiempo`, `punta
 (296, 'b@gmail.com', 'atencion', '0 : 20', 1, '', 5, 3),
 (297, 'b@gmail.com', 'atencion', '12 : 56', 1, '', 1, 4),
 (298, 'b@gmail.com', 'atencion', '5 : 5', 1, '', 4, 3),
-(299, 'b@gmail.com', 'atencion', '16 : 54', 1, '', 5, 3);
+(299, 'b@gmail.com', 'atencion', '16 : 54', 1, '', 5, 3),
+(300, 'b@gmail.com', 'atencion', '0 : 58', 1, '', 1, 3),
+(301, 'b@gmail.com', 'atencion', '0 : 57', 1, '', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -713,7 +733,7 @@ ALTER TABLE `control`
 -- AUTO_INCREMENT de la tabla `resultado`
 --
 ALTER TABLE `resultado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=300;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=302;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

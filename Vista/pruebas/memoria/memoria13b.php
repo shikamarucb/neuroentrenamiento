@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link href="../../main.css" rel="stylesheet" type="text/css">
     <link href="memoria.css" rel="stylesheet" type="text/css">
-
+    <script language="Javascript" type="text/javascript" src="../../js/memoria.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Jura:600,400,500|Exo+2:400,500' rel='stylesheet' type='text/css'>
     <title>Memoria</title>
 </head>
