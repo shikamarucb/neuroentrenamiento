@@ -47,25 +47,25 @@
                     <td><input type="text" class="inpt11" name="6"></td>
                     <td><input type="text" class="inpt11" name="7"></td>
                     <td><input type="text" class="inpt11" name="8"></td>
-                </tr><!--
-                <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
+                    <td><input type="text" class="inpt11" name="9"></td>
+                    <td><input type="text" class="inpt11" name="10"></td>
+                    <td><input type="text" class="inpt11" name="11"></td>
+                    <td><input type="text" class="inpt11" name="12"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                    <td><input type="text" class="inpt11"></td>
-                </tr>-->
+                    <td><input type="text" class="inpt11" name="13"></td>
+                    <td><input type="text" class="inpt11" name="14"></td>
+                    <td><input type="text" class="inpt11" name="15"></td>
+                    <td><input type="text" class="inpt11" name="16" ></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="inpt11" name="17" ></td>
+                    <td><input type="text" class="inpt11" name="18"></td>
+                    <td><input type="text" class="inpt11" name="19"></td>
+                    <td><input type="text" class="inpt11" name="20"></td>
+                </tr>
             </table><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

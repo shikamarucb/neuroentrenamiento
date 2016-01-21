@@ -88,7 +88,8 @@
             }
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
-            $calificacion->tres($conexion);
+            $calificacion->tres($conexion);          
+
             echo "Fin de la prueba";            
     	}
       public function atencion12(){//funcion para la prueba de atencion del dia 2 semana 1
@@ -801,7 +802,20 @@
             $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
             $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
             $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));
-            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));                                                                  
+            $r8=strtoupper($conexion->real_escape_string(strip_tags($_POST['8'])));
+            $r9=strtoupper($conexion->real_escape_string(strip_tags($_POST['9'])));
+            $r10=strtoupper($conexion->real_escape_string(strip_tags($_POST['10'])));
+            $r11=strtoupper($conexion->real_escape_string(strip_tags($_POST['11'])));
+            $r12=strtoupper($conexion->real_escape_string(strip_tags($_POST['12'])));
+            $r13=strtoupper($conexion->real_escape_string(strip_tags($_POST['13'])));
+            $r14=strtoupper($conexion->real_escape_string(strip_tags($_POST['14'])));
+            $r15=strtoupper($conexion->real_escape_string(strip_tags($_POST['15'])));
+            $r16=strtoupper($conexion->real_escape_string(strip_tags($_POST['16'])));
+            $r17=strtoupper($conexion->real_escape_string(strip_tags($_POST['17'])));
+            $r18=strtoupper($conexion->real_escape_string(strip_tags($_POST['18'])));
+            $r19=strtoupper($conexion->real_escape_string(strip_tags($_POST['19'])));
+            $r20=strtoupper($conexion->real_escape_string(strip_tags($_POST['20'])));
+
             $email=$_SESSION['session'];
             $control= new Control($email);
             $resultado=$control->getControl($conexion);
@@ -814,7 +828,7 @@
             $enunciado="palabras";            
             $actividad=new Actividad();
             $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
-            if($rta->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+            if($rta->num_rows != 0){                                               
               while($infos=$rta->fetch_array(MYSQLI_ASSOC)){                            
                 foreach ($infos as $clave=>$info) {                                    
                     if($info == $r1){                                                              
@@ -832,6 +846,30 @@
                     }elseif($info == $r7){                                                            
                        $rango=$rango+1;
                     }elseif($info == $r8){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r9){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r10){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r11){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r12){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r13){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r14){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r15){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r16){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r17){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r18){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r19){                                                            
+                       $rango=$rango+1;
+                    }elseif($info == $r20){                                                            
                        $rango=$rango+1;
                     }                                                  
                 }
@@ -968,7 +1006,7 @@
                 }
               }
             }
-            if ($aciertos==3) {
+            if ($aciertos==4) {
               $rango=$rango+1;
             }
             $enunciado="cantidad secuencia4";                        

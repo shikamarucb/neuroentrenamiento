@@ -60,8 +60,9 @@
                 $email=$datos["email"];
                 $roll=$datos["roll"];
                 $_SESSION['session']=$email;
+                $_SESSION['name']=$nombre;
                 if($roll==3){
-                   header('location: ../Vista/pruebas/memoria/memoria11.php');
+                   header('location: ../Vista/pruebas/menu/Prueba.php');
                 }elseif ($roll==2) {
                     header('location: ../Vista/Administracion/dashboard.php');
                 }elseif ($roll==1) {
