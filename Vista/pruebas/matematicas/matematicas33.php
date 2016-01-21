@@ -5,7 +5,7 @@
     <link href="../../main.css" rel="stylesheet" type="text/css">
     <link href="mate.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Jura:600,400,500|Exo+2:400,500' rel='stylesheet' type='text/css'>
-    <title>Plantilla</title>
+    <title>Matemáticas</title>
 </head>
 <body>
 <?php    
@@ -20,10 +20,10 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html">Prueba</a></li>
             <li><a href="contact.html">Contacto</a></li>
+            <li><a href="login.html">Progreso</a></li>
             <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
-            <li><a href="login.html">Iniciar Sesion</a></li>
         </ul>
     </div>
 </nav>
