@@ -46,12 +46,15 @@
            </select> 
                       
     </div>
-		<div style="width:30%">
-			<div>
-				<canvas id="canvas" height="450" width="600"></canvas>
+		<div style="width:100%">
+			<div style="margin: 0 auto; width:800px;">
+				<canvas id="canvas" height="600" width="800" style="margin 0 auto;"></canvas>
 			</div>
 		</div>                      
-	<script>		
+	<script>
+        var atencion=[];
+        var memoria=[];
+        var matematicas=[];
 	    $(document).ready(mostrar()); 
 	    function mostrar(){	    	
         /*hay un controlador que se llama graficar.php que lo que se hizo fue adaptar lo que se hizo en laravel y así
@@ -63,8 +66,14 @@
                     url:'../../Controlador/graficar.php?value=semana&email=<?php echo urlencode($email);?>',
                     data:{semana:semana},
                     type: 'post',
-                    success: function (data){                      
-                      alert(data);
+                    success: function (data){
+                        datos=JSON.parse(data);        
+                        for(var i=0;i<datos.length;i++){
+                            atencion.push(datos[i].atencion);
+                            memoria.push(datos[i].memoria);
+                            matematicas.push(datos[i].matematicas);
+                        }
+                      //window.alert(datos[0].matematicas);
                      }
                    }
                 )	    	
@@ -72,27 +81,37 @@
 	    }
 		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 		var lineChartData = {
-			labels : ["January","February","March","April","May","June","July"],
+			labels : ["Dia 1","Dia 2","Dia 3","Dia 4","Dia 5"],
 			datasets : [
 				{
-					label: "My First dataset",
-					fillColor : "rgba(220,220,220,0.2)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
+					label: "Memoria",
+					fillColor : "rgba(13,255,0,0.2)",
+					strokeColor : "rgba(13,255,0,1)",
+					pointColor : "rgba(13,255,0,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
-					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+					data : memoria
 				},
 				{
-					label: "My Second dataset",
+					label: "Atencion",
 					fillColor : "rgba(151,187,205,0.2)",
 					strokeColor : "rgba(151,187,205,1)",
 					pointColor : "rgba(151,187,205,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+					data : atencion
+				},
+                {
+					label: "Matematicas",
+					fillColor : "rgba(13,255,0,0.2)",
+					strokeColor : "rgba(13,255,0,0.2)",
+					pointColor : "rgba(13,255,0,0.2)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(151,187,205,1)",
+					data : matematicas
 				}
 			]
 
