@@ -34,7 +34,7 @@
         }
 
         public function getUsers($table,$conexion, $roll){//obtiene todos los usuarios registrados
-            return $conexion->query("SELECT * from ".$table." where roll=".$roll." ;");            
+            return $conexion->query("SELECT * from ".$table." where roll=".$roll." order by nombre ;");            
         }
 
         public function getUsersByEmail($table,$conexion,$email){//obtiene un usuario  o administrador unicamente por su email,  utilizado para el dashboard y 

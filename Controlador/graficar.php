@@ -2,6 +2,7 @@
     include_once ("../Modelo/usuario.php");
     include_once ("../Modelo/control.php");
     include_once ("../Modelo/conexion.php");
+    include_once ("../Modelo/resultado.php");
 
   class Graficar{
 
@@ -11,15 +12,17 @@
                     
   	  $email=$_GET['email'];
   		$semana=$conexion->real_escape_string(strip_tags($_POST['semana']));
+
   		$resultado=new Resultado($email);
       $datos=$resultado->getResultByWeek($conexion, $email, $semana);
-      $info=$datos->fetch_array(MYSQLI_ASSOC);
+      $info=$datos->fetch_all(MYSQLI_ASSOC);
       
       $arra1= array("dia"=>1);
       $arra2= array("dia"=>2);
       $arra3= array("dia"=>3);
       $arra4= array("dia"=>4);
       $arra5= array("dia"=>5);
+
       $arrygrande=array();
 
       foreach($info as $valor){
@@ -47,7 +50,7 @@
           $arraygrande[4]=$arra5;
       } 
 
-      echo json_encode($arraygrande);      
+      echo json_encode($arraygrande);     
   	}
   }
 

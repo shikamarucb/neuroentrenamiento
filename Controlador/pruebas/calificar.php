@@ -39,6 +39,22 @@
         }                       
         $this->agregar($conexion, $puntos);
       }
+      public function veinteAtencion($conexion){//funcion donde se califican las puebas que contienen 20 respuestas de matemáticas. 
+        // se calcula la calificacion 
+        $puntos=0;
+        if($this->rango != 0){ 
+          if( $this->rango < 11){
+             $puntos=0.5;            
+          }else{ 
+            if($this->rango > 10 && $this->rango < 20){
+              $puntos=0.75;               
+            }else{
+                $puntos=1;
+            }
+          }            
+        }                       
+        $this->agregar($conexion, $puntos);
+      }
       public function catorce($conexion){//funcion donde se califican las puebas que contienen 14 respuestas. 
         // se calcula la calificacion 
         $puntos=0;

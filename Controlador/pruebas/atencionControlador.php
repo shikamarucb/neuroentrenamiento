@@ -1228,6 +1228,8 @@
                 $semana=$datos["semana_usuario"];
                 $contador=$datos["contador_actividad"];               
             }
+            $rango=$r1+$r2+$r3+$r4;
+            /*
             $enunciado="puntos rojos";            
             $actividad=new Actividad();
             $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
@@ -1260,10 +1262,9 @@
               if($infos["respuesta"] == $r4){                                                              
                  $rango=$rango+1;                      
               }
-            }            
-
+            }*/                        
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
-            $calificacion->cuatro($conexion);            
+            $calificacion->diez($conexion); //se evaluarian 4 de la manera comentada XD ..           
             echo "Fin de la prueba";            
       }
       public function atencion35(){//funcion para la prueba de atencion del dia 5 semana 3
@@ -1299,6 +1300,8 @@
                 $semana=$datos["semana_usuario"];
                 $contador=$datos["contador_actividad"];               
             }
+            $rango=$r1+$r2+$r3+$r4;
+            /*
             $enunciado="signo pesos";            
             $actividad=new Actividad();
             $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
@@ -1331,10 +1334,9 @@
               if($infos["respuesta"] == $r4){                                                              
                  $rango=$rango+1;                      
               }
-            }            
-
+            } */                       
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
-            $calificacion->cuatro($conexion);            
+            $calificacion->veinteAtencion($conexion);   //se evaluarian 4.         
             echo "Fin de la prueba";            
       }
       public function atencion41(){
@@ -1370,6 +1372,8 @@
                 $semana=$datos["semana_usuario"];
                 $contador=$datos["contador_actividad"];               
             }
+            $rango=$r1+$r2+$r3+$r4;
+            /*
             $enunciado="figura1";            
             $actividad=new Actividad();
             $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
@@ -1402,10 +1406,9 @@
               if($infos["respuesta"] == $r4){                                                              
                  $rango=$rango+1;                      
               }
-            }                          
-
+            } */                                    
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
-            $calificacion->cuatro($conexion);
+            $calificacion->nueve($conexion);//se evaluarian 4 si no es así XD
             echo "Fin de la prueba";
       }
       public function atencion43(){

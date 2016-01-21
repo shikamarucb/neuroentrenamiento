@@ -15,8 +15,8 @@
           $info=$usuarios->getControl($email);
           $resultado=$info->fetch_array(MYSQLI_ASSOC);
           $semana=$resultado['semana_usuario'];          
-       ?>                     
-           <select name="semana" onchange="mostrar(this.value);">
+       ?>                         
+           <select id="semana" onchange="mostrar();">
             <?php
                 switch ($semana) {
                   case '1':
@@ -43,20 +43,32 @@
                     break;                         
                 }
             ?>                           
-           </select>             
+           </select> 
+                      
     </div>
 		<div style="width:30%">
 			<div>
 				<canvas id="canvas" height="450" width="600"></canvas>
 			</div>
 		</div>                      
-	<script>
-	    $(document).ready(mostrar(1)); 
-	    function mostrar(semana){
+	<script>		
+	    $(document).ready(mostrar()); 
+	    function mostrar(){	    	
         /*hay un controlador que se llama graficar.php que lo que se hizo fue adaptar lo que se hizo en laravel y así
         poder hacer las consultas necesarias para graficar. en este caso lo que se quiere hacer es en el select de arriba 
         al hacer el cambio que se dirija a esta funcion que sera la encargada de gráficar.  
-	    	*/
+	    */	    
+	    var semana=$("#semana").val();
+                  $.ajax({
+                    url:'../../Controlador/graficar.php?value=semana&email=<?php echo urlencode($email);?>',
+                    data:{semana:semana},
+                    type: 'post',
+                    success: function (data){                      
+                      alert(data);
+                     }
+                   }
+                )	    	
+	    	
 	    }
 		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 		var lineChartData = {
