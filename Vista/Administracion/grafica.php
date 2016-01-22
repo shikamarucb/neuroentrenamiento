@@ -66,7 +66,7 @@
                     url:'../../Controlador/graficar.php?value=semana&email=<?php echo urlencode($email);?>',
                     data:{semana:semana},
                     type: 'post',
-                    success: function (data){
+                    success: function (data){                    	
                         datos=JSON.parse(data);        
                         for(var i=0;i<datos.length;i++){
                             atencion.push(datos[i].atencion);
@@ -79,7 +79,11 @@
                 )	    	
 	    	
 	    }
-		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+	    atent();
+        function atent(){
+            window.alert('');
+        }
+		//var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 		var lineChartData = {
 			labels : ["Dia 1","Dia 2","Dia 3","Dia 4","Dia 5"],
 			datasets : [

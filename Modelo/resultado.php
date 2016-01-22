@@ -15,6 +15,11 @@ class Resultado{
     	$query=new Query();
     	return $query->getResultByWeek($this->table,$conexion, $email, $semana);
     }
+
+    public function getResultBySex($conexion,$semana){
+        $query=new Query();
+    	return $query->getResultBysex($conexion, $semana);
+    }
     
 }
 ?>

@@ -74,7 +74,7 @@
         </div>
           <div class="graph_box">
       <div class="col-md-4 grid_2"><div class="grid_1">
-        <a href="graphByStudent.php"><h3>Estudiantes</h3><a/>
+        <a href="graphByStudent.php"><h3>Estudiantes</h3></a>
         <canvas id="doughnut" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
       </div></div>
       <div class="col-md-4 grid_2"><div class="grid_1">
@@ -82,7 +82,7 @@
         <canvas id="line" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
       </div></div>
       <div class="col-md-4 grid_2"><div class="grid_1">
-        <h3>Sexo</h3>
+        <a href="graficaGenero.php"><h3>Sexo</h3></a>
         <canvas id="polarArea" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
       </div></div>
       <div class="clearfix"> </div>
