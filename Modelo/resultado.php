@@ -20,6 +20,16 @@ class Resultado{
         $query=new Query();
     	return $query->getResultBysex($conexion, $semana);
     }
+
+    public function getResultByAge($conexion, $semana){
+        $query=new Query();
+        return $query->getResultByAge($conexion, $semana);
+    }
+
+    public function getResultByCourse($conexion, $semana){
+        $query=new Query();
+        return $query->getResultByCourse($conexion, $semana);
+    }
     
 }
 ?>

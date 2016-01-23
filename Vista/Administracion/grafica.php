@@ -1,3 +1,9 @@
+<?php
+    include_once ("../../Controlador/permisosAdmins.php");
+    session_start();
+    $permiso=new PermisosAdmins();    
+    if($permiso->verificarAdmin()){    
+?>
 <!doctype html>
 <html>
 	<head>
@@ -130,3 +136,6 @@
 	</script>
 	</body>
 </html>
+<?php
+}
+?>

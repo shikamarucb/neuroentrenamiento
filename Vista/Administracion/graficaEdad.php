@@ -32,7 +32,7 @@
         	    	  
       var semana=$("#semana").val();
                   $.ajax({
-                    url:'../../Controlador/graficar.php?value=sexo',
+                    url:'../../Controlador/graficar.php?value=edad',
                     data:{semana:semana},
                     type: 'post',
                     success: function (data){  

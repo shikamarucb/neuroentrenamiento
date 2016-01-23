@@ -78,7 +78,7 @@
         <canvas id="doughnut" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
       </div></div>
       <div class="col-md-4 grid_2"><div class="grid_1">
-        <h3>Curso</h3>
+        <a href="graficaCurso.php"><h3>Curso</h3>
         <canvas id="line" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
       </div></div>
       <div class="col-md-4 grid_2"><div class="grid_1">
@@ -89,7 +89,7 @@
       </div>
       <div class="graph_box1">
       <div class="col-md-4 grid_2"><div class="grid_1">
-        <h3>Edad</h3>
+        <a href="graficaEdad.php"><h3>Edad</h3>
         <canvas id="bar" height="300" width="400" style="width: 400px; height: 300px;"></canvas>
       </div></div>
       <div class="col-md-4 grid_2"><div class="grid_1">
