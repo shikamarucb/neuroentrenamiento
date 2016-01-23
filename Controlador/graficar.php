@@ -75,6 +75,9 @@
       $arra4F= array("dia"=>4);
       $arra5F= array("dia"=>5);
 
+      $hombres= array();
+      $mujeres=array();
+
       $arrygrande=array();
 
       foreach($info as $valor){
@@ -96,8 +99,22 @@
           }
         }
       }
+      $hombres[0]=$arra1M;
+      $hombres[1]=$arra2M;
+      $hombres[2]=$arra3M;
+      $hombres[3]=$arra4M;
+      $hombres[4]=$arra5M;
+
+      $mujeres[0]=$arra1F;
+      $mujeres[1]=$arra2F;
+      $mujeres[2]=$arra3F;
+      $mujeres[3]=$arra4F;
+      $mujeres[4]=$arra5F;
+
+      $arraygrande['masculino']=$hombres;
+      $arraygrande['femenino']=$mujeres;
       
-      if(count($arra1M)==4){           //LOS PRIMEROS 5 CAMPOS DEL arraygrande son para masculinos los siguientes 5 son para femenino
+      /*if(count($arra1M)==4){           //LOS PRIMEROS 5 CAMPOS DEL arraygrande son para masculinos los siguientes 5 son para femenino
             $arraygrande[0]=$arra1M;
       }
       if(count($arra2M)==4){
@@ -127,7 +144,7 @@
       }
       if(count($arra5F)==4){
           $arraygrande[9]=$arra5F;
-      } 
+      } */
 
       echo json_encode($arraygrande);
     }
