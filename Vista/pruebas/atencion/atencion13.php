@@ -14,6 +14,7 @@
     $fechaIn= date("Y-m-d");
     $inicio=microtime(true);
     $_SESSION['tIni']=$inicio;
+    
 ?>
 <nav id="navi">
     <div id="title">

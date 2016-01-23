@@ -73,6 +73,24 @@
         public function getResultByWeek($table, $conexion, $email, $semana){
           return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' AND semana=".$semana.";");
         }
+
+        public function getResultBysex($conexion, $semana){
+           return $conexion->query("SELECT  avg(puntaje_usuario), users.genero, prueba_tipo,dia from resultado
+                                    inner join users on resultado.usuario_correo=users.email AND semana=".$semana."
+                                     group by genero,dia,prueba_tipo;");
+        }
+
+        public function getResultByAge($conexion, $semana){
+           return $conexion->query("SELECT avg(puntaje_usuario), users.edad,prueba_tipo,dia from resultado
+                                   inner join users on resultado.usuario_correo=users.email and semana=".$semana." 
+                                   group by edad,dia,prueba_tipo order by edad;");
+        }
+
+        public function getResultByCourse($conexion, $semana){
+           return $conexion->query("SELECT avg(puntaje_usuario), users.grado,prueba_tipo,dia from resultado
+                                   inner join users on resultado.usuario_correo=users.email And semana=".$semana."
+                                    group by grado,dia,prueba_tipo order by grado;");
+        }
         
     }
 ?>
