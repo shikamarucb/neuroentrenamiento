@@ -114,38 +114,6 @@
       $arraygrande['masculino']=$hombres;
       $arraygrande['femenino']=$mujeres;
       
-      /*if(count($arra1M)==4){           //LOS PRIMEROS 5 CAMPOS DEL arraygrande son para masculinos los siguientes 5 son para femenino
-            $arraygrande[0]=$arra1M;
-      }
-      if(count($arra2M)==4){
-          $arraygrande[1]=$arra2M;
-      }
-      if(count($arra3M)==4){
-          $arraygrande[2]=$arra3M;
-      }
-      if(count($arra4M)==4){
-          $arraygrande[3]=$arra4M;
-      }
-      if(count($arra5M)==4){
-          $arraygrande[4]=$arra5M;
-      } 
-
-      if(count($arra1F)==4){           //LOS PRIMEROS 5 CAMPOS DEL arraygrande son para masculinos los siguientes 5 son para femenino
-            $arraygrande[5]=$arra1F;
-      }
-      if(count($arra2F)==4){
-          $arraygrande[6]=$arra2F;
-      }
-      if(count($arra3F)==4){
-          $arraygrande[7]=$arra3F;
-      }
-      if(count($arra4F)==4){
-          $arraygrande[8]=$arra4F;
-      }
-      if(count($arra5F)==4){
-          $arraygrande[9]=$arra5F;
-      } */
-
       echo json_encode($arraygrande);
     }
     public function edad(){

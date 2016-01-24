@@ -1,5 +1,9 @@
-if(history.forward(1)){
-           history.replace(history.forward(1));
+function nobackbutton(){
+	
+   window.location.hash="no-back-button";
+	
+   window.location.hash="Again-No-back-button" //chrome
+	
+   window.onhashchange=function(){window.location.hash="no-back-button";}
+	
 }
-
-alert("esta en memoria");

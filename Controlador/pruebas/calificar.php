@@ -270,8 +270,9 @@
                 $this->dia=1;
                 $this->semana=$this->semana+1;
             }
+            $fecha=$_SESSION['Ufecha'];
             $control=new Control($this->email);            
-            $control->upControl($conexion, $this->contador, $this->dia, $this->semana);
+            $control->upControl($conexion, $this->contador, $this->dia, $this->semana, $fecha);
         }        
 
     }

@@ -11,6 +11,11 @@ class Resultado{
 
     }
 
+    public function getResult($conexion, $email, $dia, $semana){
+        $query=new Query();
+        return $query->getResult($this->table,$conexion, $email, $dia, $semana);
+    }
+
     public function getResultByWeek($conexion, $email, $semana){
     	$query=new Query();
     	return $query->getResultByWeek($this->table,$conexion, $email, $semana);
