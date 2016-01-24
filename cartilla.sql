@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-01-2016 a las 19:19:05
+-- Tiempo de generación: 24-01-2016 a las 17:38:26
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -446,30 +446,31 @@ CREATE TABLE IF NOT EXISTS `control` (
   `dia_usuario` int(10) unsigned NOT NULL,
   `semana_usuario` int(10) unsigned NOT NULL,
   `contador_actividad` int(10) unsigned NOT NULL,
-  `users_email` varchar(70) NOT NULL
+  `users_email` varchar(70) NOT NULL,
+  `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `control`
 --
 
-INSERT INTO `control` (`id`, `dia_usuario`, `semana_usuario`, `contador_actividad`, `users_email`) VALUES
-(4, 5, 2, 0, 'admin@gmail.com'),
-(9, 5, 1, 0, 'diacarri@hotmail.com'),
-(10, 3, 1, 0, 'cb@gmail.com'),
-(11, 3, 1, 0, 'bc@gmail.com'),
-(12, 3, 1, 0, 'estudiante1@gmail.com'),
-(13, 2, 1, 0, 'j.alejadro96@outlok.com'),
-(14, 2, 1, 0, 'usuario@hotmail.com'),
-(15, 2, 1, 0, 'charly199308@outlook.com'),
-(16, 2, 1, 0, 'YK_1126@HOTMAIL.COM'),
-(17, 1, 1, 0, 'ABGGH@HOTMAIL.COM'),
-(18, 2, 1, 0, 'jesus.andres1996@hotmail.com'),
-(19, 6, 1, 0, 'andreyfanton@hotmail.com'),
-(20, 1, 1, 0, 'yandrey.yg@gmail.com'),
-(21, 1, 1, 0, 'raul2010@gmail.com'),
-(22, 1, 1, 0, 'a@gmail.com\n'),
-(23, 3, 1, 0, 'b@gmail.com');
+INSERT INTO `control` (`id`, `dia_usuario`, `semana_usuario`, `contador_actividad`, `users_email`, `fecha`) VALUES
+(4, 5, 2, 0, 'admin@gmail.com', '0000-00-00'),
+(9, 5, 1, 0, 'diacarri@hotmail.com', '0000-00-00'),
+(10, 3, 1, 0, 'cb@gmail.com', '0000-00-00'),
+(11, 2, 2, 0, 'bc@gmail.com', '0000-00-00'),
+(12, 3, 1, 0, 'estudiante1@gmail.com', '0000-00-00'),
+(13, 2, 1, 0, 'j.alejadro96@outlok.com', '0000-00-00'),
+(14, 2, 1, 0, 'usuario@hotmail.com', '0000-00-00'),
+(15, 2, 1, 0, 'charly199308@outlook.com', '0000-00-00'),
+(16, 2, 1, 0, 'YK_1126@HOTMAIL.COM', '0000-00-00'),
+(17, 1, 1, 0, 'ABGGH@HOTMAIL.COM', '0000-00-00'),
+(18, 2, 1, 0, 'jesus.andres1996@hotmail.com', '0000-00-00'),
+(19, 6, 1, 0, 'andreyfanton@hotmail.com', '0000-00-00'),
+(20, 1, 1, 0, 'yandrey.yg@gmail.com', '0000-00-00'),
+(21, 1, 1, 0, 'raul2010@gmail.com', '0000-00-00'),
+(22, 1, 1, 0, 'a@gmail.com\n', '0000-00-00'),
+(23, 4, 1, 0, 'b@gmail.com', '2016-01-23');
 
 -- --------------------------------------------------------
 
@@ -507,146 +508,31 @@ CREATE TABLE IF NOT EXISTS `resultado` (
   `respuesta_usuario` varchar(45) NOT NULL,
   `dia` int(11) NOT NULL,
   `semana` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=302 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=320 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `resultado`
 --
 
 INSERT INTO `resultado` (`id`, `usuario_correo`, `prueba_tipo`, `tiempo`, `puntaje_usuario`, `respuesta_usuario`, `dia`, `semana`) VALUES
-(137, '', 'memoria', '0 : 48', 0, '', 0, 0),
-(138, 'b@gmail.com', 'memoria', '2 : 13', 1, '', 2, 2),
-(139, 'b@gmail.com', 'memoria', '0 : 28', 1, '', 1, 2),
-(140, 'b@gmail.com', 'memoria', '0 : 52', 0.75, '', 1, 2),
-(141, 'b@gmail.com', 'memoria', '1 : 32', 0.75, '', 1, 2),
-(142, 'b@gmail.com', 'memoria', '0 : 19', 1, '', 1, 2),
-(143, 'b@gmail.com', 'memoria', '0 : 21', 0.5, '', 1, 2),
-(144, 'b@gmail.com', 'memoria', '0 : 49', 0.75, '', 3, 2),
-(145, 'b@gmail.com', 'memoria', '0 : 30', 1, '', 3, 2),
-(146, 'b@gmail.com', 'memoria', '1 : 7', 0.75, '', 4, 2),
-(147, 'b@gmail.com', 'memoria', '0 : 57', 0.75, '', 4, 2),
-(148, 'b@gmail.com', 'memoria', '1 : 50', 0.75, '', 4, 2),
-(149, 'b@gmail.com', 'memoria', '8 : 36', 0.75, '', 4, 2),
-(150, 'b@gmail.com', 'memoria', '1 : 18', 0.75, '', 4, 2),
-(151, 'b@gmail.com', 'memoria', '3 : 6', 0.75, '', 4, 2),
-(152, 'b@gmail.com', 'memoria', '4 : 19', 0.75, '', 4, 2),
-(153, 'b@gmail.com', 'memoria', '5 : 44', 0.75, '', 4, 2),
-(154, 'b@gmail.com', 'memoria', '1 : 6', 0.75, '', 4, 2),
-(155, 'b@gmail.com', 'memoria', '4 : 46', 0.5, '', 4, 2),
-(156, 'b@gmail.com', 'memoria', '111 : 18', 0, '', 1, 2),
-(157, 'b@gmail.com', 'memoria', '111 : 56', 0, '', 1, 2),
-(158, 'b@gmail.com', 'memoria', '5 : 21', 0, '', 4, 2),
-(159, 'b@gmail.com', 'memoria', '1 : 14', 0.5, '', 4, 2),
-(160, 'b@gmail.com', 'memoria', '1 : 50', 0.75, '', 4, 2),
-(161, 'b@gmail.com', 'memoria', '1 : 27', 0.75, '', 4, 2),
-(162, 'b@gmail.com', 'memoria', '1 : 39', 0.75, '', 4, 2),
-(163, 'b@gmail.com', 'memoria', '3 : 9', 0.75, '', 4, 2),
-(164, 'b@gmail.com', 'memoria', '4 : 32', 0.75, '', 4, 2),
-(165, 'b@gmail.com', 'memoria', '7 : 34', 0.75, '', 4, 2),
-(166, 'b@gmail.com', 'memoria', '18 : 3', 0.75, '', 4, 2),
-(167, 'b@gmail.com', 'memoria', '18 : 43', 0.75, '', 4, 2),
-(168, 'b@gmail.com', 'memoria', '23 : 18', 0.75, '', 4, 2),
-(169, 'b@gmail.com', 'memoria', '1 : 9', 0.75, '', 4, 2),
-(170, 'b@gmail.com', 'memoria', '6 : 42', 0.75, '', 4, 2),
-(171, 'b@gmail.com', 'memoria', '1 : 2', 0.75, '', 4, 2),
-(172, 'b@gmail.com', 'memoria', '2 : 25', 0.75, '', 4, 2),
-(173, 'b@gmail.com', 'memoria', '4 : 14', 0.75, '', 4, 2),
-(174, 'b@gmail.com', 'memoria', '6 : 38', 1, '', 4, 2),
-(175, 'b@gmail.com', 'memoria', '10 : 25', 1, '', 4, 2),
-(176, 'b@gmail.com', 'memoria', '11 : 57', 1, '', 4, 2),
-(177, 'b@gmail.com', 'memoria', '0 : 45', 1, '', 5, 2),
-(178, 'b@gmail.com', 'memoria', '0 : 15', 0.5, '', 5, 2),
-(179, 'b@gmail.com', 'memoria', '1 : 24', 0, '', 1, 3),
-(180, 'b@gmail.com', 'memoria', '3 : 12', 0, '', 1, 3),
-(181, 'b@gmail.com', 'memoria', '5 : 24', 0, '', 1, 3),
-(182, 'b@gmail.com', 'memoria', '0 : 17', 1, '', 5, 2),
-(183, 'b@gmail.com', 'memoria', '0 : 46', 0, '', 1, 3),
-(184, 'b@gmail.com', 'memoria', '1 : 28', 0, '', 1, 3),
-(185, 'b@gmail.com', 'memoria', '0 : 47', 0.75, '', 1, 3),
-(186, 'b@gmail.com', 'memoria', '1 : 40', 0, '', 2, 3),
-(187, 'b@gmail.com', 'memoria', '0 : 51', 1, '', 1, 3),
-(188, 'b@gmail.com', 'memoria', '0 : 39', 1, '', 2, 3),
-(189, 'b@gmail.com', 'memoria', '0 : 24', 0.5, '', 2, 3),
-(190, 'b@gmail.com', 'memoria', '0 : 25', 1, '', 3, 3),
-(191, 'b@gmail.com', 'memoria', '0 : 38', 0.75, '', 3, 3),
-(192, '', 'memoria', '13 : 13', 0, '', 0, 0),
-(193, 'b@gmail.com', 'memoria', '0 : 27', 1, '', 4, 3),
-(194, 'b@gmail.com', 'memoria', '0 : 42', 0.75, '', 4, 3),
-(195, 'b@gmail.com', 'memoria', '1 : 8', 1, '', 5, 3),
-(196, 'b@gmail.com', 'memoria', '1 : 5', 1, '', 5, 3),
-(197, 'b@gmail.com', 'memoria', '1 : 5', 0.5, '', 5, 3),
-(198, 'b@gmail.com', 'memoria', '1 : 38', 1, '', 1, 4),
-(199, 'b@gmail.com', 'memoria', '0 : 51', 0.75, '', 1, 4),
-(200, 'b@gmail.com', 'memoria', '2 : 44', 1, '', 2, 4),
-(201, 'b@gmail.com', 'memoria', '0 : 52', 0.5, '', 2, 4),
-(202, 'b@gmail.com', 'memoria', '3 : 16', 1, '', 4, 4),
-(203, 'b@gmail.com', 'memoria', '1 : 7', 0.75, '', 4, 4),
-(204, 'b@gmail.com', 'memoria', '1 : 21', 1, '', 5, 4),
-(205, 'b@gmail.com', 'memoria', '0 : 56', 0.5, '', 5, 4),
-(206, '', 'memoria', '24180178 :', 0, '', 0, 0),
-(207, 'zapata@gmail.com', 'memoria', '24180592 :', 0, '', 0, 0),
-(208, 'zapata@gmail.com', 'memoria', '24180775 :', 0, '', 0, 0),
-(211, 'b@gmail.com', 'atencion', '0 : 11', 0.5, '', 1, 1),
-(213, 'b@gmail.com', 'atencion', '0 : 30', 0.75, '', 2, 1),
-(215, 'b@gmail.com', 'atencion', '0 : 43', 1, '', 3, 1),
-(218, 'b@gmail.com', 'matematicas', '3 : 50', 0, '', 3, 1),
-(230, 'b@gmail.com', 'memoria', '1 : 12', 1, '', 1, 1),
-(231, 'b@gmail.com', 'memoria', '1 : 41', 1, '', 3, 1),
-(243, 'b@gmail.com', 'atencion', '75 : 50', 0.5, '', 1, 2),
-(244, 'b@gmail.com', 'atencion', '2 : 23', 1, '', 1, 2),
-(245, 'b@gmail.com', 'atencion', '1 : 54', 0.5, '', 1, 2),
-(246, 'b@gmail.com', 'atencion', '1 : 16', 0, '', 2, 2),
-(247, 'b@gmail.com', 'atencion', '0 : 58', 1, '', 1, 2),
-(248, 'b@gmail.com', 'atencion', '0 : 16', 0, '', 2, 2),
-(249, 'b@gmail.com', 'atencion', '0 : 4', 1, '', 2, 2),
-(250, 'b@gmail.com', 'atencion', '0 : 4', 0, '', 2, 2),
-(251, 'b@gmail.com', 'atencion', '0 : 19', 1, '', 3, 2),
-(252, 'b@gmail.com', 'atencion', '0 : 28', 1, '', 4, 2),
-(253, 'b@gmail.com', 'atencion', '1 : 52', 0.75, '', 4, 2),
-(254, 'b@gmail.com', 'atencion', '0 : 23', 1, '', 4, 2),
-(255, 'b@gmail.com', 'atencion', '0 : 50', 0.75, '', 5, 2),
-(256, 'b@gmail.com', 'atencion', '1 : 33', 1, '', 5, 2),
-(257, 'b@gmail.com', 'atencion', '0 : 8', 0.75, '', 1, 4),
-(258, 'b@gmail.com', 'atencion', '0 : 33', 1, '', 1, 4),
-(259, 'b@gmail.com', 'atencion', '0 : 17', 1, '', 3, 4),
-(260, 'b@gmail.com', 'atencion', '0 : 36', 0.5, '', 3, 4),
-(261, 'b@gmail.com', 'atencion', '0 : 47', 0.5, '', 4, 4),
-(262, 'b@gmail.com', 'atencion', '0 : 11', 1, '', 4, 4),
-(263, 'b@gmail.com', 'atencion', '14 : 30', 1, '', 5, 4),
-(264, 'b@gmail.com', 'atencion', '1 : 25', 1, '', 1, 2),
-(265, 'b@gmail.com', 'memoria', '1 : 6', 1, '', 1, 2),
-(266, 'b@gmail.com', 'memoria', '1 : 26', 1, '', 2, 1),
-(270, 'b@gmail.com', 'matematicas', '89 : 50', 3, '', 1, 1),
-(272, 'b@gmail.com', 'matematicas', '2 : 7', 2.25, '', 2, 1),
-(273, 'b@gmail.com', 'matematicas', '31 : 49', 2.25, '', 4, 2),
-(274, 'b@gmail.com', 'matematicas', '34 : 13', 2.25, '', 4, 2),
-(275, 'b@gmail.com', 'matematicas', '36 : 10', 2.25, '', 4, 2),
-(276, 'b@gmail.com', 'matematicas', '37 : 58', 3, '', 4, 2),
-(277, 'b@gmail.com', 'matematicas', '89 : 11', 0, '', 4, 2),
-(278, 'b@gmail.com', 'matematicas', '91 : 18', 0, '', 5, 2),
-(279, 'b@gmail.com', 'matematicas', '1 : 11', 3, '', 5, 2),
-(280, 'b@gmail.com', 'matematicas', '36 : 41', 3, '', 3, 3),
-(281, 'b@gmail.com', 'matematicas', '42 : 10', 3, '', 3, 3),
-(282, 'b@gmail.com', 'matematicas', '43 : 57', 1.5, '', 3, 3),
-(283, 'b@gmail.com', 'matematicas', '64 : 31', 2.25, '', 3, 3),
-(284, 'b@gmail.com', 'matematicas', '65 : 51', 3, '', 3, 3),
-(285, 'b@gmail.com', 'atencion', '1 : 16', 0.75, '', 1, 3),
-(286, 'b@gmail.com', 'atencion', '1 : 40', 0.75, '', 1, 3),
-(287, 'b@gmail.com', 'atencion', '2 : 38', 0.75, '', 1, 3),
-(288, 'b@gmail.com', 'atencion', '0 : 37', 1, '', 1, 3),
-(289, 'b@gmail.com', 'atencion', '47 : 5', 1, '', 2, 3),
-(290, 'b@gmail.com', 'atencion', '1 : 17', 0.5, '', 2, 3),
-(291, 'b@gmail.com', 'atencion', '10 : 31', 0.75, '', 3, 3),
-(292, 'b@gmail.com', 'atencion', '11 : 30', 0.75, '', 3, 3),
-(293, 'b@gmail.com', 'atencion', '3 : 10', 1, '', 3, 3),
-(294, 'b@gmail.com', 'atencion', '8 : 39', 0.75, '', 4, 3),
-(295, 'b@gmail.com', 'atencion', '9 : 55', 1, '', 4, 3),
-(296, 'b@gmail.com', 'atencion', '0 : 20', 1, '', 5, 3),
-(297, 'b@gmail.com', 'atencion', '12 : 56', 1, '', 1, 4),
-(298, 'b@gmail.com', 'atencion', '5 : 5', 1, '', 4, 3),
-(299, 'b@gmail.com', 'atencion', '16 : 54', 1, '', 5, 3),
-(300, 'b@gmail.com', 'atencion', '0 : 58', 1, '', 1, 3),
-(301, 'b@gmail.com', 'atencion', '0 : 57', 1, '', 1, 3);
+(302, 'b@gmail.com', 'atencion', '1 : 6', 1, '', 1, 1),
+(303, 'b@gmail.com', 'matematicas', '0 : 32', 1.5, '', 1, 1),
+(304, 'b@gmail.com', 'memoria', '0 : 39', 0.75, '', 1, 1),
+(305, 'b@gmail.com', 'atencion', '0 : 7', 1, '', 2, 1),
+(306, 'b@gmail.com', 'matematicas', '0 : 23', 1.5, '', 2, 1),
+(307, 'b@gmail.com', 'memoria', '0 : 29', 1, '', 2, 1),
+(308, 'bc@gmail.com', 'atencion', '0.30', 1, '', 1, 1),
+(309, 'bc@gmail.com', 'memoria', '030', 1, '', 1, 1),
+(310, 'bc@gmail.com', 'matematicas', '0:30', 1.5, '', 1, 1),
+(311, 'bc@gmail.com', 'atencion', '0.30', 0.75, '', 2, 1),
+(312, 'bc@gmail.com', 'memoria', '0:30', 0.5, '', 2, 1),
+(313, 'bc@gmail.com', 'matematicas', '0.30', 3, '', 2, 1),
+(314, 'bc@gmail.com', 'atencion', '0.30', 1, '', 3, 2),
+(315, 'bc@gmail.com', 'memoria', '0.30', 1, '', 3, 2),
+(316, 'bc@gmail.com', 'matematicas', '0.30', 3, '', 3, 2),
+(317, 'b@gmail.com', 'atencion', '1 : 45', 1, '', 3, 1),
+(318, 'b@gmail.com', 'matematicas', '1 : 31', 2.25, '', 3, 1),
+(319, 'b@gmail.com', 'memoria', '0 : 46', 1, '', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -676,7 +562,7 @@ INSERT INTO `users` (`email`, `nombre`, `apellido`, `genero`, `edad`, `grado`, `
 ('admin3@gmail.com', 'Diego Andres', 'Carranza Rivera', 'M', '21', '', '123', 2),
 ('andreyfanton@hotmail.com', 'Yeison Andrey', 'Gomez Rubio', 'M', '16', '', '$2y$10$7sR986.TNET17X8ybtRvCeu2xJyLaWcSp4tqOhwSe4uEmX4SZYiUy', 3),
 ('b@gmail.com', 'Bernardo ', 'Bermudez', 'M', '12', 'sexto', '123', 3),
-('bc@gmail.com', 'Bernardo ', 'Delgado', 'M', '13', '6', '$2y$10$Eo5NJ61JaQCOj0OEOuA8Ee8zVMpL0kHNWbJIefiSH2/BvuScOVCGq', 3),
+('bc@gmail.com', 'Bernardo ', 'Delgado', 'F', '13', 'septimo', '$2y$10$Eo5NJ61JaQCOj0OEOuA8Ee8zVMpL0kHNWbJIefiSH2/BvuScOVCGq', 3),
 ('cn@gmail.com', 'Camilo', 'Novoa', 'F', '18', '', '$2y$10$CBt6tL/UXxQnJw1D99flAOaWyR8JkVZi1dJO/.GJu6e8K0IBSI9la', 2),
 ('correo@mail.com\n', 'pepe\n', 'apellido\n', 'hombre\n', '12\n', 'septimo\n', '1234\n', 3),
 ('diacarri@hotmail.com', 'andres', 'carranza', 'M', '15', '6', '$2y$10$4qoCnaDxPfBTGf8aQ4yf.eSc97ZkzKIe2J40nvgM5O2yEq8JPdTJ2', 3),
@@ -733,7 +619,7 @@ ALTER TABLE `control`
 -- AUTO_INCREMENT de la tabla `resultado`
 --
 ALTER TABLE `resultado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=302;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=320;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

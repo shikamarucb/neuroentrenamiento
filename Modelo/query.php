@@ -70,6 +70,11 @@
                   '".$dia."','".$semana."');");      
         }
 
+        public function getResult($table, $conexion, $email, $dia, $semana){
+            return $conexion->query("SELECT * FROM ".$table." where usuario_correo='".$email."'
+                    and dia=".$dia." and semana =".$semana." ;");
+        }
+
         public function getResultByWeek($table, $conexion, $email, $semana){
           return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' AND semana=".$semana.";");
         }

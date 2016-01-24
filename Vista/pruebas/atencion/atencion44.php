@@ -1,3 +1,15 @@
+<?php
+    include_once ("../../../Controlador/permisos.php");
+    session_start();
+    $permiso=new Permisos();    
+    if($permiso->verificarUser()){ 
+      if($permiso->accederPruebas("atencion")){ 
+        date_default_timezone_set("America/Bogota");
+        $fechaIn= date("Y-m-d");
+        $inicio=microtime(true);
+        $_SESSION['tIni']=$inicio;
+        $_SESSION['Ufecha']=$fechaIn;  
+?>
 <!doctype html>
 <html>
 <head>
@@ -8,13 +20,6 @@
     <title>Atención</title>
 </head>
 <body>
-<?php
-    session_start();
-    date_default_timezone_set("America/Bogota");
-    $fechaIn= date("Y-m-d");
-    $inicio=microtime(true);
-    $_SESSION['tIni']=$inicio;
-?>
 <nav id="navi">
     <div id="title">
         <h1>Neuroentrenamiento</h1>
@@ -22,7 +27,6 @@
     <div id="menu">
         <ul>
             <li><a href="index.html">Prueba</a></li>
-            <li><a href="contact.html">Contacto</a></li>
             <li><a href="login.html">Progreso</a></li>
             <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
         </ul>
@@ -73,3 +77,7 @@
 
 </body>
 </html>
+<?php
+  }
+}
+?>
