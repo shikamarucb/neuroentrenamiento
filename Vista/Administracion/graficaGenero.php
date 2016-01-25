@@ -124,7 +124,6 @@
                 mostrarM=atencionM;
             }
             
-            alert(mostrarH);
             establecerVec();
             ggg();
             
@@ -168,32 +167,6 @@
             
         }
         
-		/*var lineChartData = {
-			labels : ["Dia 1","Dia 2","Dia 3","Dia 4","Dia 5"],
-			datasets : [
-				{
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(220,220,220,1)",
-					data : mostrarH
-				},
-				{
-					label: "Atencion",
-					fillColor : "rgba(151,187,205,0.2)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : mostrarM
-				}
-			]
-
-		}*/
     atent();
 
 	function ggg(){
@@ -207,8 +180,6 @@
 		var myLineChart = new Chart(ctx).Line(lineChartData, {
 			pointDot : true,
 		});
-        
-        
         
 	}
 	</script>
