@@ -79,8 +79,8 @@
                             memoria.push(datos[i].memoria);
                             matematicas.push(datos[i].matematicas);
                         }
-                      //window.alert(datos[0].matematicas);
-                     }
+                        alert(data);
+                    }
                    }
                 )	    	
 	    	
