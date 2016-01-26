@@ -4,13 +4,14 @@ include_once ("query.php");
 class Usuario{
     
     private $table="users";
-   // private $roll=3;
+   
 //funciones para hacer el CRUD de los usuarios registrados... los culaes tienen un roll de categoria 3.
     public function addUser($conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password){
         $roll=3;
+        $active=0;
         $query=new Query();
         $query->add($this->table,$conexion,$email,$nombre,$apellido,
-                    $edad,$genero,$grado,$password,$roll);
+                    $edad,$genero,$grado,$password,$roll, $active);
     }    
     public function getUser($conexion, $email, $password){
         $query=new Query();
@@ -36,6 +37,16 @@ class Usuario{
     public function getUsersByEmail($conexion,$email){
         $query=new Query();
         return $query->getUsersByEmail($this->table,$conexion,$email);
+    }
+
+    public function activarUsuario($conexion, $email){//funcion para activar los usuarios para que puedan ingresar
+        $query=new Query();
+        $query->activarUsuario($this->table,$conexion, $email);
+    }
+
+    public function updPassword($conexion, $email, $password){
+        $query=new Query();
+        $query->updPass($this->table, $conexion, $email, $password);        
     }
 
     //funciones para hacer el CRUD de los administradores registrados...Los culaes tienen un roll de categoria 2 y pertenecen a la misma tabla de usuarios

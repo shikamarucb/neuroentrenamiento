@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2016 a las 17:38:26
+-- Tiempo de generación: 26-01-2016 a las 06:31:15
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `cartilla`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `activacion`
+--
+
+CREATE TABLE IF NOT EXISTS `activacion` (
+  `id` int(10) unsigned NOT NULL,
+  `codigo` varchar(30) NOT NULL,
+  `users_email` varchar(70) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `activacion`
+--
+
+INSERT INTO `activacion` (`id`, `codigo`, `users_email`) VALUES
+(1, 'asdasdasd', 'c@gmail.com'),
+(2, '816345838e9e630723f1003bec8f23', 'd@gmail.com'),
+(3, 'fca8cb380e7fa41b9ebea74af826a9', 'e@gmail.com'),
+(4, '7ae6b32131e73a103ce28da224c2e3', 'andreyfanton@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -448,29 +470,19 @@ CREATE TABLE IF NOT EXISTS `control` (
   `contador_actividad` int(10) unsigned NOT NULL,
   `users_email` varchar(70) NOT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `control`
 --
 
 INSERT INTO `control` (`id`, `dia_usuario`, `semana_usuario`, `contador_actividad`, `users_email`, `fecha`) VALUES
-(4, 5, 2, 0, 'admin@gmail.com', '0000-00-00'),
-(9, 5, 1, 0, 'diacarri@hotmail.com', '0000-00-00'),
-(10, 3, 1, 0, 'cb@gmail.com', '0000-00-00'),
 (11, 2, 2, 0, 'bc@gmail.com', '0000-00-00'),
-(12, 3, 1, 0, 'estudiante1@gmail.com', '0000-00-00'),
-(13, 2, 1, 0, 'j.alejadro96@outlok.com', '0000-00-00'),
-(14, 2, 1, 0, 'usuario@hotmail.com', '0000-00-00'),
-(15, 2, 1, 0, 'charly199308@outlook.com', '0000-00-00'),
-(16, 2, 1, 0, 'YK_1126@HOTMAIL.COM', '0000-00-00'),
-(17, 1, 1, 0, 'ABGGH@HOTMAIL.COM', '0000-00-00'),
-(18, 2, 1, 0, 'jesus.andres1996@hotmail.com', '0000-00-00'),
-(19, 6, 1, 0, 'andreyfanton@hotmail.com', '0000-00-00'),
-(20, 1, 1, 0, 'yandrey.yg@gmail.com', '0000-00-00'),
-(21, 1, 1, 0, 'raul2010@gmail.com', '0000-00-00'),
-(22, 1, 1, 0, 'a@gmail.com\n', '0000-00-00'),
-(23, 4, 1, 0, 'b@gmail.com', '2016-01-23');
+(23, 4, 1, 0, 'b@gmail.com', '2016-01-23'),
+(24, 1, 1, 0, 'c@gmail.com', '0000-00-00'),
+(25, 1, 1, 0, 'd@gmail.com', '0000-00-00'),
+(26, 1, 1, 0, 'e@gmail.com', '0000-00-00'),
+(27, 1, 1, 0, 'andreyfanton@hotmail.com', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -548,33 +560,33 @@ CREATE TABLE IF NOT EXISTS `users` (
   `edad` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   `grado` varchar(35) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
-  `roll` int(10) unsigned NOT NULL
+  `roll` int(10) unsigned NOT NULL,
+  `active` int(2) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`email`, `nombre`, `apellido`, `genero`, `edad`, `grado`, `password`, `roll`) VALUES
-('ABGGH@HOTMAIL.COM', 'Andrea', 'Arias', 'M', '41', 'septimo', '$2y$10$oadou60Mtb42lqSiR5bECuJIcramznNVySjjn/1zHOOCxMWF9IOEu', 3),
-('admin@gmail.com', 'admin', 'administrador', 'F', '40', '6', '123', 1),
-('admin2@gmail.com', 'Yeison Andrey', 'Gomez Rubio', 'M', '23', '', '$2y$10$ya7oiYJfHVphn7HsxjvrVORqbcmqtBJ5xFV6h0uPIdGkAjEo3SP4K', 2),
-('admin3@gmail.com', 'Diego Andres', 'Carranza Rivera', 'M', '21', '', '123', 2),
-('andreyfanton@hotmail.com', 'Yeison Andrey', 'Gomez Rubio', 'M', '16', '', '$2y$10$7sR986.TNET17X8ybtRvCeu2xJyLaWcSp4tqOhwSe4uEmX4SZYiUy', 3),
-('b@gmail.com', 'Bernardo ', 'Bermudez', 'M', '12', 'sexto', '123', 3),
-('bc@gmail.com', 'Bernardo ', 'Delgado', 'F', '13', 'septimo', '$2y$10$Eo5NJ61JaQCOj0OEOuA8Ee8zVMpL0kHNWbJIefiSH2/BvuScOVCGq', 3),
-('cn@gmail.com', 'Camilo', 'Novoa', 'F', '18', '', '$2y$10$CBt6tL/UXxQnJw1D99flAOaWyR8JkVZi1dJO/.GJu6e8K0IBSI9la', 2),
-('correo@mail.com\n', 'pepe\n', 'apellido\n', 'hombre\n', '12\n', 'septimo\n', '1234\n', 3),
-('diacarri@hotmail.com', 'andres', 'carranza', 'M', '15', '6', '$2y$10$4qoCnaDxPfBTGf8aQ4yf.eSc97ZkzKIe2J40nvgM5O2yEq8JPdTJ2', 3),
-('j.alejadro96@outlok.com', 'alejandro', 'camacho', 'M', '18', '6', '$2y$10$OKsZ/Q1V5hgyuF7ttvG59etKPQN9cUIP0C6rsCNIqS2eI7hfn1cEG', 3),
-('jesus.andres1996@hotmail.com', 'jesu andres', 'castellanos aguilar', 'M', '19', '11', '$2y$10$Nq0.A7AboVGuYh60K1YCwOWd4VUXJ7gAQPvhn27sqeuNERrcZyTUW', 3),
-('usuario@hotmail.com', 'usuario', 'usuario', 'M', '15', '11', '$2y$10$cDKFZEq3GfjFn/WQdBLgROu2C.gMBwLFNZHfZckHmSCW0aBjEWhSO', 3),
-('YK_1126@HOTMAIL.COM', 'Yurani', 'Riaño', 'F', '19', '11', '$2y$10$mbCRHfYAcm3gKRioxfO7BO.7P7J/tpUco.aEYtDflCwhRNiJFt.a2', 3),
-('zapata@gmail.com', 'zapata', 'zapata', 'M', '12', 'sexto', '123', 3);
+INSERT INTO `users` (`email`, `nombre`, `apellido`, `genero`, `edad`, `grado`, `password`, `roll`, `active`) VALUES
+('admin@gmail.com', 'admin', 'administrador', 'F', '40', '6', '123', 1, 0),
+('admin3@gmail.com', 'Diego Andres', 'Carranza Rivera', 'M', '21', '', '123', 2, 0),
+('andreyfanton@hotmail.com', 'fernando', 'fernandez', 'M', '11', 'sexto', '123', 3, 0),
+('b@gmail.com', 'Bernardo ', 'Bermudez', 'M', '12', 'sexto', '123', 3, 1),
+('bc@gmail.com', 'Bernardo ', 'Delgado', 'F', '13', 'septimo', '$2y$10$Eo5NJ61JaQCOj0OEOuA8Ee8zVMpL0kHNWbJIefiSH2/BvuScOVCGq', 3, 1),
+('c@gmail.com', 'Camila', 'Cifuentes', 'M', '11', 'sexto', '123', 3, 0),
+('d@gmail.com', 'Danilo', 'delagado', 'M', '11', 'sexto', '123', 3, 0),
+('e@gmail.com', 'elena', 'enao', 'M', '12', 'sexto', '321', 3, 1);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `activacion`
+--
+ALTER TABLE `activacion`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `actividad`
@@ -611,10 +623,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `activacion`
+--
+ALTER TABLE `activacion`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT de la tabla `control`
 --
 ALTER TABLE `control`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `resultado`
 --

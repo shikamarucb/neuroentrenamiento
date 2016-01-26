@@ -50,7 +50,7 @@
                     url:'../../Controlador/graficar.php?value=curso',
                     data:{semana:semana},
                     type: 'post',
-                    success: function (data){ 
+                    success: function (data){                     	
                         atencion=new Array(new Array());
                         memoria=new Array(new Array());
                         matematicas=new Array(new Array());

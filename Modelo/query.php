@@ -2,21 +2,21 @@
     include_once ("conexion.php");
     class Query{
         //funciones para el manejo de usuarios
-        public function add($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password,$roll){  //funcion para el register      
+        public function add($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$grado,$password,$roll,$active){  //funcion para el register      
             $conexion->query("INSERT into ".$table." values ('".$email."','".$nombre."','".
                          $apellido."','".$genero."','".$edad."','".$grado."','".
-                             $password."','".$roll."');");
+                             $password."','".$roll."', '".$active."');");
         }
 
         public function addAdmin($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$password,$roll){  //funcion para el register      
-            $conexion->query("INSERT into ".$table." (email, nombre, apellido, genero, edad, password, roll)
+            $conexion->query("INSERT into ".$table." (email, nombre, apellido, genero, edad, password, roll, active)
                         values ('".$email."','".$nombre."','".
-                        $apellido."','".$genero."','".$edad."','".$password."','".$roll."');");
+                        $apellido."','".$genero."','".$edad."','".$password."','".$roll."', '1');");
         }
         
         public function get($table,$email,$password,$conexion){//funcion para el logueo
             return $conexion->query("SELECT * from ".$table." where email = '".$email."'
-                               AND password = '".$password."';");            
+                               AND password = '".$password."' AND active=1;");            
         }
 
         public function upUser($table,$conexion,$email,$nombre,$apellido,$edad,$genero,$grado){//actualiza un usuario seleccionado desde el dashboard del admin
@@ -37,17 +37,35 @@
             return $conexion->query("SELECT * from ".$table." where roll=".$roll." order by nombre ;");            
         }
 
-        public function getUsersByEmail($table,$conexion,$email){//obtiene un usuario  o administrador unicamente por su email,  utilizado para el dashboard y 
+        public function getUsersByEmail($table,$conexion,$email){//obtiene un usuario  o administrador unicamente por su email
             return $conexion->query("SELECT * from ".$table." where  email = '".$email."';");            
+        }
+
+        public function activarUsuario($table,$conexion, $email){//funcion para activar los usuarios que verifiquen el correo
+            $conexion->query("UPDATE ".$table." SET active=1 where email='".$email."';");
+        }
+
+        public function updPass($table, $conexion, $email, $password){
+            $conexion->query("UPDATE ".$table." SET password='".$password."' where email='".$email."';");
         }
 
         //Funciones para el manejo de la tabla control 
         public function addControl($conexion, $table, $users_email){            
-             $conexion->query("INSERT into ".$table." values (1 , 1, 0, '".$users_email."');");
+             $conexion->query("INSERT into ".$table." (dia_usuario, semana_usuario, contador_actividad, users_email, fecha)
+                        values (1 , 1, 0, '".$users_email."', '0000-00-00');");
         } 
 
         public function getControl($table,$email,$conexion){
             return $conexion->query("SELECT * from ".$table." where users_email = '".$email."';");        
+        }
+        //manejo de la tabla activacion
+
+        public function addActive($table, $conexion,$email,$codigo){            
+             $conexion->query("INSERT into ".$table." (codigo, users_email) values ('".$codigo."','".$email."');");
+        } 
+
+        public function getActive($table,$conexion,$email, $codigo){
+            return $conexion->query("SELECT * from ".$table." where users_email=".$email." AND codigo = '".$codigo."';");
         }
 
         //funciones para el manejo de la tabla Actividad

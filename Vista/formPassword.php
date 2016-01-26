@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="main.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Jura:600,400,500|Exo+2:400,500' rel='stylesheet' type='text/css'>
+    <script language="Javascript" type="text/javascript" src="js/passwords.js"></script>
     <title>Plantilla</title>
 </head>
 <body>
@@ -23,7 +24,7 @@
     
 <div id="cont1L">
     <div><br><br>
-        <h1>Iniciar Sesión</h1><br>
+        <h1>Recuperar contraseña</h1><br>
         <p>Se fugiat mandaremus tractavissent ita est quem dolor fugiat cupidatat, qui 
             illum tempor sempiternum, est se fugiat tempor. 
         </p>
@@ -39,14 +40,14 @@
             cernantur fore veniam o anim
         </p>
     </div>
-    
     <div id="cont1L2">
-        <form name="login" action="../Controlador/userController.php?value=loguear" method="POST">
-            <input type="email" placeholder="Email" name="email" required><br>
-            <input type="password" placeholder="Constraseña" name="password" required><br><br>            
-            <button type="submit">Iniciar Sesión</button>            
-        </form>
-        <a href="formRecuperar.html">¿Olvidaste tu contraseña?</a>
+        <form name="login" action="../Controlador/userController.php?value=restablecer" method="POST">
+            <?php  $email=mysql_real_escape_string($_GET['email']);?>
+            <input type="hidden" value="<?php echo $email ?>" name="email"><br>
+            <input type="password" placeholder="Nueva Contraseña" name="password" required><br>
+            <input type="password" placeholder="Repetir Contraseña" name="password2" required><br><br>           
+            <button type="submit" onclick="return compara();">Restablecer</button>            
+        </form>        
     </div>
 </div>
 
