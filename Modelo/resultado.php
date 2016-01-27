@@ -35,6 +35,11 @@ class Resultado{
         $query=new Query();
         return $query->getResultByCourse($conexion, $semana);
     }
+
+    public function getResultByEmail($conexion, $email){
+        $query=new Query();
+        return $query->getResultByEmail($this->table,$conexion, $email);
+    }
     
 }
 ?>

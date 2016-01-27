@@ -1,6 +1,7 @@
 <?php
     include_once ("../../Modelo/usuario.php");
     include_once ("../../Modelo/control.php");
+    include_once ("../../Modelo/resultado.php");
     include_once ("../../Modelo/conexion.php");
 
    class UsuariosAdmin{
@@ -28,6 +29,13 @@
             $datos=new Control($email);
             return $datos->getControl($conexion);
             
+        }
+        public function getTimes($email){
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar(); 
+
+            $resultados=new Resultado();
+            return $resultados->getResultByEmail($conexion, $email);                  
         }
                     
     }    

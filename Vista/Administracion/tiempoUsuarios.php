@@ -78,7 +78,7 @@
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Correo</th>
-              <th>Manejo</th>
+              <th>Consultar</th>
            </thead>
            <tbody>
              <?php
@@ -90,7 +90,7 @@
                    <td><?php echo utf8_encode($usuario['apellido']); ?></td>
                    <td><?php echo utf8_encode($usuario['email']); ?></td>
                    <td>                      
-                       <a href="modUsuarios.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Editar</a>                       
+                       <a href="timeForUser.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Consultar</a>                       
                    </td>
                    </tbody>
               <?php                 

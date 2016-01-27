@@ -1,9 +1,3 @@
-<?php
-    include_once ("../../Controlador/permisosAdmins.php");
-    session_start();
-    $permiso=new PermisosAdmins();    
-    if($permiso->verificarAdmin()){    
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -57,8 +51,7 @@
                             <a href="#"><i class="fa fa-indent nav_icon"></i>Resultados<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="menuGraficas.php">Gráficas</a>
-                                    <a href="tiempoUsuarios.php">Tiempos de las pruebas</a>                                     
+                                    <a href="/tipo">Gráficas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -71,33 +64,58 @@
         </nav>
         <div id="page-wrapper">
         <div class="graphs">  
-           <strong>Usuarios Registrados </strong>  
+           <strong>Tiempo en las preubas</strong>  
         </div>
-          <table class="table">
-           <thead>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Correo</th>
-              <th>Manejo</th>
-           </thead>
-           <tbody>
-             <?php
-              include_once ("../../Controlador/usuariosAdmin.php");
-              $usuarios=new UsuariosAdmin();
-              $datos=$usuarios->listar();                                                     
-                  foreach ($datos as $usuario) { ?>
-                   <td><?php echo utf8_encode($usuario['nombre']);?></td>
-                   <td><?php echo utf8_encode($usuario['apellido']); ?></td>
-                   <td><?php echo utf8_encode($usuario['email']); ?></td>
-                   <td>                      
-                       <a href="modUsuarios.php?email=<?php echo urlencode($usuario['email']);?>" class="btn btn-primary">Editar</a>                       
-                   </td>
-                   </tbody>
-              <?php                 
-                 }                               
-               ?>                    
-          </table>
-        </div>
+             <?php 
+               include_once ("../../Controlador/usuariosAdmin.php");
+                $usuario=new UsuariosAdmin();                 
+                $email=mysql_real_escape_string($_GET["email"]);
+                $datos=$usuario->getUserByEmail($email);
+                foreach ($datos as $dato) {
+                  $nombre=utf8_encode($dato['nombre']);
+                  $apellido=utf8_encode($dato['apellido']);
+                  $edad=$dato['edad'];
+                  $genero=$dato['genero'];
+                  $curso=$dato['grado'];                  
+                }
+                $resultados=$usuario->getTimes($email);
+                $datos=$resultados->fetch_all(MYSQLI_ASSOC);                
+             ?>        
+          <div>
+            <label>Nombre: </label>
+            <label><?php echo  utf8_encode($nombre); ?> </label><br><br>
+            <label>Apellido:  </label>
+            <label><?php echo  utf8_encode($apellido); ?></label><br><br>
+            <label>Edad: </label>
+            <label><?php echo $edad ?></label><br><br>                                  
+            <label>Curso: </label>
+            <label><?php echo $curso ?></label><br><br>                                                       
+          </div><br><br>
+          <div>
+            <a href="tiempoUsuarios.php">Volver</a>
+            <table class="table">
+                <thead>                    
+                    <th>Prueba</th>
+                    <th>Dia</th>
+                    <th>Semana</th>
+                    <th>Tiempo (min:seg)</th>
+                    <th>Puntuacion</th>
+                </thead>
+                <tbody><?php
+                          foreach ($datos as $dato) {?>
+                                <td><?php echo $dato['prueba_tipo'] ?></td>
+                                <td><?php echo $dato['dia'] ?></td>
+                                <td><?php echo $dato['semana'] ?></td>
+                                <td><?php echo $dato['tiempo'] ?></td>
+                                <td><?php echo $dato['puntaje_usuario'] ?></td>
+                </tbody>
+                        <?php  
+                            }                    
+                        ?>
+                
+            </table>
+          </div>          
+
     <!-- /#wrapper -->
     <!-- Nav CSS -->
 <link href="vistaAdmin/css/custom.css" rel="stylesheet" type="text/css">
@@ -107,6 +125,3 @@
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/bootstrap.min.js"></script>
 </body>
 </html>
-<?php
-}
-?>

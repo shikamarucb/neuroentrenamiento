@@ -114,6 +114,10 @@
                                    inner join users on resultado.usuario_correo=users.email And semana=".$semana."
                                     group by grado,dia,prueba_tipo order by grado;");
         }
+
+        public function getResultByEmail($table,$conexion, $email){
+            return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' order by semana;");
+        }
         
     }
 ?>
