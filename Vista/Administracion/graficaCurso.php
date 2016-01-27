@@ -50,13 +50,18 @@
                     url:'../../Controlador/graficar.php?value=curso',
                     data:{semana:semana},
                     type: 'post',
-                    success: function (data){                     	
-                        atencion=new Array(new Array());
-                        memoria=new Array(new Array());
-                        matematicas=new Array(new Array());
+                    success: function (data){
+                        alert(data);
+                        atencion=new Array();
+                        memoria=new Array();
+                        matematicas=new Array();
                         datos=JSON.parse(data);
                         var k=0;
                         for(var i in datos){
+                            
+                            memoria[k]=new Array();
+                            matematicas[k]=new Array();
+                            atencion[k]=new Array();
                             
                             for(var j=0;j<datos[i].length;j++){
                                 if(datos[i][j].memoria!=null){
@@ -73,7 +78,7 @@
                             }
                             k++;
                         }  
-                        alert(data);
+                        
                         pruebaG();
                      }
                    }
@@ -103,6 +108,7 @@
                 mostrarr=memoria;
             }
            
+            alert(memoria[0]);
             establecerVec();
             ggg();
         }
@@ -124,9 +130,9 @@
 				},
                 {
 					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					fillColor : "rgba(255,0,0,0.7)",
+					strokeColor : "rgba(255,0,0,0.7)",
+					pointColor : "rgba(255,0,0,0.7)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
