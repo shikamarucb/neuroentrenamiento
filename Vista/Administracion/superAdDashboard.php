@@ -54,7 +54,8 @@
                             <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a>                              
+                            <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a> 
+                            <a href="../../Controlador/backup.php"><i class="fa fa-indent nav_icon"></i>Generar Backup de la base de datos</a>                              
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>

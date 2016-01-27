@@ -14,6 +14,10 @@ class Activacion{
     	$query=new Query();
         return $query->getActive($this->table,$conexion,$email, $codigo);
     }
+    public function deleteActive($conexion, $email){
+    	$query=new Query();
+        $query->deleteActive($this->table,$conexion,$email);
+    }
 
 
 }

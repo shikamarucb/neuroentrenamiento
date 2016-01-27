@@ -40,6 +40,11 @@ class Resultado{
         $query=new Query();
         return $query->getResultByEmail($this->table,$conexion, $email);
     }
+
+    public function deleteResult($conexion, $email){
+        $query=new Query();
+        $query->deleteResult($conexion, $this->table, $email);
+    }
     
 }
 ?>

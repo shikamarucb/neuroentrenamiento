@@ -27,6 +27,10 @@ class Control{
         $conexion->query("UPDATE ".$this->table." SET dia_usuario=".$dia.", semana_usuario=".$semana.",
                          contador_actividad=".$contador.", fecha='".$fecha."'  where users_email='".$this->users_email."';");
     }
+    public function deleteControl($conexion){
+        $query=new Query();
+        $query->deleteControl($conexion, $this->table, $this->users_email);
+    }
     
 }
 ?>

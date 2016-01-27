@@ -58,6 +58,10 @@
         public function getControl($table,$email,$conexion){
             return $conexion->query("SELECT * from ".$table." where users_email = '".$email."';");        
         }
+
+        public function deleteControl($conexion, $table, $email){
+            $conexion->query("DELETE from ".$table." where users_email='".$email."';");
+        }
         //manejo de la tabla activacion
 
         public function addActive($table, $conexion,$email,$codigo){            
@@ -66,6 +70,10 @@
 
         public function getActive($table,$conexion,$email, $codigo){
             return $conexion->query("SELECT * from ".$table." where users_email=".$email." AND codigo = '".$codigo."';");
+        }
+
+        public function deleteActive($table,$conexion,$email){
+           $conexion->query("DELETE from ".$table." where users_email='".$email."';");
         }
 
         //funciones para el manejo de la tabla Actividad
@@ -117,6 +125,10 @@
 
         public function getResultByEmail($table,$conexion, $email){
             return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' order by semana;");
+        }
+
+        public function deleteResult($conexion, $table, $email){
+            $conexion->query("DELETE from ".$table." where usuario_correo='".$email."';");
         }
         
     }

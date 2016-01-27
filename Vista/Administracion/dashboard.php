@@ -84,6 +84,7 @@
              <?php
               include_once ("../../Controlador/usuariosAdmin.php");
               $usuarios=new UsuariosAdmin();
+              $usuarios->actividadUsuarios();
               $datos=$usuarios->listar();                                                     
                   foreach ($datos as $usuario) { ?>
                    <td><?php echo utf8_encode($usuario['nombre']);?></td>
