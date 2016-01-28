@@ -41,7 +41,7 @@
               echo "semana: ".$semana; 
             ?>
             <li><a href="#">Prueba</a></li>            
-            <li><a href="progreso.html">Progreso</a></li>
+            <li><a href="miGrafica.php">Progreso</a></li>
             <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
         </ul>
         <div><li>Bienvenido:  <?php echo $nombre ?></li></div>

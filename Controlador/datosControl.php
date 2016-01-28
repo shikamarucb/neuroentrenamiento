@@ -15,20 +15,7 @@
             
         }
 
-        public function finalizar($tipo){
-            switch ($tipo) {
-                case 'atencion':
-                    
-                    break;
-                case 'memoria':
-                    # code...
-                    break;
-                case 'matematicas':
-                    # code...
-                    break;
-                
-            }
-        }
+        
                     
     }    
 ?>
