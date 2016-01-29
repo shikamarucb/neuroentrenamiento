@@ -29,6 +29,7 @@
            </select>                     
     </div>
 		<div style="width:100%">
+            <div style="text-align:center;"><img src="imagenes/leySexo.svg"></div>
 			<div style="margin: 0 auto; width:800px;" id="divContGr">
 				<canvas id="canvas" height="600" width="800" style="margin 0 auto;"></canvas>
 			</div>

@@ -28,10 +28,12 @@
            </select>                     
     </div>
 		<div style="width:100%">
+            <div style="text-align:center;"><img src="imagenes/leyEdad.svg"></div>
 			<div style="margin: 0 auto; width:800px;" id="divContGr">
 				<canvas id="canvas" height="600" width="800" style="margin 0 auto;"></canvas>
 			</div>
-		</div>                      
+		</div>
+        
 	<script>
         var datos=[];
         var grado=[];
@@ -117,64 +119,95 @@
 			labels : ["Dia 1","Dia 2","Dia 3","Dia 4","Dia 5"],
 			datasets : [
 				{
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "11 Años",
+					fillColor : "rgba(0,0,255,0.4)",
+					strokeColor : "rgba(0,0,255,1)",
+					pointColor : "rgba(0,0,255,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[0]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "12 Años",
+					fillColor : "rgba(0,145,255,0.4)",
+					strokeColor : "rgba(0,145,255,1)",
+					pointColor : "rgba(0,145,255,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[1]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "13 Años",
+					fillColor : "rgba(0,207,255,0.4)",
+					strokeColor : "rgba(0,207,255,1)",
+					pointColor : "rgba(0,207,255,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[2]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "14 Años",
+					fillColor : "rgba(0,255,213,0.4)",
+					strokeColor : "rgba(0,255,213,1)",
+					pointColor : "rgba(0,255,213,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[3]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "15 Años",
+					label: "Decimo",
+					fillColor : "rgba(0,255,128,0.4)",
+					strokeColor : "rgba(0,255,128,1)",
+					pointColor : "rgba(0,255,128,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[4]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
+					label: "16 Años",
+					fillColor : "rgba(13,255,0,0.4)",
 					strokeColor : "rgba(13,255,0,1)",
 					pointColor : "rgba(13,255,0,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[5]
+				},
+                {
+					label: "17 Años",
+					fillColor : "rgba(204,255,0,0.4)",
+					strokeColor : "rgba(204,255,0,1)",
+					pointColor : "rgba(204,255,0,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : mostrarr[6]
+				},
+                {
+					label: "18 Años",
+					fillColor : "rgba(255,230,0,0.4)",
+					strokeColor : "rgba(255,230,0,1)",
+					pointColor : "rgba(255,230,0,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : mostrarr[7]
+				},
+                {
+					label: "19 Años",
+					fillColor : "rgba(255,153,0,0.4)",
+					strokeColor : "rgba(255,153,0,1)",
+					pointColor : "rgba(255,153,0,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",
+					data : mostrarr[8]
 				}
                 
 			]
