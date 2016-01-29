@@ -28,6 +28,7 @@
            </select>                     
     </div>
 		<div style="width:100%">
+            <div style="text-align:center;"><img src="imagenes/leyCurso.svg"></div>
 			<div style="margin: 0 auto; width:800px;" id="divContGr">
 				<canvas id="canvas" height="600" width="800" style="margin 0 auto;"></canvas>
 			</div>
@@ -119,58 +120,58 @@
 			labels : ["Dia 1","Dia 2","Dia 3","Dia 4","Dia 5"],
 			datasets : [
 				{
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "Sexto",
+					fillColor : "rgba(0,0,255,0.4)",
+					strokeColor : "rgba(0,0,255,1)",
+					pointColor : "rgba(0,0,255,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[0]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(255,0,0,0.7)",
-					strokeColor : "rgba(255,0,0,0.7)",
-					pointColor : "rgba(255,0,0,0.7)",
+					label: "Septimo",
+					fillColor : "rgba(0,145,255,0.4)",
+					strokeColor : "rgba(0,145,255,1)",
+					pointColor : "rgba(0,145,255,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[1]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "Octavo",
+					fillColor : "rgba(0,207,255,0.4)",
+					strokeColor : "rgba(0,207,255,1)",
+					pointColor : "rgba(0,207,255,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[2]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "Noveno",
+					fillColor : "rgba(0,255,213,0.4)",
+					strokeColor : "rgba(0,255,213,1)",
+					pointColor : "rgba(0,255,213,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[3]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
-					strokeColor : "rgba(13,255,0,1)",
-					pointColor : "rgba(13,255,0,1)",
+					label: "Decimo",
+					fillColor : "rgba(0,255,128,0.4)",
+					strokeColor : "rgba(0,255,128,1)",
+					pointColor : "rgba(0,255,128,1)",
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
 					data : mostrarr[4]
 				},
                 {
-					label: "Memoria",
-					fillColor : "rgba(13,255,0,0.2)",
+					label: "Once",
+					fillColor : "rgba(13,255,0,0.4)",
 					strokeColor : "rgba(13,255,0,1)",
 					pointColor : "rgba(13,255,0,1)",
 					pointStrokeColor : "#fff",
