@@ -45,19 +45,19 @@
             <p>De acuerdo al texto responde las siguientes preguntas. </p><br><br>
             <div id="divA1">
                 <label>1. ¿Qué palabra se repite dentro del círculo?</label><br>
-                <input type="text" name="r1"><br><br>
+                <input type="text" name="r1" required><br><br>
 
                 <label>2. ¿Cuántas veces se repite esta palabra?</label><br>
-                <input type="number" name="r2"><br><br>
+                <input type="number" name="r2" required><br><br>
 
                 <label>3. ¿Qué palabras se encuentran mal escritas, les faltan o les sobran letras?</label><br>
-                <input type="text" name="r3"><br><br>
+                <input type="text" name="r3" required><br><br>
 
                 <label>4. ¿Cuántas palabras finalizan en “ido” y están escritas correctamente?</label><br>
-                <input type="number" name="r4"><br><br>
+                <input type="number" name="r4" required><br><br>
                 
                 <label>5. ¿Cuántas palabras finalizan en “esa”?</label><br>
-                <input type="number" name="r5"><br><br>
+                <input type="number" name="r5" required><br><br>
             </div>
             
             <button id="subBA" type="submit">Enviar</button>

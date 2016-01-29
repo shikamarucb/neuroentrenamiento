@@ -63,23 +63,23 @@
             <table>
                 <tr>
                     <td class="td1">1.Anillo</td>
-                    <td class="td2"><input type="number" name="capital" min="1" max="5" style="width:7%;"><p>Es la capital del departamento de Nariño</p></td>
+                    <td class="td2"><input type="number" name="capital" min="1" max="5" style="width:7%;" required><p>Es la capital del departamento de Nariño</p></td>
                 </tr>
                 <tr>
                     <td class="td1">2.Pasto</td>
-                    <td class="td2"><input type="number" name="cuentos" min="1" max="5" style="width:7%;"><p>Aparecen en los cuentos de hadas y las niñas sueñan con uno al crecer.  </p></td>
+                    <td class="td2"><input type="number" name="cuentos" min="1" max="5" style="width:7%;" required><p>Aparecen en los cuentos de hadas y las niñas sueñan con uno al crecer.  </p></td>
                 </tr>
                 <tr>
                     <td class="td1">3.Tomate</td>
-                    <td class="td2"><input type="number" name="rojoAzul" min="1" max="5" style="width:7%;"><p>Es el resultado de la mezcla entre el color rojo y azul.</p></td>
+                    <td class="td2"><input type="number" name="rojoAzul" min="1" max="5" style="width:7%;" required><p>Es el resultado de la mezcla entre el color rojo y azul.</p></td>
                 </tr>
                 <tr>
                     <td class="td1">4.Morado</td>
-                    <td class="td2"><input type="number" name="compromiso" min="1" max="5" style="width:7%;"><p>Es un símbolo de compromiso.</p></td>
+                    <td class="td2"><input type="number" name="compromiso" min="1" max="5" style="width:7%;" required><p>Es un símbolo de compromiso.</p></td>
                 </tr>
                 <tr>
                     <td class="td1">5.Príncipes</td>
-                    <td class="td2"><input type="number" name="vegetal" min="1" max="5" style="width:7%;"><p>Vegetal de color rojo que se utiliza en las ensaladas.</p></td>
+                    <td class="td2"><input type="number" name="vegetal" min="1" max="5" style="width:7%;" required><p>Vegetal de color rojo que se utiliza en las ensaladas.</p></td>
                 </tr>
             </table><br><br><br><br>
             <button type="submit" >Enviar</button>

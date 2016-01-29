@@ -40,20 +40,20 @@
         <img src="../imagenes/a33A.png">
         <form style="text-align:center;" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion33" method="POST" autocomplete="off">
             <div>
-                <img src="../imagenes/b33A.png"><input type="number" style="width:8%;" name="1">
-                <img src="../imagenes/c33A.png"><input type="number" style="width:8%;" name="2">
-                <img src="../imagenes/d33A.png"><input type="number" style="width:8%;" name="3">
-                <img src="../imagenes/e33A.png"><input type="number" style="width:8%;" name="4">
+                <img src="../imagenes/b33A.png"><input type="number" style="width:8%;" name="1" required>
+                <img src="../imagenes/c33A.png"><input type="number" style="width:8%;" name="2" required>
+                <img src="../imagenes/d33A.png"><input type="number" style="width:8%;" name="3" required>
+                <img src="../imagenes/e33A.png"><input type="number" style="width:8%;" name="4" required>
             </div><br>
             <div>
-                <img src="../imagenes/f33A.png"><input type="number" style="width:8%;" name="5">
-                <img src="../imagenes/g33A.png"><input type="number" style="width:8%;" name="6">
-                <img src="../imagenes/h33A.png"><input type="number" style="width:8%;" name="7">
-                <img src="../imagenes/i33A.png"><input type="number" style="width:8%;" name="8">
+                <img src="../imagenes/f33A.png"><input type="number" style="width:8%;" name="5" required>
+                <img src="../imagenes/g33A.png"><input type="number" style="width:8%;" name="6" required>
+                <img src="../imagenes/h33A.png"><input type="number" style="width:8%;" name="7" required>
+                <img src="../imagenes/i33A.png"><input type="number" style="width:8%;" name="8" required>
             </div><br>
             <div>
-                <img src="../imagenes/j33A.png"><input type="number" style="width:8%;" name="9">
-                <img src="../imagenes/k33A.png"><input type="number" style="width:8%;" name="10">
+                <img src="../imagenes/j33A.png"><input type="number" style="width:8%;" name="9" required>
+                <img src="../imagenes/k33A.png"><input type="number" style="width:8%;" name="10" required>
             </div><br><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

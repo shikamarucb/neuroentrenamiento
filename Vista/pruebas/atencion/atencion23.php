@@ -40,10 +40,10 @@
         <p>A continuación encontrarás una serie de números que siguen una secuencia lógica. Escribe el número correspondiente en cada una de las casillas. </p><br><br>
         
         <form id="formA2" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion23" method="POST" autocomplete="off">
-            <h1><pre>1) 0         33         66         99 </pre></h1><input type="text" name="1"><br>
-            <h1><pre>2) 60         90         120         150 </pre></h1><input type="text" name="2"><br>
-            <h1><pre>3) 380         340         300         260 </pre></h1><input type="text" name="3"><br>
-            <h1><pre>4) 50         150         250         350 </pre></h1><input type="text" name="4"><br><br>
+            <h1><pre>1) 0         33         66         99 </pre></h1><input type="text" name="1" required><br>
+            <h1><pre>2) 60         90         120         150 </pre></h1><input type="text" name="2" required><br>
+            <h1><pre>3) 380         340         300         260 </pre></h1><input type="text" name="3" required><br>
+            <h1><pre>4) 50         150         250         350 </pre></h1><input type="text" name="4" required><br><br>
             
             <button id="subBA" type="submit">Enviar</button>
         </form>

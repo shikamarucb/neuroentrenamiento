@@ -10,7 +10,7 @@
   		$conexion=new Conexion();
   		$conexion=$conexion->conectar();
                     
-  	  $email=$_GET['email'];
+  	  $email=mysql_real_escape_string($_GET['email']);
   		$semana=$conexion->real_escape_string(strip_tags($_POST['semana']));
 
   		$resultado=new Resultado();
@@ -398,7 +398,7 @@
     
   }
 
-    $metodo=$_GET['value'];
+    $metodo=mysql_real_escape_string($_GET['value']);
     $metodo=array('Graficar',$metodo);
 
     if(is_callable($metodo,true,$llamar)){

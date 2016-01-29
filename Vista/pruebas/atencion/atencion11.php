@@ -111,12 +111,12 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11" name="1"></td>
-                    <td><input type="text" class="inpt11" name="2"></td>
-                    <td><input type="text" class="inpt11" name="3"></td>
-                    <td><input type="text" class="inpt11" name="4"></td>
-                    <td><input type="text" class="inpt11" name="5"></td>
-                    <td><input type="text" class="inpt11" name="6"></td>
+                    <td><input type="text" class="inpt11" name="1" required></td>
+                    <td><input type="text" class="inpt11" name="2" required></td>
+                    <td><input type="text" class="inpt11" name="3" required></td>
+                    <td><input type="text" class="inpt11" name="4" required></td>
+                    <td><input type="text" class="inpt11" name="5" required></td>
+                    <td><input type="text" class="inpt11" name="6" required></td>
                 </tr>
             </table><br><br>
             
@@ -129,11 +129,11 @@
                     <td>12</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11" name="7"></td>
-                    <td><input type="text" class="inpt11" name="8"></td>
-                    <td><input type="text" class="inpt11" name="9"></td>
-                    <td><input type="text" class="inpt11" name="10"></td>
-                    <td><input type="text" class="inpt11" name="11"></td>
+                    <td><input type="text" class="inpt11" name="7" required></td>
+                    <td><input type="text" class="inpt11" name="8" required></td>
+                    <td><input type="text" class="inpt11" name="9" required></td>
+                    <td><input type="text" class="inpt11" name="10" required></td>
+                    <td><input type="text" class="inpt11" name="11" required></td>
                 </tr>
             </table><br><br>
             
@@ -150,15 +150,15 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td><input type="text" class="inpt11" name="12"></td>
-                    <td><input type="text" class="inpt11" name="13"></td>
-                    <td><input type="text" class="inpt11" name="14"></td>
-                    <td><input type="text" class="inpt11" name="15"></td>
-                    <td><input type="text" class="inpt11" name="16"></td>
-                    <td><input type="text" class="inpt11" name="17"></td>
-                    <td><input type="text" class="inpt11" name="18"></td>
-                    <td><input type="text" class="inpt11" name="19"></td>
-                    <td><input type="text" class="inpt11" name="20"></td>
+                    <td><input type="text" class="inpt11" name="12" required></td>
+                    <td><input type="text" class="inpt11" name="13" required></td>
+                    <td><input type="text" class="inpt11" name="14" required></td>
+                    <td><input type="text" class="inpt11" name="15" required></td>
+                    <td><input type="text" class="inpt11" name="16" required></td>
+                    <td><input type="text" class="inpt11" name="17" required></td>
+                    <td><input type="text" class="inpt11" name="18" required></td>
+                    <td><input type="text" class="inpt11" name="19" required></td>
+                    <td><input type="text" class="inpt11" name="20" required></td>
                 </tr>
             </table><br><br>
             

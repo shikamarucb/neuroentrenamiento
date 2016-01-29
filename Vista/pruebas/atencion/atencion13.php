@@ -42,19 +42,19 @@
             <p>Responde las siguientes preguntas de acuerdo al texto anterior. </p><br><br>
             <div id="divA1">
                 <label>¿Quién trabaja la mayor parte del tiempo?</label><br>
-                <input type="text" name="r1"><br><br>
+                <input type="text" name="r1" required><br><br>
 
                 <label>¿Qué lugares visita la familia?</label><br>
-                <input type="text" name="r2"><br><br>
+                <input type="text" name="r2" required><br><br>
 
                 <label>¿Cuántos hijos tiene el protagonista?</label><br>
-                <input type="text" name="r3"><br><br>
+                <input type="text" name="r3" required><br><br>
 
                 <label>¿Cómo se llama la esposa del protagonista?</label><br>
-                <input type="text" name="r4"><br><br>
+                <input type="text" name="r4" required><br><br>
 
                 <label>¿Cuál es la profesión del protagonista?</label><br>
-                <input type="text" name="r5"><br><br>
+                <input type="text" name="r5" required><br><br>
             </div>
             
             <button id="subBA" type="submit">Enviar</button>

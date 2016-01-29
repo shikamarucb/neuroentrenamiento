@@ -69,7 +69,7 @@
              <?php 
                include_once ("../../Controlador/usuariosAdmin.php");
                 $usuario=new UsuariosAdmin();                 
-                $email=mysql_real_escape_string($_GET["email"]);
+                $email=mysql_real_escape_string(strip_tags($_GET["email"]));
                 $datos=$usuario->getUserByEmail($email);
                 foreach ($datos as $dato) {
                   $nombre=utf8_encode($dato['nombre']);

@@ -40,10 +40,10 @@
         <img src="../imagenes/a35A.png">
         <form style="text-align:center;" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion35" method="POST" autocomplete="off">
             <div>
-                <img src="../imagenes/b35A.png"><input type="number" style="width:8%;" name="1">
-                <img src="../imagenes/c35A.png"><input type="number" style="width:8%;" name="2">
-                <img src="../imagenes/d35A.png"><input type="number" style="width:8%;" name="3">
-                <img src="../imagenes/e35A.png"><input type="number" style="width:8%;" name="4">
+                <img src="../imagenes/b35A.png"><input type="number" style="width:8%;" name="1" required>
+                <img src="../imagenes/c35A.png"><input type="number" style="width:8%;" name="2" required>
+                <img src="../imagenes/d35A.png"><input type="number" style="width:8%;" name="3" required>
+                <img src="../imagenes/e35A.png"><input type="number" style="width:8%;" name="4" required>
             </div><br><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

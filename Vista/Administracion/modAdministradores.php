@@ -64,7 +64,7 @@
              <?php 
                include_once ("../../Controlador/administradores.php");
                 $admin=new Administradores();                 
-                $email=$_GET["email"];
+                $email=mysql_real_escape_string(strip_tags($_GET["email"]));
                 $datos=$admin->getAdminByEmail($email);
                 foreach ($datos as $dato) {
                   $nombre=utf8_encode($dato['nombre']);
