@@ -39,10 +39,10 @@
         <p>A continuación encuentras una serie de números que siguen una secuencia lógica. Deberás completar la secuencia escribiendo dentro de la casilla el número que corresponde a cada serie en cada una de las filas. </p><br><br>
         
         <form id="formA2" action="../../../Controlador/pruebas/atencionControlador.php?value=atencion45" method="POST" autocomplete="off">
-            <h1><pre>1) 852         807         762         717 </pre></h1><input type="text" name="1"><br>
-            <h1><pre>2) 3         12         48         192 </pre></h1><input type="text" name="2"><br>
-            <h1><pre>3) 158         474         1422         4266</pre></h1><input type="text" name="3"><br>
-            <h1><pre>4) 66         64         60         54 </pre></h1><input type="text" name="4"><br><br>
+            <h1><pre>1) 852         807         762         717 </pre></h1><input type="text" name="1" required><br>
+            <h1><pre>2) 3         12         48         192 </pre></h1><input type="text" name="2" required><br>
+            <h1><pre>3) 158         474         1422         4266</pre></h1><input type="text" name="3" required><br>
+            <h1><pre>4) 66         64         60         54 </pre></h1><input type="text" name="4" required><br><br>
             
             <button id="subBA" type="submit">Enviar</button>
         </form>

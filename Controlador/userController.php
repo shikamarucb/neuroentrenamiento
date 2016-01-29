@@ -44,9 +44,9 @@
         public function activar(){// funcion para activar la cuenta registrada.
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
-
-            $codigo=$conexion->real_escape_string(strip_tags($_GET['code']));
-            $email=$conexion->real_escape_string(strip_tags($_GET['email']));
+            
+            $codigo=mysql_real_escape_string(strip_tags($_GET['code']));
+            $email=mysql_real_escape_string(strip_tags($_GET['email']));
             $activar=new Activacion();
             $resultado=$activar->getActive($conexion, $email, $codigo);//se comprueba que el codigo de activacion enviado
             if($resultado->num_rows != 0){                             //corresponda al almacenado den la base de datos
@@ -204,7 +204,7 @@
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
-            $email=$_GET["email"];
+            $email=mysql_real_escape_string(strip_tags($_GET["email"]));
  
             $user=new Usuario();
             $user->deleteUser($conexion,$email);
@@ -216,7 +216,7 @@
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
-            $email=$_GET["email"];
+            $email=mysql_real_escape_string(strip_tags($_GET["email"]));
  
             $user=new Usuario();
             $user->deleteUser($conexion,$email);
@@ -227,7 +227,7 @@
         
     }
 
-    $metodo=$_GET['value'];
+    $metodo=mysql_real_escape_string(strip_tags($_GET['value']));
     $metodo=array('UsuarioC',$metodo);
 
     if(is_callable($metodo,true,$llamar)){

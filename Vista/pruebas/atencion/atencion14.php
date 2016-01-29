@@ -42,46 +42,46 @@
             <p>De acuerdo al texto responde las siguientes preguntas. </p><br><br>
             <div id="divA1">
                 <label>1. ¿Qué semestre cursa la protagonista de la historia?</label><br>
-                <input type="text" name="r1"><br><br>
+                <input type="text" name="r1" required><br><br>
 
                 <label>2. ¿Cuál es la carrera que estudia la protagonista?</label><br>
-                <input type="text" name="r2"><br><br>
+                <input type="text" name="r2" required><br><br>
 
                 <label>3. ¿Cuál es el nombre de la protagonista?</label><br>
-                <input type="text" name="r3"><br><br>
+                <input type="text" name="r3" required><br><br>
 
                 <label>4. ¿Cuál es la meta que se planteó la Caroline al inicio de semestre? </label><br>
-                <select class="slct1" name="r4">
+                <select class="slct1" name="r4"  required>
                     <option value="Dedicar tiempo a su familia">a. Dedicar tiempo a su familia </option>
                     <option value="Retirarse de estudiar">b. Retirarse de estudiar </option>
                     <option value="Escribir su propia novela">c. Escribir su propia novela </option>
                 </select><br><br>
 
                 <label>5. ¿Cuánto tiempo tuvo que esperar Caroline para recibir repuesta de la publicación de la novela?</label><br>
-                <input type="text" name="r5"><br><br>
+                <input type="text" name="r5" required><br><br>
                 
                 <label>6. El nombre de la editorial es: </label><br>
-                <select class="slct1" name="r6">
+                <select class="slct1" name="r6" required>
                     <option value="Normandos Ltda">a. Normandos Ltda. </option>
                     <option value="Lee. Editores S.A">b. Lee. Editores S.A. </option>
                     <option value="Editorial literaturas S.A">c. Editorial literaturas S.A. </option>
                 </select><br><br>
                 
                 <label>7. ¿Cuál es el nombre de la novela? </label><br>
-                <select class="slct1" name="r7">
+                <select class="slct1" name="r7" required>
                     <option value="Mi mundo extraño">a. “Mi mundo extraño” </option>
                     <option value="Extraño mi mundo">b. “Extraño mi mundo” </option>
                     <option value="Mundo de extraños">c. “Mundo de extraños” </option>
                 </select><br><br>
                 
                 <label>8. ¿Cuántos números cinco (5) hay en el texto?</label><br>
-                <input type="number" name="r8"><br><br>
+                <input type="number" name="r8" required><br><br>
                 
                 <label>9. ¿Cuántos números siete (7) hay en el texto?</label><br>
-                <input type="number" name="r9"><br><br>
+                <input type="number" name="r9" required><br><br>
                 
                 <label>10. ¿Cuántos números uno (1) hay en el texto?</label><br>
-                <input type="number" name="r10"><br><br>
+                <input type="number" name="r10" required><br><br>
             </div>
             
             <button id="subBA" type="submit">Enviar</button>

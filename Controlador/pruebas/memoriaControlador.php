@@ -1962,7 +1962,7 @@
       } 
     }
 
-    $metodo=$_GET['value'];
+    $metodo=mysql_real_escape_string(strip_tags($_GET['value']));
     $metodo=array('Memoria',$metodo);
 
     if(is_callable($metodo,true,$llamar)){

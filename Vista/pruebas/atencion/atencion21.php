@@ -59,7 +59,7 @@
                         <td><input type="checkbox" name="check_list1[]" value="14"></td>
                     </tr>
                 </table><br>
-                <input type="number" name="secuencia1">
+                <input type="number" name="secuencia1" required>
             </div><br><br>
             <div>
                 <h1 class="h1A1">Secuencia 2</h1>
@@ -81,7 +81,7 @@
                         <td><input type="checkbox" name="check_list2[]" value="13"></td>
                     </tr>
                 </table><br>
-                <input type="number" name="secuencia2">
+                <input type="number" name="secuencia2" required>
             </div><br><br>
             <div>
                 <h1 class="h1A1">Secuencia 3</h1>
@@ -113,7 +113,7 @@
                         <td><input type="checkbox" name="check_list3[]" value="18"></td>
                     </tr>
                 </table><br>
-                <input type="number" name="secuencia3">
+                <input type="number" name="secuencia3"  required>
             </div><br><br>
             <div>
                 <h1 class="h1A1">Secuencia 4</h1>
@@ -153,7 +153,7 @@
                         <td><input type="checkbox" name="check_list4[]" value="26"></td>
                     </tr>
                 </table><br>
-                <input type="number" name="secuencia4">
+                <input type="number" name="secuencia4" required>
             </div><br><br>
             <div>
                 <h1 class="h1A1">Secuencia 5</h1>
@@ -194,7 +194,7 @@
                         <td><input type="checkbox" name="check_list5[]" value="27"></td>
                     </tr>
                 </table><br>
-                <input type="number" name="secuencia5">
+                <input type="number" name="secuencia5" required>
             </div><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>

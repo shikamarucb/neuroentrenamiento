@@ -17,7 +17,7 @@
         <?php
           include_once ("../../Controlador/usuariosAdmin.php");
           $usuarios=new UsuariosAdmin();
-          $email=$_GET["email"];
+          $email=mysql_real_escape_string(strip_tags($_GET["email"]));
           $info=$usuarios->getControl($email);
           $resultado=$info->fetch_array(MYSQLI_ASSOC);
           $semana=$resultado['semana_usuario'];          

@@ -49,7 +49,7 @@
                     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB<br>
                     BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB 
                 </p>
-                <input type="number" name="ochos">
+                <input type="number" name="ochos" required>
             </div><br><br>
             <div style="margin:0 auto; width:90%; text-align:center;">
                 <p>Entre las letras “G” encuentra los números 6 y escribe cuántos encuentras </p><br>
@@ -62,7 +62,7 @@
                     GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG<br>
                     GGGGGGGGGGGGGGGGG6GGGGGGGGGGGGGGGGGGGGGGGGGGG  
                 </p>
-                <input type="number" name="seis">
+                <input type="number" name="seis" required>
             </div><br><br>
             <button id="subBA" type="submit">Enviar</button>
         </form>
