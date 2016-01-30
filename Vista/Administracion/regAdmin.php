@@ -1,3 +1,9 @@
+<?php
+    include_once ("../../Controlador/permisosAdmins.php");
+    session_start();
+    $permiso=new PermisosAdmins();    
+    if($permiso->verificarSuperAdmin()){    
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -48,10 +54,11 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
                         </li>
                         <li>
-                            <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a>                            
+                            <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a>
+                            <a href="../../Controlador/backup.php"><i class="fa fa-indent nav_icon"></i>Generar Backup de la base de datos</a>                            
                             <!-- /.nav-second-level -->
                         </li>
                     </ul>
@@ -99,3 +106,6 @@
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+?>

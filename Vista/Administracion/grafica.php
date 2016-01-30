@@ -112,7 +112,7 @@
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : atencion
+					data : matematicas
 				},
                 {
 					label: "Matematicas",
@@ -122,7 +122,7 @@
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : matematicas
+					data : atencion
 				}
 			]
 

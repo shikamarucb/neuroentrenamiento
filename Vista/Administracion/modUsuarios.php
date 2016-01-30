@@ -1,3 +1,9 @@
+<?php
+    include_once ("../../Controlador/permisosAdmins.php");
+    session_start();
+    $permiso=new PermisosAdmins();    
+    if($permiso->verificarAdmin()){    
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -45,13 +51,14 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="dashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="dashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-indent nav_icon"></i>Resultados<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="/tipo">Gráficas</a>
+                                    <a href="tiempoUsuarios.php">Tiempos de las pruebas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -178,3 +185,6 @@
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+?>
