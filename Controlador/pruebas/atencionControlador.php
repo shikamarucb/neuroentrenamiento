@@ -90,7 +90,7 @@
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->tres($conexion);          
 
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");             
     	}
       public function atencion12(){//funcion para la prueba de atencion del dia 2 semana 1
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -127,7 +127,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
       public function atencion13(){//funcion para la prueba de atencion del dia 3 semana 1 
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -207,7 +207,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
       public function atencion14(){//funcion para la prueba de atencion del dia 4 semana 1 
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -332,7 +332,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       }
       public function atencion15(){//funcion para la prueba de atencion del dia 5 semana 1 
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -412,7 +412,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       }
       public function atencion21(){//funcion para la prueba de atencion del dia 1 semana 2 
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -582,7 +582,7 @@
             
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
        public function atencion22(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -625,7 +625,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->uno($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
        public function atencion23(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -695,7 +695,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       public function atencion24(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -774,7 +774,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       public function atencion25(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -878,7 +878,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       public function atencion31(){//funcion para la prueba de atencion del dia 1 semana 3 
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1021,7 +1021,7 @@
             
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->ocho($conexion);            
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");          
       }
       public function atencion32(){//funcion para la prueba de atencion del dia 2 semana 3 
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1126,7 +1126,7 @@
             }           
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");          
       }
       public function atencion33(){//funcion para la prueba de atencion del dia 3 semana 3 
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1231,7 +1231,7 @@
             }           
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);          
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
        public function atencion34(){//funcion para la prueba de atencion del dia 4 semana 3
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1303,7 +1303,7 @@
             }*/                        
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion); //se evaluarian 4 de la manera comentada XD ..           
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
       public function atencion35(){//funcion para la prueba de atencion del dia 5 semana 3
          session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1375,7 +1375,7 @@
             } */                       
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->veinteAtencion($conexion);   //se evaluarian 4.         
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
       public function atencion41(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1447,7 +1447,7 @@
             } */                                    
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->nueve($conexion);//se evaluarian 4 si no es así XD
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       public function atencion43(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1518,7 +1518,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       public function atencion44(){//funcion para la prueba de atencion del dia 1 semana 2 
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1564,7 +1564,7 @@
             }            
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");           
       }
       public function atencion45(){
              session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
@@ -1634,7 +1634,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
 
     }

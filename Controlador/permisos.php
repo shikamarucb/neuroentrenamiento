@@ -19,10 +19,12 @@
                 	if($roll==3 || $roll ==1){
                 		return true;
                 	}else{
-                		echo "No tiene permisos para acceder";                	}
+                		//echo "No tiene permisos para acceder";
+                        header ("Location: ../msg/permsg.html");
+                    }
                 }       	    	
        	    }else{
-       	    	echo "Debes iniciar Sesion";
+       	    	header ("Location: ../msg/loginmsg.html");
        	    }       	                
         
        }
@@ -53,10 +55,12 @@
             if($i==0){
               return true;
             }else{
-              echo "No puedes realizar esta prueba de nuevo";
+              //echo "No puedes realizar esta prueba de nuevo";
+                header ("Location: ../msg/againmsg.html");
             }
           }else{
             echo "No puedes hacer mas pruebas por el dia de hoy. Por favor regresa mañana";
+              header ("Location: ../msg/endedmsg.html");
           } 
        } 
 

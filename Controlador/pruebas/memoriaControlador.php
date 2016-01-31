@@ -85,7 +85,7 @@
             }
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
     	}
        //funcion para prueba de memoria semana 1- dia 2
       public function memoria12(){
@@ -193,7 +193,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->ocho($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //Funcion para prueba de memoria 1- 3
       public function memoria13(){
@@ -274,7 +274,7 @@
             }
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
 
 
       }
@@ -353,7 +353,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
 //funcion para prueba de memoria 1-5
       public function memoria15(){
@@ -436,7 +436,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //manejo de la preuab de la semana 2 dia 1
       public function memoria21(){
@@ -484,7 +484,7 @@
             
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //manejo de la prueba de memoria 2-2
       public function memoria22(){
@@ -579,7 +579,7 @@
             
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
 
       //funcion para prueba de memoria 2-3
@@ -663,7 +663,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria 2-4
       public function memoria24(){
@@ -780,7 +780,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->nueve($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       }
        //funcion para prueba de memoria 2-5
@@ -854,7 +854,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       } 
 
       //funcion para prueba de memoria de la semana 3 dia 1 (3-1)
@@ -965,7 +965,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->ocho($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria de la semana 3 dia 2 (3-2)
       public function memoria32(){
@@ -1056,7 +1056,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria 3-3
       public function memoria33(){
@@ -1182,7 +1182,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       }
       //funcion para prueba de memoria 3-4
@@ -1309,7 +1309,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       } 
       //funcion para prueba de memoria 3-5
@@ -1472,7 +1472,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->catorce($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       }  
       //funcion para prueba de memoria de la semana 4 dia 1 
@@ -1599,7 +1599,7 @@
                         
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       }
       //funcion para prueba de memoria de la semana 4 dia 2 (4-2)
       public function memoria42(){
@@ -1688,7 +1688,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria 4-4
       public function memoria44(){
@@ -1832,7 +1832,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->doce($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       }
       //funcion para prueba de memoria semana 4 dia 5 
       public function memoria45(){
@@ -1958,7 +1958,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       } 
     }
 

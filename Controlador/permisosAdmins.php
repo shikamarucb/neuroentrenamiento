@@ -17,10 +17,10 @@
                 	if($roll==2 || $roll ==1){
                 		return true;
                 	}else{
-                		echo "No tiene permisos para acceder";                	}
+                		header ("Location: ../pruebas/msg/permsg.html");                	}
                 }       	    	
        	    }else{
-       	    	echo "Debes iniciar Sesion";
+       	    	header ("Location: ../pruebas/msg/loginmsg.html");
        	    }       	                
         
        }
@@ -37,10 +37,10 @@
                 	if($roll ==1){
                 		return true;
                 	}else{
-                		echo "No tiene permisos para acceder";                	}
+                		header ("Location: ../pruebas/msg/permsg.html"); ;                	}
                 }       	    	
        	    }else{
-       	    	echo "Debes iniciar Sesion";
+       	    	header ("Location: ../pruebas/msg/loginmsg.html");
        	    }       	                
         
        }
