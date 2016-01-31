@@ -41,7 +41,7 @@
               $dia=$info['dia_usuario'];
             ?>
             <li><h1 style="font-family: 'Jura'; color:darkgoldenrod;">Bienvenido:  <?php echo $nombre ?></h1></li>
-            <li><a href="#">Prueba</a></li>            
+            <li><a href="prueba.php">Prueba</a></li>            
             <li><a href="miGrafica.php">Progreso</a></li>
             <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
         </ul>

@@ -26,9 +26,9 @@
     </div>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Prueba</a></li>
-            <li><a href="login.html">Progreso</a></li>
-            <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
+            <li><a href="../menu/prueba.php">Prueba</a></li>
+            <li><a href="../menu/miGrafica.php">Progreso</a></li>
+            <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesión</a></li>
         </ul>
     </div>
 </nav>

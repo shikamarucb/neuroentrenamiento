@@ -51,7 +51,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                            <a href="superAdDashboard.php"><i class="fa fa-dashboard fa-fw nav_icon"></i>Inicio</a>
                         </li>
                         <li>
                             <a href="regAdmin.php"><i class="fa fa-indent nav_icon"></i>Resgistrar Nuevo Administrador</a> 
