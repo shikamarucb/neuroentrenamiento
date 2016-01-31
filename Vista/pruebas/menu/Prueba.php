@@ -44,18 +44,25 @@
             <li><a href="prueba.php">Prueba</a></li>            
             <li><a href="miGrafica.php">Progreso</a></li>
             <li><a href="../../../Controlador/userController.php?value=logout">Cerrar Sesion</a></li>
-        </ul>
-        <div><h1 style="font-family: 'Jura'; color: blue;"><?php echo "Semana: ".$semana." Dia: ".$dia ?></h1></div>
+        </ul>        
     </div>    
 </nav>
     
 <div id="cont1C" style="min-height:410px;">
     <div><br><br>
+        <?php if($semana < 5){?>
+        <div><h1 style="font-family: 'Jura'; font-size: 1.2em; color: blue; text-align:right"><?php echo "Semana: ".$semana." Dia: ".$dia ?></h1></div>
         <h1>Prueba del Dia</h1><br>
         <p>Escoge con que prueba deseas empezar.</p><br><br><br>
         <a class="pruebaDia" href="../atencion/atencion<?php echo $semana.$dia?>.php">Atención<i class="fa fa-eye"></i></a><br>
         <a class="pruebaDia" href="../matematicas/matematicas<?php if($semana.$dia == '24' || $semana.$dia == '25' || $semana.$dia == '33') echo $semana.$dia?>.php">Matemáticas<i class="fa fa-percent"></i></a><br>
         <a class="pruebaDia" href="../memoria/memoria<?php echo $semana.$dia?>.php">Memoria<i class="fa fa-commenting-o"></i></a>
+        <?php
+         }else{?>
+            <div><h1 style="font-family: 'Jura'; font-size: 1.8em; color: green;">Felicitaciones.<br> Has Terminado con el entrenamiento.</h1></div>
+         <?php
+         }
+         ?>
     </div>
 </div>
 

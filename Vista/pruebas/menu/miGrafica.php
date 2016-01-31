@@ -46,7 +46,13 @@
                         <option value="3">Semana 3</option>
                         <option value="4">Semana 4</option>
                      <?php 
-                    break;                         
+                    break;
+                    default: 
+                      ?><option value="1">Semana 1</option>                                    
+                        <option value="2">Semana 2</option>
+                        <option value="3">Semana 3</option>
+                        <option value="4">Semana 4</option>
+                     <?php                          
                 }
             ?>                           
            </select>
