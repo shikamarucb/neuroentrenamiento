@@ -39,7 +39,7 @@
 
             mail($email, "Por favor activa tu cuenta", $contenido);//se envia el correo para que pueda ser activada la cuenta
 
-            header('location: ../Vista/login.html');
+            header("location: ../Vista/pruebas/msg/registermsg.html");
         }
         public function activar(){// funcion para activar la cuenta registrada.
             $conexion=new Conexion();
@@ -102,7 +102,8 @@
                     header('location: ../Vista/Administracion/superAdDashboard.php');
                 }
             }else{
-                echo "Datos incorrectos o ingresa a tu correo y activa tu cuenta ";
+                //echo "Datos incorrectos o ingresa a tu correo y activa tu cuenta ";
+                header ("Location: ../Vista/pruebas/msg/errormsg.html");
             }
         }
 
@@ -123,8 +124,11 @@
                    localhost:8080/neuroentrenamiento/Vista/formPassword.php?email='.urlencode($email);
 
             mail($email, "Restablecer tu contraseña", $contenido);
+            header ("Location: ../Vista/login.html");
+
             } else{
-                echo "Este correo aún no esta registrado...";
+                //echo "Este correo aún no esta registrado...";
+                header ("Location: ../Vista/pruebas/msg/existmsg.html");
             }        
         } 
 
@@ -166,7 +170,7 @@
 
             $contenido="Nombre:  ".$nombre."\nCorreo:  ".$email."\nMensaje:  ".$mensaje;
             mail($destino, $asunto, $contenido); 
-            header('location: ../Vista/index.html');
+             header ("Location: ../Vista/pruebas/msg/contactmsg.html");
         }
 
         public function actualizar(){

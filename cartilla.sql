@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-01-2016 a las 17:58:33
+-- Tiempo de generación: 01-02-2016 a las 05:14:53
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `activacion` (
   `id` int(10) unsigned NOT NULL,
   `codigo` varchar(30) NOT NULL,
   `users_email` varchar(70) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `activacion`
@@ -40,7 +40,9 @@ INSERT INTO `activacion` (`id`, `codigo`, `users_email`) VALUES
 (2, '816345838e9e630723f1003bec8f23', 'd@gmail.com'),
 (3, 'fca8cb380e7fa41b9ebea74af826a9', 'e@gmail.com'),
 (4, '7ae6b32131e73a103ce28da224c2e3', 'andreyfanton@hotmail.com'),
-(5, '3e921a837fb3793bb8d9b7e0985c04', 'e@gmail.com');
+(5, '3e921a837fb3793bb8d9b7e0985c04', 'e@gmail.com'),
+(6, '4a2afded34dfad76308a37811f6acf', 'zapata@gmail.com'),
+(7, '83c54847912f72b1224946c87f20f2', 'zapata@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -695,7 +697,18 @@ INSERT INTO `actividad` (`id_actividad`, `tipo`, `dia`, `semana`, `respuesta`, `
 (650, 'matematicas', 5, 4, '18', '(9 x 8) - (9 x 6) ='),
 (651, 'matematicas', 5, 4, '230', '(20 x 10) + 30 ='),
 (652, 'matematicas', 5, 4, '158', '(16 x 8) + 30 ='),
-(653, 'matematicas', 5, 4, '57', '(17 - 8) + 48 =');
+(653, 'matematicas', 5, 4, '57', '(17 - 8) + 48 ='),
+(654, 'atencion', 2, 4, '3', 'secuencia1'),
+(655, 'atencion', 2, 4, '2', 'secuencia2'),
+(656, 'atencion', 2, 4, '1', 'secuencia3'),
+(657, 'atencion', 2, 4, '2', 'secuencia4'),
+(658, 'memoria', 3, 4, '1', 'figura1'),
+(659, 'memoria', 3, 4, '6', 'figura2'),
+(670, 'memoria', 3, 4, '4', 'figura3'),
+(671, 'memoria', 3, 4, '5', 'figura4'),
+(672, 'memoria', 3, 4, '2', 'figura5'),
+(673, 'memoria', 3, 4, '7', 'figura6'),
+(674, 'memoria', 3, 4, '3', 'figura7');
 
 -- --------------------------------------------------------
 
@@ -710,18 +723,18 @@ CREATE TABLE IF NOT EXISTS `control` (
   `contador_actividad` int(10) unsigned NOT NULL,
   `users_email` varchar(70) NOT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `control`
 --
 
 INSERT INTO `control` (`id`, `dia_usuario`, `semana_usuario`, `contador_actividad`, `users_email`, `fecha`) VALUES
-(1, 0, 0, 0, 'neurocartilla@gmail.com', '2016-01-30'),
+(1, 0, 0, 0, 'neurocartilla@gmail.com', '2016-01-31'),
 (11, 1, 1, 0, 'bc@gmail.com', '2016-01-05'),
-(23, 5, 1, 0, 'b@gmail.com', '2016-01-28'),
+(23, 5, 1, 0, 'b@gmail.com', '2016-01-30'),
 (26, 1, 1, 0, 'e@gmail.com', '0000-00-00'),
-(27, 1, 1, 0, 'e@gmail.com', '0000-00-00');
+(29, 1, 1, 0, 'zapata@gmail.com', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -759,7 +772,7 @@ CREATE TABLE IF NOT EXISTS `resultado` (
   `respuesta_usuario` varchar(45) NOT NULL,
   `dia` int(11) NOT NULL,
   `semana` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=323 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=325 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `resultado`
@@ -777,7 +790,7 @@ INSERT INTO `resultado` (`id`, `usuario_correo`, `prueba_tipo`, `tiempo`, `punta
 (319, 'b@gmail.com', 'memoria', '0 : 46', 1, '', 3, 1),
 (320, 'b@gmail.com', 'atencion', '5 : 24', 1, '', 4, 1),
 (321, 'b@gmail.com', 'matematicas', '1 : 6', 1.5, '', 4, 1),
-(322, 'b@gmail.com', 'memoria', '0 : 56', 1, '', 4, 1);
+(322, 'b@gmail.com', 'memoria', '1 : 7', 0.75, '', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -807,7 +820,8 @@ INSERT INTO `users` (`email`, `nombre`, `apellido`, `genero`, `edad`, `grado`, `
 ('bc@gmail.com', 'Bernardo C', 'Delgado', 'F', '13', 'septimo', '123', 3, 1),
 ('e@gmail.com', 'elena maria', 'enao', 'F', '11', 'sexto', '123', 3, 1),
 ('neurocartilla@gmail.com', 'admin', 'administrador', 'M', '40', '6', '123', 1, 1),
-('yandrey.yg@gmail.com', 'Yeison Andrey', 'Gomez', 'M', '23', '', '123', 2, 1);
+('yandrey.yg@gmail.com', 'Yeison Andrey', 'Gomez', 'M', '23', '', '123', 2, 1),
+('zapata@gmail.com', 'zapata', 'zapata', 'M', '11', 'sexto', '123', 3, 0);
 
 --
 -- Índices para tablas volcadas
@@ -857,17 +871,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `activacion`
 --
 ALTER TABLE `activacion`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `control`
 --
 ALTER TABLE `control`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de la tabla `resultado`
 --
 ALTER TABLE `resultado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=323;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=325;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

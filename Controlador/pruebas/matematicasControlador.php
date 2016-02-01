@@ -50,7 +50,7 @@
             }            
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->veinte($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
     	}
       //funcion para prueba de matematicas semana2-dia 4
       public function matematicas24(){
@@ -121,7 +121,7 @@
             }            
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatroMate($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //función para evaluar la prueba de matmátcas semana 2- dia 5 
       public function matematicas25(){
@@ -210,7 +210,7 @@
             }            
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seisMate($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //función para evaluar la prueba de matmátcas semana 3-dia 3 
       public function matematicas33(){
@@ -316,7 +316,7 @@
             }                     
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diezMate($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
     	
     }

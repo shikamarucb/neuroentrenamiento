@@ -1,3 +1,9 @@
+<?php
+    include_once ("../../Controlador/permisosAdmins.php");
+    session_start();
+    $permiso=new PermisosAdmins();    
+    if($permiso->verificarSuperAdmin()){    
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -111,3 +117,6 @@
 <script language="Javascript" type="text/javascript" src="vistaAdmin/js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php
+}
+?>

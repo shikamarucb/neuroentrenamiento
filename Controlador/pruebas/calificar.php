@@ -152,6 +152,23 @@
         $this->agregar($conexion, $puntos);
       }
 
+      public function siete($conexion){//funcion donde se califican las puebas que contienen 7 respuestas. 
+        // se calcula la calificacion 
+        $puntos=0;
+        if($this->rango != 0){ 
+          if( $this->rango < 4){
+             $puntos=0.5;            
+          }else{ 
+            if($this->rango > 3 && $this->rango < 7){
+              $puntos=0.75;               
+            }else{
+                $puntos=1;
+            }
+          }            
+        }                       
+        $this->agregar($conexion, $puntos);
+      }
+
     	public function seis($conexion){//funcion donde se califican las puebas que contienen 6 respuestas. 
     		// se calcula la calificacion 
     		$puntos=0;

@@ -3,7 +3,7 @@
     session_start();
     $permiso=new Permisos();    
     if($permiso->verificarUser()){ 
-      if($permiso->accederPruebas("memoria")){ 
+      if($permiso->accederPruebas("memoria", "44")){ 
         date_default_timezone_set("America/Bogota");
         $fechaIn= date("Y-m-d");
         $inicio=microtime(true);

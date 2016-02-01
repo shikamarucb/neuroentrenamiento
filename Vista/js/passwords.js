@@ -12,9 +12,7 @@ function compara(){
         alert('las Contraseñas no coinciden..!!');
         return false;
       }
-    }
-    alert("Gracias por registrarte: hemos enviado un mensaje a tu cuenta de correo electronico.
-          por favor verifica tu cuenta y así podras acceder al aplicativo. ");
+    }    
     return true;
   }
 } 

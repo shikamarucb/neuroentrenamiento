@@ -85,7 +85,7 @@
             }
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
     	}
        //funcion para prueba de memoria semana 1- dia 2
       public function memoria12(){
@@ -193,7 +193,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->ocho($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //Funcion para prueba de memoria 1- 3
       public function memoria13(){
@@ -274,7 +274,7 @@
             }
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
 
 
       }
@@ -353,7 +353,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
 //funcion para prueba de memoria 1-5
       public function memoria15(){
@@ -436,7 +436,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //manejo de la preuab de la semana 2 dia 1
       public function memoria21(){
@@ -484,7 +484,7 @@
             
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //manejo de la prueba de memoria 2-2
       public function memoria22(){
@@ -579,7 +579,7 @@
             
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
 
       //funcion para prueba de memoria 2-3
@@ -663,7 +663,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cinco($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria 2-4
       public function memoria24(){
@@ -780,7 +780,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->nueve($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       }
        //funcion para prueba de memoria 2-5
@@ -854,7 +854,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->cuatro($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       } 
 
       //funcion para prueba de memoria de la semana 3 dia 1 (3-1)
@@ -965,7 +965,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->ocho($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria de la semana 3 dia 2 (3-2)
       public function memoria32(){
@@ -1056,7 +1056,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
       }
       //funcion para prueba de memoria 3-3
       public function memoria33(){
@@ -1182,7 +1182,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       }
       //funcion para prueba de memoria 3-4
@@ -1309,7 +1309,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       } 
       //funcion para prueba de memoria 3-5
@@ -1472,7 +1472,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->catorce($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
 
       }  
       //funcion para prueba de memoria de la semana 4 dia 1 
@@ -1599,7 +1599,7 @@
                         
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       }
       //funcion para prueba de memoria de la semana 4 dia 2 (4-2)
       public function memoria42(){
@@ -1688,7 +1688,107 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->seis($conexion);
-            echo "Fin de la prueba";
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");
+      }
+      //funcion para prueba de memoria semana4-dia3
+      public function memoria43(){
+             session_start();//seccion para calcular el tiempo que se tardo en realizar la prueba.
+             $fin=microtime(true);
+             $ini=$_SESSION['tIni'];
+             $segundos=$fin-$ini;
+             $minutos=0;
+             $segundos=round($segundos);
+            while($segundos>59){
+              $minutos=$minutos+1;
+              $segundos=$segundos-60;
+            }
+            $tiempo=$minutos." : ".$segundos;
+
+            $tipo="memoria";
+            $puntos=0;
+            $rango=0;        
+            $conexion=new Conexion();
+            $conexion=$conexion->conectar();
+            
+            $r1=strtoupper($conexion->real_escape_string(strip_tags($_POST['1'])));
+            $r2=strtoupper($conexion->real_escape_string(strip_tags($_POST['2'])));
+            $r3=strtoupper($conexion->real_escape_string(strip_tags($_POST['3'])));
+            $r4=strtoupper($conexion->real_escape_string(strip_tags($_POST['4'])));
+            $r5=strtoupper($conexion->real_escape_string(strip_tags($_POST['5'])));
+            $r6=strtoupper($conexion->real_escape_string(strip_tags($_POST['6'])));
+            $r7=strtoupper($conexion->real_escape_string(strip_tags($_POST['7'])));                                           
+                        
+            $email=$_SESSION['session'];
+            $control= new Control($email);
+            $resultado=$control->getControl($conexion);
+            if ($resultado->num_rows !=0){
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $dia= $datos["dia_usuario"];
+                $semana=$datos["semana_usuario"];
+                $contador=$datos["contador_actividad"];               
+            }
+            $enunciado="figura1";            
+            $actividad=new Actividad();
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r1){                                                                           
+                 $rango=$rango+1;                                     
+              }              
+            }
+            $enunciado="figura2";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                        
+              if(utf8_encode($infos["respuesta"]) == $r2){                                                                            
+                 $rango=$rango+1;                                                                      
+              }                                      
+            }
+            $enunciado="figura3";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if(utf8_encode($infos["respuesta"]) == $r3){                                                                              
+                 $rango=$rango+1;                                                     
+              }                                      
+            }
+            $enunciado="figura4";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r4){                                                                          
+                 $rango=$rango+1;                                    
+              }              
+            }
+            $enunciado="figura5";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r5){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }
+            $enunciado="figura6";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                                         
+              if(utf8_encode($infos["respuesta"]) == $r6){                                                              
+                 $rango=$rango+1;                                                               
+              }                          
+            }
+            $enunciado="figura7";                        
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            if($rta->num_rows != 0){                                               
+              $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
+              if($infos["respuesta"] == $r7){                                                              
+                 $rango=$rango+1;                                                   
+              }
+            }                       
+
+            $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
+            $calificacion->siete($conexion);
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
+
       }
       //funcion para prueba de memoria 4-4
       public function memoria44(){
@@ -1832,7 +1932,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->doce($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       }
       //funcion para prueba de memoria semana 4 dia 5 
       public function memoria45(){
@@ -1958,7 +2058,7 @@
 
             $calificacion=new Calificar($rango,$tipo,$email,$dia,$semana, $contador,$tiempo);
             $calificacion->diez($conexion);
-            echo "Fin de la prueba";            
+            header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       } 
     }
 

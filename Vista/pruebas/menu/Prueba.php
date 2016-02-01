@@ -59,7 +59,7 @@
         <a class="pruebaDia" href="../memoria/memoria<?php echo $semana.$dia?>.php">Memoria<i class="fa fa-commenting-o"></i></a>
         <?php
          }else{?>
-            <div><h1 style="font-family: 'Jura'; font-size: 1.8em; color: green;">Felicitaciones.<br> Has Terminado con el entrenamiento.</h1></div>
+            <div><h1 style="font-family: 'Jura'; font-size: 1.8em; color: green;">Felicitaciones.<br> Has Terminado el entrenamiento.</h1></div>
          <?php
          }
          ?>
