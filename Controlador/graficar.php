@@ -52,6 +52,43 @@
 
       echo json_encode($arraygrande);     
   	}
+
+    public function promedio(){
+      $conexion=new Conexion();
+      $conexion=$conexion->conectar();
+                    
+      $email=mysql_real_escape_string($_GET['email']);      
+
+      $resultado=new Resultado();
+      $datos=$resultado->getResultByAverage($conexion, $email);//se realiza la consulta que extrae los datos promediados por cada semana en cada area
+      $info=$datos->fetch_all(MYSQLI_ASSOC);
+
+      
+      $semana1= array("semana"=>1);//array´s donde se alamecena la informacion por cada semana
+      $semana2= array("semana"=>2);
+      $semana3= array("semana"=>3);
+      $semana4= array("semana"=>4);
+     
+
+      $arrygrande=array();
+
+      foreach($info as $valor){//se recorre la cosnulta devuelta
+          switch($valor["semana"]){ // dependiendo de la semana de almacena en el array correspondiente
+              case 1: $semana1[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;
+              case 2: $semana2[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;
+              case 3: $semana3[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;
+              case 4: $semana4[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;             
+          }
+      }
+
+      $arraygrande['semana1']=$semana1;// se crea un array que contiene los array´s  de cada semana.
+      $arraygrande['semana2']=$semana2;
+      $arraygrande['semana3']=$semana3;
+      $arraygrande['semana4']=$semana4;
+      
+
+      echo json_encode($arraygrande);    //valor que se envia a la vista en json 
+    }
     
     public function sexo(){
       $conexion=new Conexion();

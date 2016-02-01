@@ -45,6 +45,11 @@ class Resultado{
         $query=new Query();
         $query->deleteResult($conexion, $this->table, $email);
     }
+
+    public function getResultByAverage($conexion, $email){
+        $query=new Query();
+        return $query->getResultByAverage($conexion, $email);
+    }
     
 }
 ?>

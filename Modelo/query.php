@@ -130,6 +130,11 @@
         public function deleteResult($conexion, $table, $email){
             $conexion->query("DELETE from ".$table." where usuario_correo='".$email."';");
         }
+
+        public function getResultByAverage($conexion, $email){
+            return $conexion->query("SELECT  avg(puntaje_usuario), prueba_tipo, semana from resultado 
+                                    where usuario_correo='".$email."'  group by prueba_tipo order by semana;");
+        }
         
     }
 ?>
