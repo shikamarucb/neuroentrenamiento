@@ -60,7 +60,7 @@
         <?php
          }else{?>
             <div><h1 style="font-family: 'Jura'; font-size: 1.8em; color: green;">Felicitaciones.<br> Has Terminado el entrenamiento.</h1></div><br><br><br>
-            <p style="font-family: 'Jura'; font-size: 1.2em; text-align:center"><a href="graficaPromedio.php" style="color: green;">Conoce tu puntuación promedio durante el entrenamiento</a></p>
+            <p style="font-family: 'Jura'; font-size: 1.2em; text-align:center"><a style="text-decoration: underline;" href="graficaPromedio.php" style="color: green;">Conoce tu puntuación promedio durante el entrenamiento</a></p>
          <?php
          }
          ?>

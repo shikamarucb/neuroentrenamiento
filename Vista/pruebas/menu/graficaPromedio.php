@@ -26,6 +26,7 @@
                       
     </div>
 		<div style="width:100%">
+            <div style="text-align:center;"><img src="../../Administracion/imagenes/leyUsuario.svg"></div>
 			<div style="margin: 0 auto; width:800px;">
 				<canvas id="canvas" height="600" width="800" style="margin 0 auto;"></canvas>
 			</div>
@@ -45,12 +46,17 @@
                     url:'../../../Controlador/graficar.php?value=promedio&email=<?php echo urlencode($email);?>',                    
                     success: function (data){  
                     alert(data);                  	
-                        datos=JSON.parse(data);        
-                        for(var i=0;i<datos.length;i++){
-                            atencion.push(datos[i].atencion);
-                            memoria.push(datos[i].memoria);
-                            matematicas.push(datos[i].matematicas);
-                        }                        
+                        datos=JSON.parse(data);
+                        for(var i in datos){
+                            
+                            if(datos[i].atencion != null){
+                                atencion.push(datos[i].atencion);}
+                            if(datos[i].memoria != null){
+                                memoria.push(datos[i].memoria);}
+                            if(datos[i].matematicas != null){
+                                matematicas.push(datos[i].matematicas);}
+                        }
+                        
                     }
                    }
                 )	    	
@@ -60,7 +66,7 @@
         function atent(){
             window.alert('');
         }
-		//var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+        
 		var lineChartData = {
 			labels : ["Dia 1","Dia 2","Dia 3","Dia 4","Dia 5"],
 			datasets : [
@@ -82,7 +88,7 @@
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : atencion
+					data : matematicas
 				},
                 {
 					label: "Matematicas",
@@ -92,7 +98,7 @@
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : matematicas
+					data : atencion
 				}
 			]
 

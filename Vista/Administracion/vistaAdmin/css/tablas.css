@@ -93,3 +93,20 @@
 .listarusuarios tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
 }
+#contFormSadmin {
+    min-width: 1000px;
+}
+
+#contFormSadmin div{
+    display: inline-block;
+    width: 40%;
+    margin-top: 15px;
+}
+
+#contFormSadmin label{
+    width: 20%;
+}
+
+#contFormSadmin input,select{
+    width: 50%;
+}

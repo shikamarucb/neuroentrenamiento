@@ -40,7 +40,7 @@
             <ul class="nav navbar-nav navbar-right">
 				
 			    <li class="dropdown">
-	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png"><span class="badge">9</span></a>
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png"></a>
 	        		<ul class="dropdown-menu">
 						<li class="dropdown-menu-header text-center">
 							<strong>Cuenta</strong>						
@@ -67,35 +67,52 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div id="page-wrapper">
-        <div class="graphs">  
-           <strong>Modificar Usuarios</strong>  
-        </div>             
+<div id="page-wrapper">
+    <div class="graphs">  
+        <strong>Modificar Usuarios</strong>  
+    </div>
+
+    <div id="formSadmin">
         <form name="registro" action="../../Controlador/userController.php?value=registrarAdmin" method="POST">
-          <div>
-            <label>Nombre</label>
-            <input type="text"  name="nombre" required><br><br>
-            <label>Apellido</label>
-            <input type="text"  name="apellido" required><br><br>
-            <label>Edad</label>
-            <input type="number" min="11" max="99"  name="edad" required><br><br>
-            <label>Genero</label>
-            <select name="genero">
-                <option value="M">M</option>
-                <option value="F">F</option>                                                           
-            </select><br>    
-          </div>
-          <div>                                                    
-          </div><br><br>
-          <label>Email</label>
-          <input type="text"  name="email" required><br>
-          <label>Contraseña</label>
-          <input type="password"  name="password" required><br><br>
-          <label>Repita la Contraseña</label>
-          <input type="password"  name="password2" required><br><br>
-          <button type="submit" onclick="return compara();" class="btn btn-primary">Registrar</button>
-        </form>                   
-        </div>
+            <div id="contFormSadmin">
+                <div>
+                    <label>Nombre</label>
+                    <input type="text"  name="nombre" required>
+                </div>
+                <div>
+                    <label>Apellido</label>
+                    <input type="text"  name="apellido" required>
+                </div>
+                <div>
+                    <label>Edad</label>
+                    <input type="number" min="11" max="99"  name="edad" required>
+                </div>
+                <div>
+                    <label>Genero</label>
+                    <select name="genero">
+                        <option value="M">M</option>
+                        <option value="F">F</option>                                                           
+                    </select>
+                </div>
+            </div>
+            <div id="contFormSadmin">
+                <div>
+                    <label>Email</label>
+                    <input type="text"  name="email" required><br>
+                </div>
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password"  name="password" required>
+                </div>
+                <div>
+                    <label>Repita la Contraseña</label>
+                    <input type="password"  name="password2" required>
+                </div>
+            </div><br><br>
+            <button type="submit" onclick="return compara();" class="btn btn-primary">Registrar</button>
+        </form>   
+    </div>
+</div>
 
     <!-- /#wrapper -->
     <!-- Nav CSS -->
