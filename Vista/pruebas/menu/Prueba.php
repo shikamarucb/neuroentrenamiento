@@ -22,7 +22,7 @@
         }
     </style>
     
-    <title>Prueba</title>
+    <title>Pruebas</title>
 </head>
 <body>
 <nav id="navi">

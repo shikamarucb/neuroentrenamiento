@@ -7,7 +7,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Line Chart</title>
+		<title>Gráfica-curso</title>
 		<script src="vistaAdmin/js/jquery.min.js"></script>
 		<script src="vistaAdmin/js/Chart.js"></script>
 	</head>

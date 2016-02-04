@@ -230,11 +230,13 @@
         }      
         
     }
+    $conexion=new Conexion();
+    $conexion=$conexion->conectar();
 
-    $metodo=mysql_real_escape_string(strip_tags($_GET['value']));
+    $metodo=$conexion->real_escape_string(strip_tags($_GET['value']));
     $metodo=array('UsuarioC',$metodo);
 
     if(is_callable($metodo,true,$llamar)){
-        call_user_func($llamar);
+        call_user_func($llamar);    
     }
 ?>

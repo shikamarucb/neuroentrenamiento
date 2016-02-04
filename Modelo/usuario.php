@@ -2,7 +2,7 @@
 include_once ("conexion.php");
 include_once ("query.php");
 class Usuario{
-    
+    //esta clase hace peticiones a la clase Query que es la encargada de realizar todas las consultas solicitadas deda cada metodo.
     private $table="users";
    
 //funciones para hacer el CRUD de los usuarios registrados... los culaes tienen un roll de categoria 3.
@@ -13,7 +13,7 @@ class Usuario{
         $query->add($this->table,$conexion,$email,$nombre,$apellido,
                     $edad,$genero,$grado,$password,$roll, $active);
     }    
-    public function getUser($conexion, $email, $password){
+    public function getUser($conexion, $email, $password){//
         $query=new Query();
         return $query->get($this->table,$email,$password,$conexion);
     }
@@ -29,7 +29,7 @@ class Usuario{
         $query->deleteUser($this->table,$conexion,$email);
     }
     
-    public function getAllUsers($conexion){
+    public function getAllUsers($conexion){//se obtienen todos los usurios registrados activos
         $roll=3;
         $query=new Query();
         return $query->getUsers($this->table,$conexion,$roll);
@@ -44,7 +44,7 @@ class Usuario{
         $query->activarUsuario($this->table,$conexion, $email);
     }
 
-    public function updPassword($conexion, $email, $password){
+    public function updPassword($conexion, $email, $password){//se actualiza la contraseña
         $query=new Query();
         $query->updPass($this->table, $conexion, $email, $password);        
     }
