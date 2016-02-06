@@ -10,7 +10,7 @@
   		$conexion=new Conexion();
   		$conexion=$conexion->conectar();
                     
-  	  $email=mysql_real_escape_string($_GET['email']);
+  	  $email=$conexion->real_escape_string($_GET['email']);
   		$semana=$conexion->real_escape_string(strip_tags($_POST['semana']));
 
   		$resultado=new Resultado();
@@ -57,7 +57,7 @@
       $conexion=new Conexion();
       $conexion=$conexion->conectar();
                     
-      $email=mysql_real_escape_string($_GET['email']);      
+      $email=$conexion->real_escape_string(strip_tags($_GET['email']));      
 
       $resultado=new Resultado();
       $datos=$resultado->getResultByAverage($conexion, $email);//se realiza la consulta que extrae los datos promediados por cada semana en cada area
@@ -434,8 +434,10 @@
     }
     
   }
+    $conexion=new Conexion();
+    $conexion=$conexion->conectar();
 
-    $metodo=mysql_real_escape_string($_GET['value']);
+    $metodo=$conexion->real_escape_string(strip_tags($_GET['value']));
     $metodo=array('Graficar',$metodo);
 
     if(is_callable($metodo,true,$llamar)){

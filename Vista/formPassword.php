@@ -36,7 +36,7 @@
     </div>
     <div id="cont1L2">
         <form name="login" action="../Controlador/userController.php?value=restablecer" method="POST">
-            <?php  $email=mysql_real_escape_string(strip_tags($_GET['email']));?>
+            <?php  $email=strip_tags($_GET['email']);?>
             <input type="hidden" value="<?php echo $email ?>" name="email"><br>
             <input type="password" placeholder="Nueva Contraseña" name="password" required><br>
             <input type="password" placeholder="Repetir Contraseña" name="password2" required><br><br>           

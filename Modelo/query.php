@@ -70,7 +70,7 @@
         } 
 
         public function getActive($table,$conexion,$email, $codigo){//se extraen los datos de la tabla para realizar la respectiva activacion
-            return $conexion->query("SELECT * from ".$table." where users_email=".$email." AND codigo = '".$codigo."';");
+            return $conexion->query("SELECT * from ".$table." where users_email='".$email."' AND codigo = '".$codigo."';");
         }
 
         public function deleteActive($table,$conexion,$email){//se eliminan los datos de la tabla cuando el usuario se elimina por inactividad 

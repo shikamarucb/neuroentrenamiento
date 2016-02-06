@@ -30,10 +30,7 @@
             $activar=new Activacion();//se agrega los respectivos datos a la tabla activacion
             $activar->add($conexion, $email, $codigo);  
             //se agrega el link que ayudara a la activación de la cuenta
-            $contenido = 'Hola, para activar tu cuenta haz click en el siguiente link:
-                    '."\n".'
-                    <a href="localhost:8080/neuroentrenamiento/Controlador/userController.php?value=activar&email='.urlencode($email).'&code='.$codigo.'">localhost:8080/neuroentrenamiento/Controlador/userController.php?value=activar&email='.urlencode($email).'&code='.$codigo.'</a>
-                    O copia el siguiente link en la barra de direcciones de tu navegador:
+            $contenido = 'Hola, para activar tu cuenta copia el siguiente link en la barra de direcciones de tu navegador:
                     '."\n".'
                    localhost:8080/neuroentrenamiento/Controlador/userController.php?value=activar&email='.urlencode($email).'&code='.$codigo;
 
@@ -45,8 +42,8 @@
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
             
-            $codigo=mysql_real_escape_string(strip_tags($_GET['code']));
-            $email=mysql_real_escape_string(strip_tags($_GET['email']));
+            $codigo=$conexion->real_escape_string(strip_tags($_GET['code']));
+            $email=$conexion->real_escape_string(strip_tags($_GET['email']));
             $activar=new Activacion();
             $resultado=$activar->getActive($conexion, $email, $codigo);//se comprueba que el codigo de activacion enviado
             if($resultado->num_rows != 0){                             //corresponda al almacenado den la base de datos
@@ -208,7 +205,7 @@
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
-            $email=mysql_real_escape_string(strip_tags($_GET["email"]));
+            $email=$conexion->real_escape_string(strip_tags($_GET["email"]));
  
             $user=new Usuario();
             $user->deleteUser($conexion,$email);
@@ -220,7 +217,7 @@
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
-            $email=mysql_real_escape_string(strip_tags($_GET["email"]));
+            $email=$conexion->real_escape_string(strip_tags($_GET["email"]));
  
             $user=new Usuario();
             $user->deleteUser($conexion,$email);

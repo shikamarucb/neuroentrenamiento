@@ -61,6 +61,7 @@
                       
     </div>
 		<div style="width:100%">
+            <div style="text-align:center;"><img src="../../Administracion/imagenes/leyUsuario.svg"></div>
 			<div style="margin: 0 auto; width:800px;">
 				<canvas id="canvas" height="600" width="800" style="margin 0 auto;"></canvas>
 			</div>
@@ -80,13 +81,15 @@
                     url:'../../../Controlador/graficar.php?value=semana&email=<?php echo urlencode($email);?>',
                     data:{semana:semana},
                     type: 'post',
-                    success: function (data){                    	
+                    success: function (data){  
+                        alert(data);
                         datos=JSON.parse(data);        
                         for(var i=0;i<datos.length;i++){
                             atencion.push(datos[i].atencion);
                             memoria.push(datos[i].memoria);
                             matematicas.push(datos[i].matematicas);
                         }                        
+                        atent();
                     }
                    }
                 )	    	
@@ -95,6 +98,7 @@
 	    atent();
         function atent(){
             window.alert('');
+            //alert(memoria);
         }
 		//var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 		var lineChartData = {
@@ -118,7 +122,7 @@
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : atencion
+					data : matematicas
 				},
                 {
 					label: "Matematicas",
@@ -128,7 +132,7 @@
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : matematicas
+					data : atencion
 				}
 			]
 

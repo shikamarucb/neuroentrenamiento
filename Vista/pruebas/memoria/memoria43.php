@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <link href="../../main.css" rel="stylesheet" type="text/css">
     <link href="memoria.css" rel="stylesheet" type="text/css">
-
+    <script type="text/javascript">document.oncontextmenu = function(){return false;}</script>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One|Jura:600,400,500|Exo+2:400,500' rel='stylesheet' type='text/css'>
     <title>Memoria</title>
 </head>

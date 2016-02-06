@@ -37,7 +37,7 @@
             <ul class="nav navbar-nav navbar-right">
 				
 			    <li class="dropdown">
-	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png"><span class="badge">9</span></a>
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="images/1.png"></a>
 	        		<ul class="dropdown-menu">
 						<li class="dropdown-menu-header text-center">
 							<strong>Cuenta</strong>						
@@ -69,8 +69,11 @@
         </div>
              <?php 
                include_once ("../../Controlador/administradores.php");
+               include_once ("../../Modelo/conexion.php");
+                $conexion=new Conexion();
+                $conexion=$conexion->conectar();                            
                 $admin=new Administradores();                 
-                $email=mysql_real_escape_string(strip_tags($_GET["email"]));
+                $email=$conexion->real_escape_string(strip_tags($_GET["email"]));
                 $datos=$admin->getAdminByEmail($email);
                 foreach ($datos as $dato) {
                   $nombre=utf8_encode($dato['nombre']);

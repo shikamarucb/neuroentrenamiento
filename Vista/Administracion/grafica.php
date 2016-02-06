@@ -16,8 +16,11 @@
     <div>
         <?php
           include_once ("../../Controlador/usuariosAdmin.php");
+          include_once ("../../Modelo/conexion.php");
           $usuarios=new UsuariosAdmin();
-          $email=mysql_real_escape_string(strip_tags($_GET["email"]));
+          $conexion=new Conexion();
+          $conexion=$conexion->conectar();
+          $email=$conexion->real_escape_string(strip_tags($_GET["email"]));
           $info=$usuarios->getControl($email);
           $resultado=$info->fetch_array(MYSQLI_ASSOC);
           $semana=$resultado['semana_usuario'];          
