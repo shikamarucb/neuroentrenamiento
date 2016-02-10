@@ -3,6 +3,7 @@
     include_once ("../Modelo/activacion.php");
     include_once ("../Modelo/control.php");
     include_once ("../Modelo/conexion.php");
+    include_once ("../Modelo/resultado.php");
 
     class UsuarioC{        
         
@@ -209,6 +210,15 @@
  
             $user=new Usuario();
             $user->deleteUser($conexion,$email);
+
+            $user=new Activacion();
+            $user->deleteActive($conexion, $email);
+
+            $user=new Control($email);
+            $user->deleteControl($conexion);
+
+            $user=new Resultado();
+            $user->deleteResult($conexion, $email);
             
             header('location: ../Vista/Administracion/dashboard.php');
 
