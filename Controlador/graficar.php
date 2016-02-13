@@ -23,7 +23,7 @@
       $arra4= array("dia"=>4);
       $arra5= array("dia"=>5);
 
-      $arrygrande=array();
+      $arraygrande=array();
 
       foreach($info as $valor){
           switch($valor["dia"]){

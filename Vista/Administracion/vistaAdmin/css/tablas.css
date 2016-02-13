@@ -110,3 +110,14 @@
 #contFormSadmin input,select{
     width: 50%;
 }
+#modUsuAdm {
+    
+}
+
+#modusuAdm label{
+    width: 20%;
+}
+
+#modusuAdm input,select{
+    width:20%;
+}
