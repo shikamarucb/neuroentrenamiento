@@ -39,7 +39,7 @@
         }                       
         $this->agregar($conexion, $puntos);
       }
-      public function veinteAtencion($conexion){//funcion donde se califican las puebas que contienen 20 respuestas de matemáticas. 
+      public function veinteAtencion($conexion){//funcion donde se califican las puebas que contienen 20 respuestas de atención. 
         // se calcula la calificacion 
         $puntos=0;
         if($this->rango != 0){ 
@@ -275,7 +275,7 @@
             }
             agregar($conexion, $puntos);                                   
         }
-        public function agregar($conexion, $puntos){
+        public function agregar($conexion, $puntos){//funcion que es invocada por las demás funciones para agregar datos a la tabla resultado y actualizar la tabla control.
            $resultado=new Resultado();
             $resultado->addResultado($conexion, $this->email, $this->tipo, $puntos, $this->dia, $this->semana, $this->tiempo);            
             $this->contador=$this->contador+1;            

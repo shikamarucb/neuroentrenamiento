@@ -57,7 +57,7 @@
             }
 
         }
-        public function registrarAdmin(){//funcion para registrar los nuevos administradores... 
+        public function registrarAdmin(){//funcion para registrar los nuevos administradores.Lo registra unicamente el superadministrador.. 
             
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
@@ -75,7 +75,7 @@
             header('location: ../Vista/Administracion/superAdDashboard.php');
         }
         
-        public function loguear(){
+        public function loguear(){//funcion parq ue loguee cualquiera de los rolles que desee ingresar. 
             session_start();
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
@@ -145,7 +145,7 @@
             header('location: ../Vista/login.html');
         }
 
-        public function logout(){
+        public function logout(){//cierra y destruye la sesion. 
             session_start();
             if(! isset($_SESSION['session'])){
                 echo "no hay sesion iniciada...";                
@@ -156,7 +156,7 @@
             }            
         }      
         
-        public function contactar(){
+        public function contactar(){//mediante el formulario de contacto se envia al correo del superadministrador. 
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
@@ -171,7 +171,7 @@
              header ("Location: ../Vista/pruebas/msg/contactmsg.html");
         }
 
-        public function actualizar(){
+        public function actualizar(){//se utiliza para actualizar los datos de los usuarios atravez del panel de administración.
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
             
@@ -187,7 +187,7 @@
 
             header('location: ../Vista/Administracion/dashboard.php');
         }
-        public function actualizarAdmin(){
+        public function actualizarAdmin(){//se utiliza para actualizar los datos de los usuarios atravez del panel de superadministración.
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
             
@@ -202,7 +202,7 @@
 
             header('location: ../Vista/Administracion/superAdDashboard.php');
         }
-        public function delete(){
+        public function delete(){//se utiliza para borrar los usuarios de todas las tablas  ya sea por incatividad o por que el administrador así lo desea. 
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
@@ -223,7 +223,7 @@
             header('location: ../Vista/Administracion/dashboard.php');
 
         }   
-        public function deleteAdmin(){
+        public function deleteAdmin(){//funcion que es invocada por el superadmin para eliminar administradores. 
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
@@ -237,6 +237,7 @@
         }      
         
     }
+    //AL LLAMAR EL CONTROLADOR SE ENVIA POR METODO GET EL NOMBRE DE LA FUNCION A INVOCAR, SE RECIBE Y SI EXISTE SE INVOCA DESDE ESTA SECCION DE CODIGO. 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
 

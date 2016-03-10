@@ -92,49 +92,49 @@
         //funciones para el manejo de la tabla Resultado
 
         public function adResultado($table, $conexion, $email, $tipo, $puntos, $dia, $semana,$tiempo){ //cuando se completa una actividad se almaecenan los  datos en la tabla                
-             $conexion->query("INSERT into ".$table."(usuario_correo, prueba_tipo, tiempo, puntaje_usuario, dia, semana)
+             $conexion->query("INSERT into ".$table."(users_email, prueba_tipo, tiempo, puntaje_usuario, dia, semana)
                   values ('".$email."','".$tipo."','".$tiempo."','".$puntos."',
                   '".$dia."','".$semana."');");      
         }
 
         public function getResult($table, $conexion, $email, $dia, $semana){// se consulta para extraer los datos de la tabla por un usuario, dia y semana  especifica 
-            return $conexion->query("SELECT * FROM ".$table." where usuario_correo='".$email."'
+            return $conexion->query("SELECT * FROM ".$table." where users_email='".$email."'
                     and dia=".$dia." and semana =".$semana." ;");
         }
 
         public function getResultByWeek($table, $conexion, $email, $semana){//se extraen los datos pertenecientes a un usuario correspondientes a una semana especifica para graficarlos 
-          return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' AND semana=".$semana.";");
+          return $conexion->query("SELECT * from ".$table." where users_email='".$email."' AND semana=".$semana.";");
         }
 
         public function getResultBysex($conexion, $semana){//se extraen los datos promediados agrupados por sexo  para graficarlos
            return $conexion->query("SELECT  avg(puntaje_usuario), users.genero, prueba_tipo,dia from resultado
-                                    inner join users on resultado.usuario_correo=users.email AND semana=".$semana."
+                                    inner join users on resultado.users_email=users.email AND semana=".$semana."
                                      group by genero,dia,prueba_tipo;");
         }
 
         public function getResultByAge($conexion, $semana){//se extraen los datos promediados agrupados por edad para graficarlos
            return $conexion->query("SELECT avg(puntaje_usuario), users.edad,prueba_tipo,dia from resultado
-                                   inner join users on resultado.usuario_correo=users.email and semana=".$semana." 
+                                   inner join users on resultado.users_email=users.email and semana=".$semana." 
                                    group by edad,dia,prueba_tipo order by edad;");
         }
 
         public function getResultByCourse($conexion, $semana){//se extraen los datos promediados agrupados por curso para graficarlos
            return $conexion->query("SELECT avg(puntaje_usuario), users.grado,prueba_tipo,dia from resultado
-                                   inner join users on resultado.usuario_correo=users.email And semana=".$semana."
+                                   inner join users on resultado.users_email=users.email And semana=".$semana."
                                     group by grado,dia,prueba_tipo order by grado;");
         }
 
         public function getResultByEmail($table,$conexion, $email){//se extraen los datos pertenecientes a un usuario unicamente
-            return $conexion->query("SELECT * from ".$table." where usuario_correo='".$email."' order by semana;");
+            return $conexion->query("SELECT * from ".$table." where users_email='".$email."' order by semana;");
         }
 
         public function deleteResult($conexion, $table, $email){//se eliminan los datos de esta tabla por inactividad del usuario
-            $conexion->query("DELETE from ".$table." where usuario_correo='".$email."';");
+            $conexion->query("DELETE from ".$table." where users_email='".$email."';");
         }
 
         public function getResultByAverage($conexion, $email){///se extraen los datos pertenecientes a un usuario, se promedian  para graficarlos, esto es unicamente cuando el usuario ha finalizado todas las pruebas
             return $conexion->query("SELECT  avg(puntaje_usuario), prueba_tipo, semana from resultado 
-                                    where usuario_correo='".$email."'  group by prueba_tipo order by semana;");
+                                    where users_email='".$email."'  group by prueba_tipo order by semana;");
         }
         
     }

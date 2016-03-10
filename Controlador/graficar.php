@@ -6,14 +6,14 @@
 
   class Graficar{
 
-  	public function semana(){
+  	public function semana(){//FUNCION QUE PERMITE GRAFICAR LOS RESULTADOS DE LOS USUARIOS A PARTIR DE UNA SEMANA ESPECIFICA.
   		$conexion=new Conexion();
   		$conexion=$conexion->conectar();
                     
   	  $email=$conexion->real_escape_string($_GET['email']);
   		$semana=$conexion->real_escape_string(strip_tags($_POST['semana']));
 
-  		$resultado=new Resultado();
+  		$resultado=new Resultado();//SE EXTRAEN LOS RESULTADOS DE LA SEMANA.
       $datos=$resultado->getResultByWeek($conexion, $email, $semana);
       $info=$datos->fetch_all(MYSQLI_ASSOC);
       
@@ -23,10 +23,10 @@
       $arra4= array("dia"=>4);
       $arra5= array("dia"=>5);
 
-      $arrygrande=array();
+      $arraygrande=array();
 
       foreach($info as $valor){
-          switch($valor["dia"]){
+          switch($valor["dia"]){//SE ALAMACENAN LOS RESULTADOS EN VECTORES 
               case 1: $arra1[$valor["prueba_tipo"]]=$valor["puntaje_usuario"]; break;
               case 2: $arra2[$valor["prueba_tipo"]]=$valor["puntaje_usuario"]; break;
               case 3: $arra3[$valor["prueba_tipo"]]=$valor["puntaje_usuario"]; break;
@@ -50,10 +50,10 @@
           $arraygrande[4]=$arra5;
       } 
 
-      echo json_encode($arraygrande);     
+      echo json_encode($arraygrande);//EL VECATOR CONTIENE TODA LA INFORMACION PARA GRAFICAR Y ES EL QUE SE ENVÍA A LA VISTA.      
   	}
 
-    public function promedio(){
+    public function promedio(){//SE GRAFICA POR PROMEDIO DEL USUARIO 
       $conexion=new Conexion();
       $conexion=$conexion->conectar();
                     
@@ -90,7 +90,7 @@
       echo json_encode($arraygrande);    //valor que se envia a la vista en json 
     }
     
-    public function sexo(){
+    public function sexo(){//SE EXTRAEN  LOS DATOS PARA GRAFICAR, AGRUPANDOLOS POR SEXO.
       $conexion=new Conexion();
       $conexion=$conexion->conectar();
                           
@@ -119,7 +119,7 @@
 
       foreach($info as $valor){
         if($valor["genero"] == 'M'){
-          switch($valor["dia"]){
+          switch($valor["dia"]){//SE GUARDA LA INFORMACION CORRESPONDIENTE ES LOS RESPECTIVOS VECTORES.
               case 1: $arra1M[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;
               case 2: $arra2M[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;
               case 3: $arra3M[$valor["prueba_tipo"]]=$valor["avg(puntaje_usuario)"]; break;
@@ -148,12 +148,12 @@
       $mujeres[3]=$arra4F;
       $mujeres[4]=$arra5F;
 
-      $arraygrande['masculino']=$hombres;
+      $arraygrande['masculino']=$hombres;//EN EL MISMO ARRAY SE GUARDAN LOS VECTORES CORRESPONFIENTES A CADA SEXO.
       $arraygrande['femenino']=$mujeres;
       
-      echo json_encode($arraygrande);
+      echo json_encode($arraygrande);//SE ENVIA EL ARRAY A LA VISTA. 
     }
-    public function edad(){
+    public function edad(){////SE EXTRAEN  LOS DATOS PARA GRAFICAR, AGRUPANDOLOS POR EDADES.
       $conexion=new Conexion();
       $conexion=$conexion->conectar();
                                 
@@ -181,7 +181,7 @@
       
       $arrygrande=array();
 
-      foreach($info as $valor){
+      foreach($info as $valor){//SE GUARDA LA INFORMACION DEVUELTA EN LOS ARRAY CORRESPONDIENTES.
         switch($valor["edad"]){
             case 11: switch($valor["dia"]){
                         case 1:  $arra1[$valor["prueba_tipo"]]= $valor["avg(puntaje_usuario)"]; break;
@@ -316,7 +316,7 @@
       echo json_encode($arraygrande);
     }
 
-    public function curso(){
+    public function curso(){////SE EXTRAEN  LOS DATOS PARA GRAFICAR, AGRUPANDOLOS POR CURSO.
       $conexion=new Conexion();
       $conexion=$conexion->conectar();
                                 
@@ -434,6 +434,7 @@
     }
     
   }
+  //AL LLAMAR EL CONTROLADOR SE ENVIA POR METODO GET EL NOMBRE DE LA FUNCION A INVOCAR, SE RECIBE Y SI EXISTE SE INVOCA DESDE ESTA SECCION DE CODIGO. 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
 

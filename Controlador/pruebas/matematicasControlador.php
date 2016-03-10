@@ -25,8 +25,8 @@
     		$conexion=new Conexion();
             $conexion=$conexion->conectar();                     
         
-            $email=$_SESSION['session'];
-            $control= new Control($email);
+            $email=$_SESSION['session'];//EN TODAS LAS FUNCIONES DEL CONTROLADOR, ESTA SECCION DE CODIGO SE EXTRAEN DATOS DE LA TABLA CONTROL PERTENECIENTES A UN EMAIL QUE INICIO SESION.
+            $control= new Control($email);//EN TODAS LAS FUNCIONES DEL CONTROLADOR, ESTA SECCION DE CODIGO SE EXTRAEN LOS DIAS Y LA SEMANA  DE LA TABLA CONTROL PARA SU UTILIZACION A LA HORA DE CALIFICAR LAS PRUEBAS Y OTROS.
             $resultado=$control->getControl($conexion);
             if ($resultado->num_rows !=0){
                 $datos=$resultado->fetch_array(MYSQLI_ASSOC);
@@ -320,6 +320,7 @@
       }
     	
     }
+    //AL LLAMAR EL CONTROLADOR SE ENVIA POR METODO GET EL NOMBRE DE LA FUNCION A INVOCAR, SE RECIBE Y SI EXISTE SE INVOCA DESDE ESTA SECCION DE CODIGO. 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
 

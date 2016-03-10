@@ -2,7 +2,7 @@
 include_once ("conexion.php");
 include_once ("query.php");
 class Usuario{
-    //esta clase hace peticiones a la clase Query que es la encargada de realizar todas las consultas solicitadas deda cada metodo.
+    //esta clase hace peticiones a la clase Query que es la encargada de realizar todas las acciones del CRUD solicitadas desde cada metodo.
     private $table="users";
    
 //funciones para hacer el CRUD de los usuarios registrados... los culaes tienen un roll de categoria 3.
@@ -24,7 +24,7 @@ class Usuario{
                     $edad,$genero,$grado);
     }
 
-    public function deleteUser($conexion,$email){
+    public function deleteUser($conexion,$email){//se elimina un usuario.
         $query=new Query();
         $query->deleteUser($this->table,$conexion,$email);
     }
@@ -51,24 +51,24 @@ class Usuario{
 
     //funciones para hacer el CRUD de los administradores registrados...Los culaes tienen un roll de categoria 2 y pertenecen a la misma tabla de usuarios
 
-    public function addAdmin($conexion,$email,$nombre,$apellido,$edad,$genero,$password){
+    public function addAdmin($conexion,$email,$nombre,$apellido,$edad,$genero,$password){//se agregan administradores 
         $roll=2;
         $query=new Query();
         $query->addAdmin($this->table,$conexion,$email,$nombre,$apellido,
                     $edad,$genero,$password,$roll);
     }    
-    public function getAdmin($conexion, $email, $password){
+    public function getAdmin($conexion, $email, $password){//se obtiene un administrador apartir de su email.
         $query=new Query();
         return $query->get($this->table,$email,$password,$conexion);
     }
 
-    public function updateAdmin($conexion,$email,$nombre,$apellido,$edad,$genero){
+    public function updateAdmin($conexion,$email,$nombre,$apellido,$edad,$genero){//se actualiza los datos de un administrador.
         $query=new Query();
         $query->upAdmin($this->table,$conexion,$email,$nombre,$apellido,
                     $edad,$genero);
     }    
     
-    public function getAllAdmins($conexion){
+    public function getAllAdmins($conexion){//se obtienen todos los administradores. 
         $roll=2;
         $query=new Query();
         return $query->getUsers($this->table,$conexion,$roll);

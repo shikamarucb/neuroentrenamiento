@@ -4,7 +4,7 @@
    
    Class PermisosAdmins{
        
-       public function verificarAdmin(){
+       public function verificarAdmin(){//funcion que verifica que el usuario que intenta ingresar a algunas paginas especificas este logueado como administrador 
        	    if(isset($_SESSION['session'])){
        	    	$email=$_SESSION['session'];
        	    	$conexion=new Conexion();
@@ -24,7 +24,7 @@
        	    }       	                
         
        }
-       public function verificarSuperAdmin(){
+       public function verificarSuperAdmin(){//funcion que verifica que el usuario que intenta ingresar a algunas paginas especificas este logueado como superadministrador
        	    if(isset($_SESSION['session'])){
        	    	$email=$_SESSION['session'];
        	    	$conexion=new Conexion();

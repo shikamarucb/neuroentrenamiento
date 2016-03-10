@@ -52,18 +52,18 @@
             $l9=strtoupper($conexion->real_escape_string(strip_tags($_POST['20'])));
             $palabra3=$l1.$l2.$l3.$l4.$l5.$l6.$l7.$l8.$l9;
 
-            $email=$_SESSION['session'];
+            $email=$_SESSION['session'];//EN TODAS LAS FUNCIONES DEL CONTROLADOR, ESTA SECCION DE CODIGO SE EXTRAEN DATOS DE LA TABLA CONTROL PERTENECIENTES A UN EMAIL QUE INICIO SESION. 
             $control= new Control($email);
             $resultado=$control->getControl($conexion);
             if ($resultado->num_rows !=0){
-                $datos=$resultado->fetch_array(MYSQLI_ASSOC);
+                $datos=$resultado->fetch_array(MYSQLI_ASSOC);//EN TODAS LAS FUNCIONES DEL CONTROLADOR, ESTA SECCION DE CODIGO SE EXTRAEN LOS DIAS Y LA SEMANA  DE LA TABLA CONTROL PARA SU UTILIZACION A LA HORA DE CALIFICAR LAS PRUEBAS Y OTROS. 
                 $dia= $datos["dia_usuario"];
                 $semana=$datos["semana_usuario"];
                 $contador=$datos["contador_actividad"];               
             }
             $enunciado="pais1";            
             $actividad=new Actividad();
-            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
+            $rta=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER LAS RESPUESTAS CORRECTAS.
             if($rta->num_rows != 0){                                               
               $infos=$rta->fetch_array(MYSQLI_ASSOC);                                                             
               if($infos["respuesta"] == $palabra1){                                                              
@@ -1676,6 +1676,7 @@
       }
 
     }
+    //AL LLAMAR EL CONTROLADOR SE ENVIA POR METODO GET EL NOMBRE DE LA FUNCION A INVOCAR, SE RECIBE Y SI EXISTE SE INVOCA DESDE ESTA SECCION DE CODIGO. 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
 

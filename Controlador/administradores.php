@@ -5,7 +5,7 @@
 
    class Administradores{        
 
-        public function listar(){            
+        public function listar(){        //FUNCION PARA LISTAR LOS ADMINISTRADORES REGISTRADOS    
             $conexion=new Conexion();
             $conexion=$conexion->conectar();
 
@@ -13,7 +13,7 @@
             return $admin->getAllAdmins($conexion);
             
         }
-        public function getAdminByEmail($email){
+        public function getAdminByEmail($email){//SE OBTIENE UN ADMINISTRADOR APARTIR DEL EMAIL.
         	$conexion=new Conexion();
             $conexion=$conexion->conectar();            
 

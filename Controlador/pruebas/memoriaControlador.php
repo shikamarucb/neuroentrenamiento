@@ -34,7 +34,7 @@
             $herra3=strtoupper($conexion->real_escape_string(strip_tags($_POST['herra3'])));
         
             $email=$_SESSION['session'];
-            $control= new Control($email);
+            $control= new Control($email);//EN TODAS LAS FUNCIONES DEL CONTROLADOR, ESTA SECCION DE CODIGO SE EXTRAEN LOS DIAS Y LA SEMANA  DE LA TABLA CONTROL PARA SU UTILIZACION A LA HORA DE CALIFICAR LAS PRUEBAS Y OTROS.
             $resultado=$control->getControl($conexion);
             if ($resultado->num_rows !=0){
                 $datos=$resultado->fetch_array(MYSQLI_ASSOC);
@@ -45,7 +45,7 @@
             $enunciado="fruta";            
             $actividad=new Actividad();
             $frutas=$actividad->getActividad($conexion,$tipo, $enunciado,$dia,$semana);//SE CONSULTA LA BD PARA EXTRAER DATOS
-            if($frutas->num_rows != 0){                                               //LAS FRUTAS DEL EJERCICIO.
+            if($frutas->num_rows != 0){                                            
               while($infos=$frutas->fetch_array(MYSQLI_ASSOC)){                            
                 foreach ($infos as $clave=>$info) {                                    
                     if($info == $fruta1){                                                              
@@ -2061,6 +2061,7 @@
             header ("Location: ../../vista/pruebas/msg/finmsg.html");            
       } 
     }
+    //AL LLAMAR EL CONTROLADOR SE ENVIA POR METODO GET EL NOMBRE DE LA FUNCION A INVOCAR, SE RECIBE Y SI EXISTE SE INVOCA DESDE ESTA SECCION DE CODIGO. 
     $conexion=new Conexion();
     $conexion=$conexion->conectar();
 

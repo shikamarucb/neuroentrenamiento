@@ -76,15 +76,15 @@
             }
         }
 
-        public function listar(){            
-            $conexion=new Conexion();
+        public function listar(){ //funcion que mediante la respectiva consulta a la base de datos apartir de la clase query           
+            $conexion=new Conexion();// se listan a todos los usuarios no administradores.
             $conexion=$conexion->conectar();
 
             $user=new Usuario();
             return $user->getAllUsers($conexion);
             
         }
-        public function getUserByEmail($email){
+        public function getUserByEmail($email){//Se obtienen un usuario registrado mediante su email haciendo la consulta a la base de datos. 
         	$conexion=new Conexion();
             $conexion=$conexion->conectar();            
 
@@ -92,7 +92,7 @@
             return $user->getUsersByEmail($conexion,$email);
             
         }
-        public function getControl($email){
+        public function getControl($email){//se obtienen los datos de la tabla control ligados a un correo registado.
             $conexion=new Conexion();
             $conexion=$conexion->conectar();            
 
@@ -100,7 +100,7 @@
             return $datos->getControl($conexion);
             
         }
-        public function getTimes($email){
+        public function getTimes($email){//se obtiene los tiempos en realizar las pruebas de los usuarios para listarlos.
             $conexion=new Conexion();
             $conexion=$conexion->conectar(); 
 

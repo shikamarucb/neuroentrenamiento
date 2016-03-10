@@ -89,7 +89,7 @@
                   $curso=$dato['grado'];                  
                 }
              ?>
-        <form name="registro" action="../../Controlador/userController.php?value=actualizar" method="POST">
+        <form name="registro" action="../../Controlador/userController.php?value=actualizar" method="POST" id="modUsuAdm">
           <div>
             <label>Nombre</label>
             <input type="text" value="<?php echo $nombre ?>"  name="nombre" required><br><br>
@@ -173,7 +173,7 @@
               ?>                
             </select><br><br>                                            
           </div><br><br>
-          <input type="hidden" value="<?php echo $email ?>"  name="email">
+          <input type="hidden" value="<?php echo $email ?>" name="email">
           <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>
         <a href="../../Controlador/userController.php?value=delete&email=<?php echo urlencode($email);?>" class="btn btn-danger">Eliminar</a>            

@@ -5,7 +5,7 @@
 
    class DatosControl{
         
-        public function getControl($email){
+        public function getControl($email){//SE OBTIENEN LOS DATOS DE LA TABLA CONTROL A PARTIR DEL EMAIL.
             $conexion=new Conexion();
             $conexion=$conexion->conectar();            
 
